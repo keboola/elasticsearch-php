@@ -1,14 +1,14 @@
 <?php
 
-namespace Elasticsearch\Endpoints\Indices\Cache;
+namespace Keboola\Elasticsearch\Endpoints\Indices\Cache;
 
-use Elasticsearch\Endpoints\AbstractEndpoint;
+use Keboola\Elasticsearch\Endpoints\AbstractEndpoint;
 
 /**
  * Class Clear
  *
- * @category Elasticsearch
- * @package  Elasticsearch\Endpoints\Indices\Cache
+ * @category Keboola\Elasticsearch
+ * @package Keboola\Elasticsearch\Endpoints\Indices\Cache
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co

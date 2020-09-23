@@ -1,15 +1,15 @@
 <?php
 
-namespace Elasticsearch\Endpoints\Ingest\Pipeline;
+namespace Keboola\Elasticsearch\Endpoints\Ingest\Pipeline;
 
-use Elasticsearch\Common\Exceptions;
-use Elasticsearch\Endpoints\AbstractEndpoint;
+use Keboola\Elasticsearch\Common\Exceptions;
+use Keboola\Elasticsearch\Endpoints\AbstractEndpoint;
 
 /**
  * Class Delete
  *
- * @category Elasticsearch
- * @package  Elasticsearch\Endpoints\Ingest
+ * @category Keboola\Elasticsearch
+ * @package Keboola\Elasticsearch\Endpoints\Ingest
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co
@@ -17,8 +17,8 @@ use Elasticsearch\Endpoints\AbstractEndpoint;
 class Delete extends AbstractEndpoint
 {
     /**
-     * @throws \Elasticsearch\Common\Exceptions\RuntimeException
      * @return string
+     * @throws \Keboola\Elasticsearch\Common\Exceptions\RuntimeException
      */
     public function getURI()
     {

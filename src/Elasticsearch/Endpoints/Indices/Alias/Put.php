@@ -1,15 +1,15 @@
 <?php
 
-namespace Elasticsearch\Endpoints\Indices\Alias;
+namespace Keboola\Keboola\Elasticsearch\Endpoints\Indices\Alias;
 
-use Elasticsearch\Endpoints\AbstractEndpoint;
-use Elasticsearch\Common\Exceptions;
+use Keboola\Elasticsearch\Endpoints\AbstractEndpoint;
+use Keboola\Elasticsearch\Common\Exceptions;
 
 /**
  * Class Put
  *
- * @category Elasticsearch
- * @package  Elasticsearch\Endpoints\Indices\Alias
+ * @category Keboola\Elasticsearch
+ * @package Keboola\Elasticsearch\Endpoints\Indices\Alias
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co
@@ -22,7 +22,7 @@ class Put extends AbstractEndpoint
     /**
      * @param array $body
      *
-     * @throws \Elasticsearch\Common\Exceptions\InvalidArgumentException
+     * @throws \Keboola\Elasticsearch\Common\Exceptions\InvalidArgumentException
      * @return $this
      */
     public function setBody($body)
@@ -53,7 +53,7 @@ class Put extends AbstractEndpoint
     }
 
     /**
-     * @throws \Elasticsearch\Common\Exceptions\RuntimeException
+     * @throws \Keboola\Elasticsearch\Common\Exceptions\RuntimeException
      * @return string
      */
     public function getURI()

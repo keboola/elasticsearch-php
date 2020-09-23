@@ -1,14 +1,14 @@
 <?php
 
-namespace Elasticsearch\Namespaces;
+namespace Keboola\Elasticsearch\Namespaces;
 
-use Elasticsearch\Endpoints\Remote\Info;
+use Keboola\Elasticsearch\Endpoints\Remote\Info;
 
 /**
  * Class RemoteNamespace
  *
- * @category Elasticsearch
- * @package  Elasticsearch\Namespaces\TasksNamespace
+ * @category Keboola\Elasticsearch
+ * @package Keboola\Elasticsearch\Namespaces\TasksNamespace
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co

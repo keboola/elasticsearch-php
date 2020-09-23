@@ -1,14 +1,14 @@
 <?php
 
-namespace Elasticsearch\ConnectionPool;
+namespace Keboola\Elasticsearch\ConnectionPool;
 
-use Elasticsearch\Connections\ConnectionInterface;
+use Keboola\Elasticsearch\Connections\ConnectionInterface;
 
 /**
  * ConnectionPoolInterface
  *
- * @category Elasticsearch
- * @package  Elasticsearch\ConnectionPool
+ * @category Keboola\Elasticsearch
+ * @package Keboola\Elasticsearch\ConnectionPool
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co

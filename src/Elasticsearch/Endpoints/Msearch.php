@@ -1,16 +1,16 @@
 <?php
 
-namespace Elasticsearch\Endpoints;
+namespace Keboola\Elasticsearch\Endpoints;
 
-use Elasticsearch\Common\Exceptions;
-use Elasticsearch\Serializers\SerializerInterface;
-use Elasticsearch\Transport;
+use Keboola\Elasticsearch\Common\Exceptions;
+use Keboola\Elasticsearch\Serializers\SerializerInterface;
+use Keboola\Elasticsearch\Transport;
 
 /**
  * Class Msearch
  *
- * @category Elasticsearch
- * @package  Elasticsearch\Endpoints
+ * @category Keboola\Elasticsearch
+ * @package Keboola\Elasticsearch\Endpoints
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co
@@ -28,8 +28,8 @@ class Msearch extends AbstractEndpoint
     /**
      * @param array|string $body
      *
-     * @throws \Elasticsearch\Common\Exceptions\InvalidArgumentException
      * @return $this
+     * @throws \Keboola\Elasticsearch\Common\Exceptions\InvalidArgumentException
      */
     public function setBody($body)
     {
@@ -83,7 +83,7 @@ class Msearch extends AbstractEndpoint
 
     /**
      * @return array
-     * @throws \Elasticsearch\Common\Exceptions\RuntimeException
+     * @throws \Keboola\Elasticsearch\Common\Exceptions\RuntimeException
      */
     public function getBody()
     {

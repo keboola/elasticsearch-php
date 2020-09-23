@@ -1,11 +1,11 @@
 <?php
-namespace Elasticsearch\Tests\Connections;
+namespace Keboola\Elasticsearch\Tests\Connections;
 
-use Elasticsearch\Client;
-use Elasticsearch\ClientBuilder;
-use Elasticsearch\Connections\Connection;
-use Elasticsearch\Serializers\SerializerInterface;
-use Elasticsearch\Serializers\SmartSerializer;
+use Keboola\Elasticsearch\Client;
+use Keboola\Elasticsearch\ClientBuilder;
+use Keboola\Elasticsearch\Connections\Connection;
+use Keboola\Elasticsearch\Serializers\SerializerInterface;
+use Keboola\Elasticsearch\Serializers\SmartSerializer;
 use Psr\Log\LoggerInterface;
 
 class ConnectionTest extends \PHPUnit\Framework\TestCase

@@ -1,26 +1,26 @@
 <?php
 
-namespace Elasticsearch\Connections;
+namespace Keboola\Elasticsearch\Connections;
 
-use Elasticsearch\Client;
-use Elasticsearch\Common\Exceptions\AlreadyExpiredException;
-use Elasticsearch\Common\Exceptions\BadRequest400Exception;
-use Elasticsearch\Common\Exceptions\Conflict409Exception;
-use Elasticsearch\Common\Exceptions\Curl\CouldNotConnectToHost;
-use Elasticsearch\Common\Exceptions\Curl\CouldNotResolveHostException;
-use Elasticsearch\Common\Exceptions\Curl\OperationTimeoutException;
-use Elasticsearch\Common\Exceptions\Forbidden403Exception;
-use Elasticsearch\Common\Exceptions\MaxRetriesException;
-use Elasticsearch\Common\Exceptions\Missing404Exception;
-use Elasticsearch\Common\Exceptions\NoDocumentsToGetException;
-use Elasticsearch\Common\Exceptions\NoShardAvailableException;
-use Elasticsearch\Common\Exceptions\RequestTimeout408Exception;
-use Elasticsearch\Common\Exceptions\RoutingMissingException;
-use Elasticsearch\Common\Exceptions\ScriptLangNotSupportedException;
-use Elasticsearch\Common\Exceptions\ServerErrorResponseException;
-use Elasticsearch\Common\Exceptions\TransportException;
-use Elasticsearch\Serializers\SerializerInterface;
-use Elasticsearch\Transport;
+use Keboola\Elasticsearch\Client;
+use Keboola\Elasticsearch\Common\Exceptions\AlreadyExpiredException;
+use Keboola\Elasticsearch\Common\Exceptions\BadRequest400Exception;
+use Keboola\Elasticsearch\Common\Exceptions\Conflict409Exception;
+use Keboola\Elasticsearch\Common\Exceptions\Curl\CouldNotConnectToHost;
+use Keboola\Elasticsearch\Common\Exceptions\Curl\CouldNotResolveHostException;
+use Keboola\Elasticsearch\Common\Exceptions\Curl\OperationTimeoutException;
+use Keboola\Elasticsearch\Common\Exceptions\Forbidden403Exception;
+use Keboola\Elasticsearch\Common\Exceptions\MaxRetriesException;
+use Keboola\Elasticsearch\Common\Exceptions\Missing404Exception;
+use Keboola\Elasticsearch\Common\Exceptions\NoDocumentsToGetException;
+use Keboola\Elasticsearch\Common\Exceptions\NoShardAvailableException;
+use Keboola\Elasticsearch\Common\Exceptions\RequestTimeout408Exception;
+use Keboola\Elasticsearch\Common\Exceptions\RoutingMissingException;
+use Keboola\Elasticsearch\Common\Exceptions\ScriptLangNotSupportedException;
+use Keboola\Elasticsearch\Common\Exceptions\ServerErrorResponseException;
+use Keboola\Elasticsearch\Common\Exceptions\TransportException;
+use Keboola\Elasticsearch\Serializers\SerializerInterface;
+use Keboola\Elasticsearch\Transport;
 use GuzzleHttp\Ring\Core;
 use GuzzleHttp\Ring\Exception\ConnectException;
 use GuzzleHttp\Ring\Exception\RingException;
@@ -29,8 +29,8 @@ use Psr\Log\LoggerInterface;
 /**
  * Class AbstractConnection
  *
- * @category Elasticsearch
- * @package  Elasticsearch\Connections
+ * @category Keboola\Elasticsearch
+ * @package Keboola\Elasticsearch\Connections
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co
@@ -96,7 +96,7 @@ class Connection implements ConnectionInterface
      * @param $handler
      * @param array $hostDetails
      * @param array $connectionParams Array of connection-specific parameters
-     * @param \Elasticsearch\Serializers\SerializerInterface $serializer
+     * @param \Keboola\Elasticsearch\Serializers\SerializerInterface $serializer
      * @param \Psr\Log\LoggerInterface $log              Logger object
      * @param \Psr\Log\LoggerInterface $trace
      */
@@ -161,7 +161,7 @@ class Connection implements ConnectionInterface
      * @param null $params
      * @param null $body
      * @param array $options
-     * @param \Elasticsearch\Transport $transport
+     * @param \Keboola\Elasticsearch\Transport $transport
      * @return mixed
      */
     public function performRequest($method, $uri, $params = null, $body = null, $options = [], Transport $transport = null)
@@ -547,7 +547,7 @@ class Connection implements ConnectionInterface
     /**
      * @param $request
      * @param $response
-     * @return \Elasticsearch\Common\Exceptions\Curl\CouldNotConnectToHost|\Elasticsearch\Common\Exceptions\Curl\CouldNotResolveHostException|\Elasticsearch\Common\Exceptions\Curl\OperationTimeoutException|\Elasticsearch\Common\Exceptions\MaxRetriesException
+     * @return \Keboola\Elasticsearch\Common\Exceptions\Curl\CouldNotConnectToHost|\Elasticsearch\Common\Exceptions\Curl\CouldNotResolveHostException|\Elasticsearch\Common\Exceptions\Curl\OperationTimeoutException|\Elasticsearch\Common\Exceptions\MaxRetriesException
      */
     protected function getCurlRetryException($request, $response)
     {
@@ -600,7 +600,7 @@ class Connection implements ConnectionInterface
      * @param $request
      * @param $response
      * @param $ignore
-     * @throws \Elasticsearch\Common\Exceptions\AlreadyExpiredException|\Elasticsearch\Common\Exceptions\BadRequest400Exception|\Elasticsearch\Common\Exceptions\Conflict409Exception|\Elasticsearch\Common\Exceptions\Forbidden403Exception|\Elasticsearch\Common\Exceptions\Missing404Exception|\Elasticsearch\Common\Exceptions\ScriptLangNotSupportedException|null
+     * @throws \Keboola\Elasticsearch\Common\Exceptions\AlreadyExpiredException|\Elasticsearch\Common\Exceptions\BadRequest400Exception|\Elasticsearch\Common\Exceptions\Conflict409Exception|\Elasticsearch\Common\Exceptions\Forbidden403Exception|\Elasticsearch\Common\Exceptions\Missing404Exception|\Elasticsearch\Common\Exceptions\ScriptLangNotSupportedException|null
      */
     private function process4xxError($request, $response, $ignore)
     {
@@ -648,7 +648,7 @@ class Connection implements ConnectionInterface
      * @param $request
      * @param $response
      * @param $ignore
-     * @throws \Elasticsearch\Common\Exceptions\NoDocumentsToGetException|\Elasticsearch\Common\Exceptions\NoShardAvailableException|\Elasticsearch\Common\Exceptions\RoutingMissingException|\Elasticsearch\Common\Exceptions\ServerErrorResponseException
+     * @throws \Keboola\Elasticsearch\Common\Exceptions\NoDocumentsToGetException|\Elasticsearch\Common\Exceptions\NoShardAvailableException|\Elasticsearch\Common\Exceptions\RoutingMissingException|\Elasticsearch\Common\Exceptions\ServerErrorResponseException
      */
     private function process5xxError($request, $response, $ignore)
     {

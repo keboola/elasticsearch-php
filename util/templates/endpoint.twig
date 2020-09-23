@@ -1,15 +1,15 @@
 <?php
 
-namespace Elasticsearch\Endpoints{% for class in namespace %}{{ loop.last ? ';' : '\\' ~ class|title  }}{%  endfor %}
+namespace Keboola\Elasticsearch\Endpoints{% for class in namespace %}{{ loop.last ? ';' : '\\' ~ class|title  }}{%  endfor %}
 
-use Elasticsearch\Endpoints\AbstractEndpoint;
-use Elasticsearch\Common\Exceptions;
+use Keboola\Elasticsearch\Endpoints\AbstractEndpoint;
+use Keboola\Elasticsearch\Common\Exceptions;
 
 /**
  * Class {{ className|title|replace({'.': ""}) }}
  *
- * @category Elasticsearch
- * @package Elasticsearch\Endpoints{% for class in namespace %}{{ loop.last ? '' : '\\' ~ class|title  }}{%  endfor %}
+ * @category Keboola\Elasticsearch
+ * @package Keboola\Elasticsearch\Endpoints{% for class in namespace %}{{ loop.last ? '' : '\\' ~ class|title  }}{%  endfor %}
 
  *
  * @author   Zachary Tong <zach@elastic.co>
@@ -29,7 +29,7 @@ class {{ className|title }} extends AbstractEndpoint
     /**
      * @param array $body
      *
-     * @throws \Elasticsearch\Common\Exceptions\InvalidArgumentException
+     * @throws \Keboola\Elasticsearch\Common\Exceptions\InvalidArgumentException
      * @return $this
      */
     public function setBody($body)
@@ -123,7 +123,7 @@ class {{ className|title }} extends AbstractEndpoint
 {% if data.body.required == true %}
     /**
      * @return array
-     * @throws \Elasticsearch\Common\Exceptions\RuntimeException
+     * @throws \Keboola\Elasticsearch\Common\Exceptions\RuntimeException
      */
     protected function getBody()
     {

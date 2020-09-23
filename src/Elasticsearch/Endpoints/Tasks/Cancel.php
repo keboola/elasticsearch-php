@@ -1,15 +1,15 @@
 <?php
 
-namespace Elasticsearch\Endpoints\Tasks;
+namespace Keboola\Elasticsearch\Endpoints\Tasks;
 
-use Elasticsearch\Common\Exceptions;
-use Elasticsearch\Endpoints\AbstractEndpoint;
+use Keboola\Elasticsearch\Common\Exceptions;
+use Keboola\Elasticsearch\Endpoints\AbstractEndpoint;
 
 /**
  * Class Cancel
  *
- * @category Elasticsearch
- * @package  Elasticsearch\Endpoints\Tasks
+ * @category Keboola\Elasticsearch
+ * @package Keboola\Elasticsearch\Endpoints\Tasks
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co
@@ -21,8 +21,8 @@ class Cancel extends AbstractEndpoint
     /**
      * @param string $taskId
      *
-     * @throws \Elasticsearch\Common\Exceptions\InvalidArgumentException
      * @return $this
+     * @throws \Keboola\Elasticsearch\Common\Exceptions\InvalidArgumentException
      */
     public function setTaskId($taskId)
     {
@@ -36,8 +36,8 @@ class Cancel extends AbstractEndpoint
     }
 
     /**
-     * @throws \Elasticsearch\Common\Exceptions\RuntimeException
      * @return string
+     * @throws \Keboola\Elasticsearch\Common\Exceptions\RuntimeException
      */
     public function getURI()
     {

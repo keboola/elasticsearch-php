@@ -1,14 +1,14 @@
 <?php
 
-use Elasticsearch\Common\Exceptions\NoNodesAvailableException;
-use Elasticsearch\ConnectionPool\SniffingConnectionPool;
+use Keboola\Elasticsearch\Common\Exceptions\NoNodesAvailableException;
+use Keboola\Elasticsearch\ConnectionPool\SniffingConnectionPool;
 use Mockery as m;
 
 /**
  * Class SniffingConnectionPoolTest
  *
  * @category   Tests
- * @package    Elasticsearch
+ * @package    Keboola\Elasticsearch
  * @subpackage Tests/SniffingConnectionPoolTest
  * @author     Zachary Tong <zachary.tong@elasticsearch.com>
  * @license    http://www.apache.org/licenses/LICENSE-2.0 Apache2
@@ -29,7 +29,7 @@ class SniffingConnectionPoolTest extends \PHPUnit_Framework_TestCase
 
     public function testAddOneHostThenGetConnection()
     {
-        $mockConnection = m::mock('\Elasticsearch\Connections\Connection')
+        $mockConnection = m::mock('\Keboola\Elasticsearch\Connections\Connection')
                           ->shouldReceive('ping')
                           ->andReturn(true)
                           ->getMock()
@@ -39,12 +39,12 @@ class SniffingConnectionPoolTest extends \PHPUnit_Framework_TestCase
 
         $connections = array($mockConnection);
 
-        $selector = m::mock('\Elasticsearch\ConnectionPool\Selectors\RoundRobinSelector')
+        $selector = m::mock('\Keboola\Elasticsearch\ConnectionPool\Selectors\RoundRobinSelector')
                     ->shouldReceive('select')
                     ->andReturn($connections[0])
                     ->getMock();
 
-        $connectionFactory = m::mock('\Elasticsearch\Connections\ConnectionFactory');
+        $connectionFactory = m::mock('\Keboola\Elasticsearch\Connections\ConnectionFactory');
 
         $connectionPoolParams = array('randomizeHosts' => false);
         $connectionPool = new SniffingConnectionPool($connections, $selector, $connectionFactory, $connectionPoolParams);
@@ -58,14 +58,14 @@ class SniffingConnectionPoolTest extends \PHPUnit_Framework_TestCase
     {
         $clusterState = json_decode('{"ok":true,"cluster_name":"elasticsearch_zach","nodes":{"Bl2ihSr7TcuUHxhu1GA_YQ":{"name":"Vesta","transport_address":"inet[/192.168.1.119:9300]","hostname":"zach-ThinkPad-W530","version":"0.90.5","http_address":"inet[/192.168.1.119:9200]"}}}', true);
 
-        $mockConnection = m::mock('\Elasticsearch\Connections\Connection')
+        $mockConnection = m::mock('\Keboola\Elasticsearch\Connections\Connection')
                           ->shouldReceive('ping')->andReturn(true)->getMock()
                           ->shouldReceive('isAlive')->andReturn(true)->getMock()
                           ->shouldReceive('getTransportSchema')->once()->andReturn('http')->getMock()
                           ->shouldReceive('sniff')->once()->andReturn($clusterState)->getMock();
 
         $connections = array($mockConnection);
-        $mockNewConnection = m::mock('\Elasticsearch\Connections\Connection')
+        $mockNewConnection = m::mock('\Keboola\Elasticsearch\Connections\Connection')
                              ->shouldReceive('isAlive')->andReturn(true)->getMock();
 
         $selector = m::mock('\Elasticsearch\ConnectionPool\Selectors\RoundRobinSelector')
@@ -191,7 +191,7 @@ class SniffingConnectionPoolTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Elasticsearch\Common\Exceptions\NoNodesAvailableException
+     * @expectedException Keboola\Elasticsearch\Common\Exceptions\NoNodesAvailableException
      */
     public function testAddTenNodesAllTimeout()
     {
@@ -268,7 +268,7 @@ class SniffingConnectionPoolTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Elasticsearch\Common\Exceptions\NoNodesAvailableException
+     * @expectedException Keboola\Elasticsearch\Common\Exceptions\NoNodesAvailableException
      */
     public function testAddSeed_SniffTwo_TimeoutTwo()
     {
@@ -369,7 +369,7 @@ class SniffingConnectionPoolTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Elasticsearch\Common\Exceptions\NoNodesAvailableException
+     * @expectedException Keboola\Elasticsearch\Common\Exceptions\NoNodesAvailableException
      */
     public function testTen_TimeoutNine_SniffTenth_AddTwoDead_TimeoutEveryone()
     {

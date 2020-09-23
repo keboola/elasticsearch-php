@@ -1,15 +1,15 @@
 <?php
 
-namespace Elasticsearch\Endpoints\Indices\Settings;
+namespace Keboola\Elasticsearch\Endpoints\Indices\Settings;
 
-use Elasticsearch\Endpoints\AbstractEndpoint;
-use Elasticsearch\Common\Exceptions;
+use Keboola\Elasticsearch\Endpoints\AbstractEndpoint;
+use Keboola\Elasticsearch\Common\Exceptions;
 
 /**
  * Class Put
  *
- * @category Elasticsearch
- * @package  Elasticsearch\Endpoints\Indices\Settings
+ * @category Keboola\Elasticsearch
+ * @package Keboola\Elasticsearch\Endpoints\Indices\Settings
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co
@@ -19,8 +19,8 @@ class Put extends AbstractEndpoint
     /**
      * @param array $body
      *
-     * @throws \Elasticsearch\Common\Exceptions\InvalidArgumentException
      * @return $this
+     * @throws \Keboola\Elasticsearch\Common\Exceptions\InvalidArgumentException
      */
     public function setBody($body)
     {
@@ -65,7 +65,7 @@ class Put extends AbstractEndpoint
 
     /**
      * @return array
-     * @throws \Elasticsearch\Common\Exceptions\RuntimeException
+     * @throws \Keboola\Elasticsearch\Common\Exceptions\RuntimeException
      */
     public function getBody()
     {

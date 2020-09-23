@@ -1,18 +1,18 @@
 <?php
 
-namespace Elasticsearch\ConnectionPool;
+namespace Keboola\Elasticsearch\ConnectionPool;
 
-use Elasticsearch\Common\Exceptions\InvalidArgumentException;
-use Elasticsearch\ConnectionPool\Selectors\SelectorInterface;
-use Elasticsearch\Connections\Connection;
-use Elasticsearch\Connections\ConnectionFactoryInterface;
-use Elasticsearch\Connections\ConnectionInterface;
+use Keboola\Elasticsearch\Common\Exceptions\InvalidArgumentException;
+use Keboola\Elasticsearch\ConnectionPool\Selectors\SelectorInterface;
+use Keboola\Elasticsearch\Connections\Connection;
+use Keboola\Elasticsearch\Connections\ConnectionFactoryInterface;
+use Keboola\Elasticsearch\Connections\ConnectionInterface;
 
 /**
  * Class AbstractConnectionPool
  *
- * @category Elasticsearch
- * @package  Elasticsearch\ConnectionPool
+ * @category Keboola\Elasticsearch
+ * @package Keboola\Elasticsearch\ConnectionPool
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co
@@ -43,7 +43,7 @@ abstract class AbstractConnectionPool implements ConnectionPoolInterface
     /** @var array */
     protected $connectionPoolParams;
 
-    /** @var \Elasticsearch\Connections\ConnectionFactory  */
+    /** @var \Keboola\Elasticsearch\Connections\ConnectionFactory  */
     protected $connectionFactory;
 
     /**

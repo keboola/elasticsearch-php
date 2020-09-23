@@ -1,15 +1,15 @@
 <?php
 
-namespace Elasticsearch\Endpoints\Indices\Template;
+namespace Keboola\Elasticsearch\Endpoints\Indices\Template;
 
-use Elasticsearch\Endpoints\AbstractEndpoint;
-use Elasticsearch\Common\Exceptions;
+use Keboola\Elasticsearch\Endpoints\AbstractEndpoint;
+use Keboola\Elasticsearch\Common\Exceptions;
 
 /**
  * Class Get
  *
- * @category Elasticsearch
- * @package  Elasticsearch\Endpoints\Indices\Template
+ * @category Keboola\Elasticsearch
+ * @package Keboola\Elasticsearch\Endpoints\Indices\Template
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co
@@ -36,8 +36,8 @@ class Get extends AbstractEndpoint
     }
 
     /**
-     * @throws \Elasticsearch\Common\Exceptions\RuntimeException
      * @return string
+     * @throws \Keboola\Elasticsearch\Common\Exceptions\RuntimeException
      */
     public function getURI()
     {

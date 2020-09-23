@@ -1,15 +1,15 @@
 <?php
 
-namespace Elasticsearch\Endpoints;
+namespace Keboola\Elasticsearch\Endpoints;
 
-use Elasticsearch\Common\Exceptions\InvalidArgumentException;
-use Elasticsearch\Common\Exceptions;
+use Keboola\Elasticsearch\Common\Exceptions\InvalidArgumentException;
+use Keboola\Elasticsearch\Common\Exceptions;
 
 /**
  * Class Search
  *
- * @category Elasticsearch
- * @package  Elasticsearch\Endpoints
+ * @category Keboola\Elasticsearch
+ * @package Keboola\Elasticsearch\Endpoints
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co
@@ -19,8 +19,8 @@ class Search extends AbstractEndpoint
     /**
      * @param array $body
      *
-     * @throws \Elasticsearch\Common\Exceptions\InvalidArgumentException
      * @return $this
+     * @throws \Keboola\Elasticsearch\Common\Exceptions\InvalidArgumentException
      */
     public function setBody($body)
     {

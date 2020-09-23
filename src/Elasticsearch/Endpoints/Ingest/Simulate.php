@@ -1,15 +1,15 @@
 <?php
 
-namespace Elasticsearch\Endpoints\Ingest;
+namespace Keboola\Elasticsearch\Endpoints\Ingest;
 
-use Elasticsearch\Common\Exceptions;
-use Elasticsearch\Endpoints\AbstractEndpoint;
+use Keboola\Elasticsearch\Common\Exceptions;
+use Keboola\Elasticsearch\Endpoints\AbstractEndpoint;
 
 /**
  * Class Simulate
  *
- * @category Elasticsearch
- * @package  Elasticsearch\Endpoints\Ingest
+ * @category Keboola\Elasticsearch
+ * @package Keboola\Elasticsearch\Endpoints\Ingest
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co
@@ -19,8 +19,8 @@ class Simulate extends AbstractEndpoint
     /**
      * @param array $body
      *
-     * @throws \Elasticsearch\Common\Exceptions\InvalidArgumentException
      * @return $this
+     * @throws \Keboola\Elasticsearch\Common\Exceptions\InvalidArgumentException
      */
     public function setBody($body)
     {
@@ -34,8 +34,8 @@ class Simulate extends AbstractEndpoint
     }
 
     /**
-     * @throws \Elasticsearch\Common\Exceptions\RuntimeException
      * @return string
+     * @throws \Keboola\Elasticsearch\Common\Exceptions\RuntimeException
      */
     public function getURI()
     {

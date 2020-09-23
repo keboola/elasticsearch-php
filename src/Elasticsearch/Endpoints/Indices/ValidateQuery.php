@@ -1,15 +1,15 @@
 <?php
 
-namespace Elasticsearch\Endpoints\Indices;
+namespace Keboola\Elasticsearch\Endpoints\Indices;
 
-use Elasticsearch\Endpoints\AbstractEndpoint;
-use Elasticsearch\Common\Exceptions;
+use Keboola\Elasticsearch\Endpoints\AbstractEndpoint;
+use Keboola\Elasticsearch\Common\Exceptions;
 
 /**
  * Class ValidateQuery
  *
- * @category Elasticsearch
- * @package  Elasticsearch\Endpoints\Indices
+ * @category Keboola\Elasticsearch
+ * @package Keboola\Elasticsearch\Endpoints\Indices
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co
@@ -19,8 +19,8 @@ class ValidateQuery extends AbstractEndpoint
     /**
      * @param array $body
      *
-     * @throws \Elasticsearch\Common\Exceptions\InvalidArgumentException
      * @return $this
+     * @throws \Keboola\Elasticsearch\Common\Exceptions\InvalidArgumentException
      */
     public function setBody($body)
     {

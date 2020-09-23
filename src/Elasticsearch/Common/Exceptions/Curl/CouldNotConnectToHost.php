@@ -1,9 +1,9 @@
 <?php
 
-namespace Elasticsearch\Common\Exceptions\Curl;
+namespace Keboola\Elasticsearch\Common\Exceptions\Curl;
 
-use Elasticsearch\Common\Exceptions\ElasticsearchException;
-use Elasticsearch\Common\Exceptions\TransportException;
+use Keboola\Elasticsearch\Common\Exceptions\ElasticsearchException;
+use Keboola\Elasticsearch\Common\Exceptions\TransportException;
 
 /**
  * Class CouldNotConnectToHost

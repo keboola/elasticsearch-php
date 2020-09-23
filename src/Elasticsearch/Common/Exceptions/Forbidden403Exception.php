@@ -1,6 +1,6 @@
 <?php
 
-namespace Elasticsearch\Common\Exceptions;
+namespace Keboola\Elasticsearch\Common\Exceptions;
 
 /**
  * Forbidden403Exception

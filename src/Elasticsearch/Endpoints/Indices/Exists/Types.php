@@ -1,9 +1,9 @@
 <?php
 
-namespace Elasticsearch\Endpoints\Indices\Exists;
+namespace Keboola\Elasticsearch\Endpoints\Indices\Exists;
 
-use Elasticsearch\Endpoints\AbstractEndpoint;
-use Elasticsearch\Common\Exceptions;
+use Keboola\Elasticsearch\Endpoints\AbstractEndpoint;
+use Keboola\Elasticsearch\Common\Exceptions;
 
 /**
  * Class Types

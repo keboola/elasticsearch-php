@@ -1,6 +1,6 @@
 <?php
 
-namespace Elasticsearch\Endpoints;
+namespace Keboola\Elasticsearch\Endpoints;
 
 /**
  * Class Reindex
@@ -48,8 +48,8 @@ class Reindex extends AbstractEndpoint
     /**
      * @param array $body
      *
-     * @throws \Elasticsearch\Common\Exceptions\InvalidArgumentException
      * @return $this
+     * @throws \Keboola\Elasticsearch\Common\Exceptions\InvalidArgumentException
      */
     public function setBody($body)
     {

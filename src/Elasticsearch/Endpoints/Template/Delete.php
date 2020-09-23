@@ -1,9 +1,9 @@
 <?php
 
-namespace Elasticsearch\Endpoints\Template;
+namespace Keboola\Elasticsearch\Endpoints\Template;
 
-use Elasticsearch\Endpoints\AbstractEndpoint;
-use Elasticsearch\Common\Exceptions;
+use Keboola\Elasticsearch\Endpoints\AbstractEndpoint;
+use Keboola\Elasticsearch\Common\Exceptions;
 
 /**
  * Class Delete
@@ -17,8 +17,8 @@ use Elasticsearch\Common\Exceptions;
 class Delete extends AbstractEndpoint
 {
     /**
-     * @throws \Elasticsearch\Common\Exceptions\RuntimeException
      * @return string
+     * @throws \Keboola\Elasticsearch\Common\Exceptions\RuntimeException
      */
     public function getURI()
     {

@@ -1,8 +1,8 @@
 <?php
 
-namespace Elasticsearch\Endpoints\Indices\Cache;
+namespace Keboola\Elasticsearch\Endpoints\Indices\Cache;
 
-use Elasticsearch\Endpoints\AbstractEndpoint;
+use Keboola\Elasticsearch\Endpoints\AbstractEndpoint;
 
 /**
  * Class Clear

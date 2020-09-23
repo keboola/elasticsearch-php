@@ -1,9 +1,9 @@
 <?php
 
-namespace Elasticsearch\Endpoints\Cluster\Settings;
+namespace Keboola\Elasticsearch\Endpoints\Cluster\Settings;
 
-use Elasticsearch\Endpoints\AbstractEndpoint;
-use Elasticsearch\Common\Exceptions;
+use Keboola\Elasticsearch\Endpoints\AbstractEndpoint;
+use Keboola\Elasticsearch\Common\Exceptions;
 
 /**
  * Class Put
@@ -19,8 +19,8 @@ class Put extends AbstractEndpoint
     /**
      * @param array $body
      *
-     * @throws \Elasticsearch\Common\Exceptions\InvalidArgumentException
      * @return $this
+     * @throws \Keboola\Elasticsearch\Common\Exceptions\InvalidArgumentException
      */
     public function setBody($body)
     {

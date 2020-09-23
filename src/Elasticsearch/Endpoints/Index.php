@@ -1,6 +1,6 @@
 <?php
 
-namespace Elasticsearch\Endpoints;
+namespace Keboola\Elasticsearch\Endpoints;
 
 use Elasticsearch\Common\Exceptions;
 

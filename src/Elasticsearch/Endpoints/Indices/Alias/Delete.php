@@ -1,9 +1,9 @@
 <?php
 
-namespace Elasticsearch\Endpoints\Indices\Alias;
+namespace Keboola\Elasticsearch\Endpoints\Indices\Alias;
 
-use Elasticsearch\Endpoints\AbstractEndpoint;
-use Elasticsearch\Common\Exceptions;
+use Keboola\Elasticsearch\Endpoints\AbstractEndpoint;
+use Keboola\Elasticsearch\Common\Exceptions;
 
 /**
  * Class Delete

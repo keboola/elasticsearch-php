@@ -1,8 +1,8 @@
 <?php
 
-namespace Elasticsearch\Endpoints;
+namespace Keboola\Elasticsearch\Endpoints;
 
-use Elasticsearch\Common\Exceptions;
+use Keboola\Elasticsearch\Common\Exceptions;
 
 /**
  * Class UpdateByQuery
@@ -18,8 +18,8 @@ class UpdateByQuery extends AbstractEndpoint
     /**
      * @param array $body
      *
-     * @throws \Elasticsearch\Common\Exceptions\InvalidArgumentException
      * @return $this
+     * @throws \Keboola\Elasticsearch\Common\Exceptions\InvalidArgumentException
      */
     public function setBody($body)
     {
@@ -39,8 +39,8 @@ class UpdateByQuery extends AbstractEndpoint
 
 
     /**
-     * @throws \Elasticsearch\Common\Exceptions\BadMethodCallException
      * @return string
+     * @throws \Keboola\Elasticsearch\Common\Exceptions\BadMethodCallException
      */
     public function getURI()
     {

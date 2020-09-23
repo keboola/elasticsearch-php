@@ -1,6 +1,6 @@
 <?php
 
-namespace Elasticsearch\Helper\Iterators;
+namespace Keboola\Elasticsearch\Helper\Iterators;
 
 use Iterator;
 

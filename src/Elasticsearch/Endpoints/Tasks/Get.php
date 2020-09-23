@@ -1,9 +1,9 @@
 <?php
 
-namespace Elasticsearch\Endpoints\Tasks;
+namespace Keboola\Elasticsearch\Endpoints\Tasks;
 
-use Elasticsearch\Common\Exceptions;
-use Elasticsearch\Endpoints\AbstractEndpoint;
+use Keboola\Elasticsearch\Common\Exceptions;
+use Keboola\Elasticsearch\Endpoints\AbstractEndpoint;
 
 /**
  * Class Get

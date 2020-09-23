@@ -1,8 +1,8 @@
 <?php
 
-namespace Elasticsearch\Endpoints\Snapshot\Repository;
+namespace Keboola\Elasticsearch\Endpoints\Snapshot\Repository;
 
-use Elasticsearch\Endpoints\AbstractEndpoint;
+use Keboola\Elasticsearch\Endpoints\AbstractEndpoint;
 
 /**
  * Class Get

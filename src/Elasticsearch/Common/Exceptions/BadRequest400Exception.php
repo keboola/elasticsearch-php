@@ -1,6 +1,6 @@
 <?php
 
-namespace Elasticsearch\Common\Exceptions;
+namespace Keboola\Elasticsearch\Common\Exceptions;
 
 /**
  * BadRequest400Exception, thrown on 400 conflict http error

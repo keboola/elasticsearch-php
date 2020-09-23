@@ -1,5 +1,5 @@
 <?php
-use Elasticsearch\ClientBuilder;
+use Keboola\Elasticsearch\ClientBuilder;
 
 /**
  * Class SniffingConnectionPoolIntegrationTest

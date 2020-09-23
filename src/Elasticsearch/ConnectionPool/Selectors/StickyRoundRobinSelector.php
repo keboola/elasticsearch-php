@@ -1,8 +1,8 @@
 <?php
 
-namespace Elasticsearch\ConnectionPool\Selectors;
+namespace Keboola\Elasticsearch\ConnectionPool\Selectors;
 
-use Elasticsearch\Connections\ConnectionInterface;
+use Keboola\Elasticsearch\Connections\ConnectionInterface;
 
 /**
  * Class StickyRoundRobinSelector

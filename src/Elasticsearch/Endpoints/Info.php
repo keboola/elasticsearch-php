@@ -1,6 +1,6 @@
 <?php
 
-namespace Elasticsearch\Endpoints;
+namespace Keboola\Elasticsearch\Endpoints;
 
 /**
  * Class Info

@@ -1,8 +1,8 @@
 <?php
 
-namespace Elasticsearch\Common\Exceptions\Serializer;
+namespace Keboola\Elasticsearch\Common\Exceptions\Serializer;
 
-use Elasticsearch\Common\Exceptions\ElasticsearchException;
+use Keboola\Elasticsearch\Common\Exceptions\ElasticsearchException;
 
 /**
  * Class JsonErrorException

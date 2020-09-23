@@ -1,9 +1,9 @@
 <?php
 
-namespace Elasticsearch\Endpoints\Ingest\Pipeline;
+namespace Keboola\Elasticsearch\Endpoints\Ingest\Pipeline;
 
-use Elasticsearch\Common\Exceptions;
-use Elasticsearch\Endpoints\AbstractEndpoint;
+use Keboola\Elasticsearch\Common\Exceptions;
+use Keboola\Elasticsearch\Endpoints\AbstractEndpoint;
 
 /**
  * Class Delete
@@ -17,8 +17,8 @@ use Elasticsearch\Endpoints\AbstractEndpoint;
 class Delete extends AbstractEndpoint
 {
     /**
-     * @throws \Elasticsearch\Common\Exceptions\RuntimeException
      * @return string
+     * @throws \Keboola\Elasticsearch\Common\Exceptions\RuntimeException
      */
     public function getURI()
     {

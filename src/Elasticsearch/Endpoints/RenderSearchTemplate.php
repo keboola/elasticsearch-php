@@ -1,9 +1,9 @@
 <?php
 
-namespace Elasticsearch\Endpoints;
+namespace Keboola\Elasticsearch\Endpoints;
 
-use Elasticsearch\Endpoints\AbstractEndpoint;
-use Elasticsearch\Common\Exceptions;
+use Keboola\Elasticsearch\Endpoints\AbstractEndpoint;
+use Keboola\Elasticsearch\Common\Exceptions;
 
 /**
  * Class Render
@@ -20,8 +20,8 @@ class RenderSearchTemplate extends AbstractEndpoint
     /**
      * @param array $body
      *
-     * @throws \Elasticsearch\Common\Exceptions\InvalidArgumentException
      * @return $this
+     * @throws \Keboola\Elasticsearch\Common\Exceptions\InvalidArgumentException
      */
     public function setBody($body)
     {
@@ -34,8 +34,8 @@ class RenderSearchTemplate extends AbstractEndpoint
     }
 
     /**
-     * @throws \Elasticsearch\Common\Exceptions\RuntimeException
      * @return string
+     * @throws \Keboola\Elasticsearch\Common\Exceptions\RuntimeException
      */
     public function getURI()
     {
@@ -60,7 +60,7 @@ class RenderSearchTemplate extends AbstractEndpoint
 
     /**
      * @return array
-     * @throws \Elasticsearch\Common\Exceptions\RuntimeException
+     * @throws \Keboola\Elasticsearch\Common\Exceptions\RuntimeException
      */
     public function getBody()
     {

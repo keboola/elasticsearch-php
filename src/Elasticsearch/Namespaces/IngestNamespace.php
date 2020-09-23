@@ -1,11 +1,11 @@
 <?php
 
-namespace Elasticsearch\Namespaces;
+namespace Keboola\Elasticsearch\Namespaces;
 
-use Elasticsearch\Endpoints\Ingest\Pipeline\Delete;
-use Elasticsearch\Endpoints\Ingest\Pipeline\Get;
-use Elasticsearch\Endpoints\Ingest\Pipeline\Put;
-use Elasticsearch\Endpoints\Ingest\Simulate;
+use Keboola\Elasticsearch\Endpoints\Ingest\Pipeline\Delete;
+use Keboola\Elasticsearch\Endpoints\Ingest\Pipeline\Get;
+use Keboola\Elasticsearch\Endpoints\Ingest\Pipeline\Put;
+use Keboola\Elasticsearch\Endpoints\Ingest\Simulate;
 
 /**
  * Class IngestNamespace

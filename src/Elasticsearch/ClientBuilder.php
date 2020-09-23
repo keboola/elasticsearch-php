@@ -1,19 +1,19 @@
 <?php
 
-namespace Elasticsearch;
+namespace Keboola\Elasticsearch;
 
-use Elasticsearch\Common\Exceptions\InvalidArgumentException;
-use Elasticsearch\Common\Exceptions\RuntimeException;
-use Elasticsearch\ConnectionPool\AbstractConnectionPool;
-use Elasticsearch\ConnectionPool\Selectors\SelectorInterface;
-use Elasticsearch\ConnectionPool\StaticNoPingConnectionPool;
-use Elasticsearch\Connections\Connection;
-use Elasticsearch\Connections\ConnectionFactory;
-use Elasticsearch\Connections\ConnectionFactoryInterface;
-use Elasticsearch\Namespaces\NamespaceBuilderInterface;
-use Elasticsearch\Serializers\SerializerInterface;
-use Elasticsearch\ConnectionPool\Selectors;
-use Elasticsearch\Serializers\SmartSerializer;
+use Keboola\Elasticsearch\Common\Exceptions\InvalidArgumentException;
+use Keboola\Elasticsearch\Common\Exceptions\RuntimeException;
+use Keboola\Elasticsearch\ConnectionPool\AbstractConnectionPool;
+use Keboola\Elasticsearch\ConnectionPool\Selectors\SelectorInterface;
+use Keboola\Elasticsearch\ConnectionPool\StaticNoPingConnectionPool;
+use Keboola\Elasticsearch\Connections\Connection;
+use Keboola\Elasticsearch\Connections\ConnectionFactory;
+use Keboola\Elasticsearch\Connections\ConnectionFactoryInterface;
+use Keboola\Elasticsearch\Namespaces\NamespaceBuilderInterface;
+use Keboola\Elasticsearch\Serializers\SerializerInterface;
+use Keboola\Elasticsearch\ConnectionPool\Selectors;
+use Keboola\Elasticsearch\Serializers\SmartSerializer;
 use GuzzleHttp\Ring\Client\CurlHandler;
 use GuzzleHttp\Ring\Client\CurlMultiHandler;
 use GuzzleHttp\Ring\Client\Middleware;
@@ -143,8 +143,8 @@ class ClientBuilder
      * @param array $config hash of settings
      * @param bool $quiet False if unknown settings throw exception, true to silently
      *                    ignore unknown settings
-     * @throws Common\Exceptions\RuntimeException
-     * @return \Elasticsearch\Client
+     * @return \Keboola\Elasticsearch\Client
+     *@throws Common\Exceptions\RuntimeException
      */
     public static function fromConfig($config, $quiet = false)
     {
@@ -229,7 +229,7 @@ class ClientBuilder
     }
 
     /**
-     * @param \Elasticsearch\Connections\ConnectionFactoryInterface $connectionFactory
+     * @param \Keboola\Elasticsearch\Connections\ConnectionFactoryInterface $connectionFactory
      * @return $this
      */
     public function setConnectionFactory(ConnectionFactoryInterface $connectionFactory)
@@ -240,10 +240,10 @@ class ClientBuilder
     }
 
     /**
-     * @param \Elasticsearch\ConnectionPool\AbstractConnectionPool|string $connectionPool
+     * @param \Keboola\Elasticsearch\ConnectionPool\AbstractConnectionPool|string $connectionPool
      * @param array $args
-     * @throws \InvalidArgumentException
      * @return $this
+     *@throws \InvalidArgumentException
      */
     public function setConnectionPool($connectionPool, array $args = [])
     {
@@ -282,7 +282,7 @@ class ClientBuilder
     }
 
     /**
-     * @param \Elasticsearch\Transport $transport
+     * @param \Keboola\Elasticsearch\Transport $transport
      * @return $this
      */
     public function setTransport($transport)
@@ -326,9 +326,9 @@ class ClientBuilder
     }
 
     /**
-     * @param \Elasticsearch\Serializers\SerializerInterface|string $serializer
-     * @throws \InvalidArgumentException
+     * @param \Keboola\Elasticsearch\Serializers\SerializerInterface|string $serializer
      * @return $this
+     *@throws \InvalidArgumentException
      */
     public function setSerializer($serializer)
     {
@@ -371,9 +371,9 @@ class ClientBuilder
     }
 
     /**
-     * @param \Elasticsearch\ConnectionPool\Selectors\SelectorInterface|string $selector
-     * @throws \InvalidArgumentException
+     * @param \Keboola\Elasticsearch\ConnectionPool\Selectors\SelectorInterface|string $selector
      * @return $this
+     *@throws \InvalidArgumentException
      */
     public function setSelector($selector)
     {
@@ -613,8 +613,8 @@ class ClientBuilder
     /**
      * @param array $hosts
      *
+     * @return \Keboola\Elasticsearch\Connections\Connection[]
      * @throws \InvalidArgumentException
-     * @return \Elasticsearch\Connections\Connection[]
      */
     private function buildConnectionsFromHosts($hosts)
     {

@@ -1,9 +1,9 @@
 <?php
 
-namespace Elasticsearch\Endpoints\Indices\Alias;
+namespace Keboola\Elasticsearch\Endpoints\Indices\Alias;
 
-use Elasticsearch\Common\Exceptions\InvalidArgumentException;
-use Elasticsearch\Endpoints\AbstractEndpoint;
+use Keboola\Elasticsearch\Common\Exceptions\InvalidArgumentException;
+use Keboola\Elasticsearch\Endpoints\AbstractEndpoint;
 
 /**
  * Class AbstractAliasEndpoint
@@ -22,9 +22,9 @@ abstract class AbstractAliasEndpoint extends AbstractEndpoint
     /**
      * @param $name
      *
-     * @throws \Elasticsearch\Common\Exceptions\InvalidArgumentException
-     *
      * @return $this
+     * @throws \Keboola\Elasticsearch\Common\Exceptions\InvalidArgumentException
+     *
      */
     public function setName($name)
     {

@@ -1,8 +1,8 @@
 <?php
-namespace Elasticsearch\Tests\Endpoints;
+namespace Keboola\Elasticsearch\Tests\Endpoints;
 
-use Elasticsearch\Endpoints\Snapshot\Status;
-use Elasticsearch\Common\Exceptions;
+use Keboola\Elasticsearch\Endpoints\Snapshot\Status;
+use Keboola\Elasticsearch\Common\Exceptions;
 
 class StatusEndpointTest extends \PHPUnit\Framework\TestCase
 {

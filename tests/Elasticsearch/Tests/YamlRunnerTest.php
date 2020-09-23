@@ -1,16 +1,16 @@
 <?php
 
-namespace Elasticsearch\Tests;
+namespace Keboola\Elasticsearch\Tests;
 
 use Doctrine\Common\Inflector\Inflector;
-use Elasticsearch;
-use Elasticsearch\Common\Exceptions\BadRequest400Exception;
-use Elasticsearch\Common\Exceptions\Conflict409Exception;
-use Elasticsearch\Common\Exceptions\Forbidden403Exception;
-use Elasticsearch\Common\Exceptions\Missing404Exception;
-use Elasticsearch\Common\Exceptions\RequestTimeout408Exception;
-use Elasticsearch\Common\Exceptions\ServerErrorResponseException;
-use Elasticsearch\Common\Exceptions\RoutingMissingException;
+use Keboola\Elasticsearch;
+use Keboola\Elasticsearch\Common\Exceptions\BadRequest400Exception;
+use Keboola\Elasticsearch\Common\Exceptions\Conflict409Exception;
+use Keboola\Elasticsearch\Common\Exceptions\Forbidden403Exception;
+use Keboola\Elasticsearch\Common\Exceptions\Missing404Exception;
+use Keboola\Elasticsearch\Common\Exceptions\RequestTimeout408Exception;
+use Keboola\Elasticsearch\Common\Exceptions\ServerErrorResponseException;
+use Keboola\Elasticsearch\Common\Exceptions\RoutingMissingException;
 use GuzzleHttp\Ring\Future\FutureArrayInterface;
 use stdClass;
 use Symfony\Component\Finder\Finder;
@@ -105,7 +105,7 @@ class YamlRunnerTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->clean();
-        $builder = Elasticsearch\ClientBuilder::create()->setHosts([self::getHost()]);
+        $builder = Keboola\Elasticsearch\ClientBuilder::create()->setHosts([self::getHost()]);
         if (version_compare(phpversion(), '5.6.6', '<') || ! defined('JSON_PRESERVE_ZERO_FRACTION')) {
             $builder->allowBadJSONSerialization();
         }
@@ -179,7 +179,7 @@ class YamlRunnerTest extends \PHPUnit_Framework_TestCase
      * @param      $operation
      * @param      $lastOperationResult
      * @param      $testName
-     * @param array $context 
+     * @param array $context
      * @param bool $async
      *
      * @return mixed

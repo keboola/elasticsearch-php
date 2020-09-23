@@ -1,8 +1,8 @@
 <?php
 
-namespace Elasticsearch\Endpoints\Cat;
+namespace Keboola\Elasticsearch\Endpoints\Cat;
 
-use Elasticsearch\Endpoints\AbstractEndpoint;
+use Keboola\Elasticsearch\Endpoints\AbstractEndpoint;
 
 /**
  * Class Help

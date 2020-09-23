@@ -1,8 +1,8 @@
 <?php
 
-namespace Elasticsearch\Endpoints\Indices\Mapping;
+namespace Keboola\Elasticsearch\Endpoints\Indices\Mapping;
 
-use Elasticsearch\Endpoints\AbstractEndpoint;
+use Keboola\Elasticsearch\Endpoints\AbstractEndpoint;
 
 /**
  * Class Get

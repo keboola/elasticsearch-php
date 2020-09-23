@@ -1,10 +1,10 @@
 <?php
 
-namespace Elasticsearch\Endpoints;
+namespace Keboola\Elasticsearch\Endpoints;
 
-use Elasticsearch\Common\Exceptions\UnexpectedValueException;
-use Elasticsearch\Serializers\SerializerInterface;
-use Elasticsearch\Transport;
+use Keboola\Elasticsearch\Common\Exceptions\UnexpectedValueException;
+use Keboola\Elasticsearch\Serializers\SerializerInterface;
+use Keboola\Elasticsearch\Transport;
 use Exception;
 use GuzzleHttp\Ring\Future\FutureArrayInterface;
 
@@ -220,7 +220,7 @@ abstract class AbstractEndpoint
     /**
      * @param array $params
      *
-     * @throws \Elasticsearch\Common\Exceptions\UnexpectedValueException
+     * @throws \Keboola\Elasticsearch\Common\Exceptions\UnexpectedValueException
      */
     private function checkUserParams($params)
     {

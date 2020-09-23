@@ -1,11 +1,11 @@
 <?php
 
-namespace Elasticsearch\Namespaces;
+namespace Keboola\Elasticsearch\Namespaces;
 
-use Elasticsearch\Common\Exceptions\Missing404Exception;
-use Elasticsearch\Common\Exceptions\RoutingMissingException;
-use Elasticsearch\Endpoints\AbstractEndpoint;
-use Elasticsearch\Transport;
+use Keboola\Elasticsearch\Common\Exceptions\Missing404Exception;
+use Keboola\Elasticsearch\Common\Exceptions\RoutingMissingException;
+use Keboola\Elasticsearch\Endpoints\AbstractEndpoint;
+use Keboola\Elasticsearch\Transport;
 use GuzzleHttp\Ring\Future\FutureArrayInterface;
 
 /**

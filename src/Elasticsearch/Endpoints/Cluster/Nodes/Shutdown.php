@@ -1,6 +1,6 @@
 <?php
 
-namespace Elasticsearch\Endpoints\Cluster\Nodes;
+namespace Keboola\Elasticsearch\Endpoints\Cluster\Nodes;
 
 /**
  * Class Shutdown

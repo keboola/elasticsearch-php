@@ -1,8 +1,8 @@
 <?php
 
-namespace Elasticsearch\Helper\Iterators;
+namespace Keboola\Elasticsearch\Helper\Iterators;
 
-use ElasticSearch\Client;
+use Keboola\Elasticsearch\Client;
 use Iterator;
 
 /**

@@ -1,9 +1,9 @@
 <?php
 
-namespace Elasticsearch\Endpoints\Cat;
+namespace Keboola\Elasticsearch\Endpoints\Cat;
 
-use Elasticsearch\Common\Exceptions\RuntimeException;
-use Elasticsearch\Endpoints\AbstractEndpoint;
+use Keboola\Elasticsearch\Common\Exceptions\RuntimeException;
+use Keboola\Elasticsearch\Endpoints\AbstractEndpoint;
 
 /**
  * Class Snapshots

@@ -9,11 +9,11 @@
  * @link     http://elastic.co
  */
 
-namespace Elasticsearch\Namespaces;
+namespace Keboola\Elasticsearch\Namespaces;
 
 
-use Elasticsearch\Serializers\SerializerInterface;
-use Elasticsearch\Transport;
+use Keboola\Elasticsearch\Serializers\SerializerInterface;
+use Keboola\Elasticsearch\Transport;
 
 interface NamespaceBuilderInterface
 {

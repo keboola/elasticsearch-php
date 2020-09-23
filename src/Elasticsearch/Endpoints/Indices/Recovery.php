@@ -1,8 +1,8 @@
 <?php
 
-namespace Elasticsearch\Endpoints\Indices;
+namespace Keboola\Elasticsearch\Endpoints\Indices;
 
-use Elasticsearch\Endpoints\AbstractEndpoint;
+use Keboola\Elasticsearch\Endpoints\AbstractEndpoint;
 
 /**
  * Class Recovery

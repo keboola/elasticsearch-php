@@ -1,7 +1,7 @@
 <?php
 
-namespace Elasticsearch\Endpoints\Remote;
-use Elasticsearch\Endpoints\AbstractEndpoint;
+namespace Keboola\Elasticsearch\Endpoints\Remote;
+use Keboola\Elasticsearch\Endpoints\AbstractEndpoint;
 
 /**
  * Class Info

@@ -1,8 +1,8 @@
 <?php
 
-namespace Elasticsearch\Namespaces;
+namespace Keboola\Elasticsearch\Namespaces;
 
-use Elasticsearch\Endpoints\Remote\Info;
+use Keboola\Elasticsearch\Endpoints\Remote\Info;
 
 /**
  * Class RemoteNamespace

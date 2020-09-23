@@ -1,6 +1,6 @@
 <?php
 
-namespace Elasticsearch\Namespaces;
+namespace Keboola\Elasticsearch\Namespaces;
 
 /**
  * Class IndicesNamespace
@@ -30,7 +30,7 @@ class IndicesNamespace extends AbstractNamespace
         /** @var callback $endpointBuilder */
         $endpointBuilder = $this->endpoints;
 
-        /** @var \Elasticsearch\Endpoints\Indices\Exists $endpoint */
+        /** @var \Keboola\Elasticsearch\Endpoints\Indices\Exists $endpoint */
         $endpoint = $endpointBuilder('Indices\Exists');
         $endpoint->setIndex($index);
         $endpoint->setParams($params);
@@ -58,7 +58,7 @@ class IndicesNamespace extends AbstractNamespace
         /** @var callback $endpointBuilder */
         $endpointBuilder = $this->endpoints;
 
-        /** @var \Elasticsearch\Endpoints\Indices\Get $endpoint */
+        /** @var \Keboola\Elasticsearch\Endpoints\Indices\Get $endpoint */
         $endpoint = $endpointBuilder('Indices\Get');
         $endpoint->setIndex($index)
                  ->setFeature($feature)
@@ -85,7 +85,7 @@ class IndicesNamespace extends AbstractNamespace
         /** @var callback $endpointBuilder */
         $endpointBuilder = $this->endpoints;
 
-        /** @var \Elasticsearch\Endpoints\Indices\Segments $endpoint */
+        /** @var \Keboola\Elasticsearch\Endpoints\Indices\Segments $endpoint */
         $endpoint = $endpointBuilder('Indices\Segments');
         $endpoint->setIndex($index);
         $endpoint->setParams($params);
@@ -108,7 +108,7 @@ class IndicesNamespace extends AbstractNamespace
         /** @var callback $endpointBuilder */
         $endpointBuilder = $this->endpoints;
 
-        /** @var \Elasticsearch\Endpoints\Indices\Template\Delete $endpoint */
+        /** @var \Keboola\Elasticsearch\Endpoints\Indices\Template\Delete $endpoint */
         $endpoint = $endpointBuilder('Indices\Template\Delete');
         $endpoint->setName($name);
         $endpoint->setParams($params);
@@ -131,7 +131,7 @@ class IndicesNamespace extends AbstractNamespace
         /** @var callback $endpointBuilder */
         $endpointBuilder = $this->endpoints;
 
-        /** @var \Elasticsearch\Endpoints\Indices\Delete $endpoint */
+        /** @var \Keboola\Elasticsearch\Endpoints\Indices\Delete $endpoint */
         $endpoint = $endpointBuilder('Indices\Delete');
         $endpoint->setIndex($index);
         $endpoint->setParams($params);
@@ -174,7 +174,7 @@ class IndicesNamespace extends AbstractNamespace
         /** @var callback $endpointBuilder */
         $endpointBuilder = $this->endpoints;
 
-        /** @var \Elasticsearch\Endpoints\Indices\Stats $endpoint */
+        /** @var \Keboola\Elasticsearch\Endpoints\Indices\Stats $endpoint */
         $endpoint = $endpointBuilder('Indices\Stats');
         $endpoint->setIndex($index)
                  ->setMetric($metric);
@@ -200,7 +200,7 @@ class IndicesNamespace extends AbstractNamespace
         /** @var callback $endpointBuilder */
         $endpointBuilder = $this->endpoints;
 
-        /** @var \Elasticsearch\Endpoints\Indices\Settings\Put $endpoint */
+        /** @var \Keboola\Elasticsearch\Endpoints\Indices\Settings\Put $endpoint */
         $endpoint = $endpointBuilder('Indices\Settings\Put');
         $endpoint->setIndex($index)
                  ->setBody($body);
@@ -226,7 +226,7 @@ class IndicesNamespace extends AbstractNamespace
         /** @var callback $endpointBuilder */
         $endpointBuilder = $this->endpoints;
 
-        /** @var \Elasticsearch\Endpoints\Indices\Gateway\Snapshot $endpoint */
+        /** @var \Keboola\Elasticsearch\Endpoints\Indices\Gateway\Snapshot $endpoint */
         $endpoint = $endpointBuilder('Indices\Gateway\Snapshot');
         $endpoint->setIndex($index);
         $endpoint->setParams($params);
@@ -253,7 +253,7 @@ class IndicesNamespace extends AbstractNamespace
         /** @var callback $endpointBuilder */
         $endpointBuilder = $this->endpoints;
 
-        /** @var \Elasticsearch\Endpoints\Indices\Shrink $endpoint */
+        /** @var \Keboola\Elasticsearch\Endpoints\Indices\Shrink $endpoint */
         $endpoint = $endpointBuilder('Indices\Shrink');
         $endpoint->setIndex($index)
                  ->setTarget($target)

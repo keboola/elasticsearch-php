@@ -1,9 +1,9 @@
 <?php
 
-namespace Elasticsearch\Endpoints\Indices;
+namespace Keboola\Elasticsearch\Endpoints\Indices;
 
-use Elasticsearch\Endpoints\AbstractEndpoint;
-use Elasticsearch\Common\Exceptions;
+use Keboola\Elasticsearch\Endpoints\AbstractEndpoint;
+use Keboola\Elasticsearch\Common\Exceptions;
 
 /**
  * Class Get
@@ -19,8 +19,8 @@ class Get extends AbstractEndpoint
     private $feature;
 
     /**
-     * @throws \Elasticsearch\Common\Exceptions\RuntimeException
      * @return string
+     * @throws \Keboola\Elasticsearch\Common\Exceptions\RuntimeException
      */
     public function getURI()
     {

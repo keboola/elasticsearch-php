@@ -1,8 +1,8 @@
 <?php
 
-namespace Elasticsearch\Endpoints;
+namespace Keboola\Elasticsearch\Endpoints;
 
-use Elasticsearch\Common\Exceptions;
+use Keboola\Elasticsearch\Common\Exceptions;
 
 /**
  * Class Exists
@@ -16,8 +16,8 @@ use Elasticsearch\Common\Exceptions;
 class Exists extends AbstractEndpoint
 {
     /**
-     * @throws \Elasticsearch\Common\Exceptions\RuntimeException
      * @return string
+     * @throws \Keboola\Elasticsearch\Common\Exceptions\RuntimeException
      */
     public function getURI()
     {

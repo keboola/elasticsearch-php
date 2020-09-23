@@ -1,6 +1,6 @@
 <?php
 
-namespace Elasticsearch\Endpoints\Indices\Alias;
+namespace Keboola\Elasticsearch\Endpoints\Indices\Alias;
 
 use Elasticsearch\Endpoints\AbstractEndpoint;
 use Elasticsearch\Common\Exceptions;

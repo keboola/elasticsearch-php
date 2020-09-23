@@ -16,7 +16,7 @@ class ClientIntegrationTests extends \PHPUnit_Framework_TestCase
     {
         $params = array();
 
-        $client = Elasticsearch\ClientBuilder::create()->setHosts([$_SERVER['ES_TEST_HOST']])->build();
+        $client = Keboola\Elasticsearch\ClientBuilder::create()->setHosts([$_SERVER['ES_TEST_HOST']])->build();
 
         $getParams = array(
             'index' => 'test',

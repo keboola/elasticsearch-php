@@ -1,8 +1,8 @@
 <?php
 
-namespace Elasticsearch\Endpoints\Indices\Gateway;
+namespace Keboola\Elasticsearch\Endpoints\Indices\Gateway;
 
-use Elasticsearch\Endpoints\AbstractEndpoint;
+use Keboola\Elasticsearch\Endpoints\AbstractEndpoint;
 
 /**
  * Class Snapshot

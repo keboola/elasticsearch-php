@@ -1,8 +1,8 @@
 <?php
 
-namespace Elasticsearch\Connections;
+namespace Keboola\Elasticsearch\Connections;
 
-use Elasticsearch\Serializers\SerializerInterface;
+use Keboola\Elasticsearch\Serializers\SerializerInterface;
 use Psr\Log\LoggerInterface;
 
 /**

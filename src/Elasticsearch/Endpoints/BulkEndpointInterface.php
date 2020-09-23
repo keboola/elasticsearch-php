@@ -1,9 +1,9 @@
 <?php
 
-namespace Elasticsearch\Endpoints;
+namespace Keboola\Elasticsearch\Endpoints;
 
-use Elasticsearch\Serializers\SerializerInterface;
-use Elasticsearch\Transport;
+use Keboola\Elasticsearch\Serializers\SerializerInterface;
+use Keboola\Elasticsearch\Transport;
 
 /**
  * Interface BulkEndpointInterface

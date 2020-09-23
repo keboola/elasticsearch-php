@@ -1,8 +1,8 @@
 <?php
 
-namespace Elasticsearch\Endpoints\Indices\Template;
+namespace Keboola\Elasticsearch\Endpoints\Indices\Template;
 
-use Elasticsearch\Endpoints\AbstractEndpoint;
+use Keboola\Elasticsearch\Endpoints\AbstractEndpoint;
 use Elasticsearch\Common\Exceptions;
 
 /**

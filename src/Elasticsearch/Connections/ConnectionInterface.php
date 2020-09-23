@@ -1,9 +1,9 @@
 <?php
 
-namespace Elasticsearch\Connections;
+namespace Keboola\Elasticsearch\Connections;
 
-use Elasticsearch\Serializers\SerializerInterface;
-use Elasticsearch\Transport;
+use Keboola\Elasticsearch\Serializers\SerializerInterface;
+use Keboola\Elasticsearch\Transport;
 use Psr\Log\LoggerInterface;
 
 /**
@@ -23,7 +23,7 @@ interface ConnectionInterface
      * @param $handler
      * @param array $hostDetails
      * @param array $connectionParams connection-specific parameters
-     * @param \Elasticsearch\Serializers\SerializerInterface $serializer
+     * @param \Keboola\Elasticsearch\Serializers\SerializerInterface $serializer
      * @param \Psr\Log\LoggerInterface $log          Logger object
      * @param \Psr\Log\LoggerInterface $trace        Logger object
      */
@@ -92,7 +92,7 @@ interface ConnectionInterface
      * @param null $params
      * @param null $body
      * @param array $options
-     * @param \Elasticsearch\Transport $transport
+     * @param \Keboola\Elasticsearch\Transport $transport
      * @return mixed
      */
     public function performRequest($method, $uri, $params = null, $body = null, $options = [], Transport $transport);

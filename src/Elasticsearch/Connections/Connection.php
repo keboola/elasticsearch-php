@@ -1,18 +1,18 @@
 <?php
 
-namespace Elasticsearch\Connections;
+namespace Keboola\Elasticsearch\Connections;
 
-use Elasticsearch\Client;
-use Elasticsearch\Common\Exceptions\AlreadyExpiredException;
-use Elasticsearch\Common\Exceptions\BadRequest400Exception;
-use Elasticsearch\Common\Exceptions\Conflict409Exception;
-use Elasticsearch\Common\Exceptions\Curl\CouldNotConnectToHost;
-use Elasticsearch\Common\Exceptions\Curl\CouldNotResolveHostException;
-use Elasticsearch\Common\Exceptions\Curl\OperationTimeoutException;
-use Elasticsearch\Common\Exceptions\Forbidden403Exception;
-use Elasticsearch\Common\Exceptions\MaxRetriesException;
-use Elasticsearch\Common\Exceptions\Missing404Exception;
-use Elasticsearch\Common\Exceptions\NoDocumentsToGetException;
+use Keboola\Elasticsearch\Client;
+use Keboola\Elasticsearch\Common\Exceptions\AlreadyExpiredException;
+use Keboola\Elasticsearch\Common\Exceptions\BadRequest400Exception;
+use Keboola\Elasticsearch\Common\Exceptions\Conflict409Exception;
+use Keboola\Elasticsearch\Common\Exceptions\Curl\CouldNotConnectToHost;
+use Keboola\Elasticsearch\Common\Exceptions\Curl\CouldNotResolveHostException;
+use Keboola\Elasticsearch\Common\Exceptions\Curl\OperationTimeoutException;
+use Keboola\Elasticsearch\Common\Exceptions\Forbidden403Exception;
+use Keboola\Elasticsearch\Common\Exceptions\MaxRetriesException;
+use Keboola\Elasticsearch\Common\Exceptions\Missing404Exception;
+use Keboola\Elasticsearch\Common\Exceptions\NoDocumentsToGetException;
 use Elasticsearch\Common\Exceptions\NoShardAvailableException;
 use Elasticsearch\Common\Exceptions\RequestTimeout408Exception;
 use Elasticsearch\Common\Exceptions\RoutingMissingException;

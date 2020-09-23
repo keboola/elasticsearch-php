@@ -5,10 +5,10 @@
  * Time: 14:34:49 pm
  */
 
-namespace Elasticsearch\Endpoints\Indices\Upgrade;
+namespace Keboola\Elasticsearch\Endpoints\Indices\Upgrade;
 
-use Elasticsearch\Endpoints\AbstractEndpoint;
-use Elasticsearch\Common\Exceptions;
+use Keboola\Elasticsearch\Endpoints\AbstractEndpoint;
+use Keboola\Elasticsearch\Common\Exceptions;
 
 /**
  * Class Post

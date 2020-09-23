@@ -1,8 +1,8 @@
 <?php
 
-namespace Elasticsearch\Endpoints\Cluster;
+namespace Keboola\Elasticsearch\Endpoints\Cluster;
 
-use Elasticsearch\Endpoints\AbstractEndpoint;
+use Keboola\Elasticsearch\Endpoints\AbstractEndpoint;
 
 /**
  * Class Stats

@@ -1,8 +1,8 @@
 <?php
 
-namespace Elasticsearch\Endpoints\Cluster\Settings;
+namespace Keboola\Elasticsearch\Endpoints\Cluster\Settings;
 
-use Elasticsearch\Endpoints\AbstractEndpoint;
+use Keboola\Elasticsearch\Endpoints\AbstractEndpoint;
 
 /**
  * Class Get

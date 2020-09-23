@@ -1,8 +1,8 @@
 <?php
 
-namespace Elasticsearch\Tests\ConnectionPool\Selectors;
+namespace Keboola\Elasticsearch\Tests\ConnectionPool\Selectors;
 
-use Elasticsearch;
+use Keboola\Elasticsearch;
 use Mockery as m;
 
 /**

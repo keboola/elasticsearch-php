@@ -1,8 +1,8 @@
 <?php
 
-namespace Elasticsearch\Endpoints;
+namespace Keboola\Elasticsearch\Endpoints;
 
-use Elasticsearch\Common\Exceptions;
+use Keboola\Elasticsearch\Common\Exceptions;
 
 /**
  * Class Mget
@@ -18,8 +18,8 @@ class Mget extends AbstractEndpoint
     /**
      * @param array $body
      *
-     * @throws \Elasticsearch\Common\Exceptions\InvalidArgumentException
      * @return $this
+     * @throws \Keboola\Elasticsearch\Common\Exceptions\InvalidArgumentException
      */
     public function setBody($body)
     {
@@ -72,7 +72,7 @@ class Mget extends AbstractEndpoint
 
     /**
      * @return array
-     * @throws \Elasticsearch\Common\Exceptions\RuntimeException
+     * @throws \Keboola\Elasticsearch\Common\Exceptions\RuntimeException
      */
     public function getBody()
     {

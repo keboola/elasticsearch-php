@@ -1,11 +1,11 @@
 <?php
 
-namespace Elasticsearch;
+namespace Keboola\Elasticsearch;
 
-use Elasticsearch\Common\Exceptions;
-use Elasticsearch\ConnectionPool\AbstractConnectionPool;
-use Elasticsearch\Connections\Connection;
-use Elasticsearch\Connections\ConnectionInterface;
+use Keboola\Elasticsearch\Common\Exceptions;
+use Keboola\Elasticsearch\ConnectionPool\AbstractConnectionPool;
+use Keboola\Elasticsearch\Connections\Connection;
+use Keboola\Elasticsearch\Connections\ConnectionInterface;
 use GuzzleHttp\Ring\Future\FutureArrayInterface;
 use Psr\Log\LoggerInterface;
 

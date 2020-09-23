@@ -1,8 +1,8 @@
 <?php
 
-namespace Elasticsearch\Endpoints;
+namespace Keboola\Elasticsearch\Endpoints;
 
-use Elasticsearch\Common\Exceptions;
+use Keboola\Elasticsearch\Common\Exceptions;
 
 /**
  * Class Create
@@ -18,8 +18,8 @@ class Create extends AbstractEndpoint
     /**
      * @param array $body
      *
-     * @throws \Elasticsearch\Common\Exceptions\InvalidArgumentException
      * @return $this
+     * @throws \Keboola\Elasticsearch\Common\Exceptions\InvalidArgumentException
      */
     public function setBody($body)
     {
@@ -33,8 +33,8 @@ class Create extends AbstractEndpoint
     }
 
     /**
-     * @throws \Elasticsearch\Common\Exceptions\RuntimeException
      * @return string
+     * @throws \Keboola\Elasticsearch\Common\Exceptions\RuntimeException
      */
     public function getURI()
     {
@@ -94,7 +94,7 @@ class Create extends AbstractEndpoint
 
     /**
      * @return array
-     * @throws \Elasticsearch\Common\Exceptions\RuntimeException
+     * @throws \Keboola\Elasticsearch\Common\Exceptions\RuntimeException
      */
     public function getBody()
     {

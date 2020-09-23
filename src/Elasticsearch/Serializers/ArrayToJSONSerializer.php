@@ -1,6 +1,6 @@
 <?php
 
-namespace Elasticsearch\Serializers;
+namespace Keboola\Elasticsearch\Serializers;
 
 /**
  * Class JSONSerializer

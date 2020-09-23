@@ -1,8 +1,8 @@
 <?php
 
-namespace Elasticsearch\Endpoints\Snapshot;
+namespace Keboola\Elasticsearch\Endpoints\Snapshot;
 
-use Elasticsearch\Endpoints\AbstractEndpoint;
+use Keboola\Elasticsearch\Endpoints\AbstractEndpoint;
 use Elasticsearch\Common\Exceptions;
 
 /**

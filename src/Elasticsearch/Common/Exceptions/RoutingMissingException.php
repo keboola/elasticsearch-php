@@ -1,6 +1,6 @@
 <?php
 
-namespace Elasticsearch\Common\Exceptions;
+namespace Keboola\Elasticsearch\Common\Exceptions;
 
 /**
  * RoutingMissingException, thrown on when a routing value is required but

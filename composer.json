@@ -29,12 +29,12 @@
   },
   "autoload": {
     "psr-4": {
-      "Elasticsearch\\": "src/Elasticsearch/"
+      "Keboola\\Elasticsearch\\": "src/Elasticsearch/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Elasticsearch\\Tests\\":      "tests/Elasticsearch/Tests/"
+      "Keboola\\Elasticsearch\\Tests\\":      "tests/Elasticsearch/Tests/"
     }
   }
 }

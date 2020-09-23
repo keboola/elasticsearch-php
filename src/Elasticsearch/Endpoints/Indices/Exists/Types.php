@@ -8,8 +8,8 @@ use Keboola\Elasticsearch\Common\Exceptions;
 /**
  * Class Types
  *
- * @category Elasticsearch
- * @package  Elasticsearch\Endpoints\Indices\Exists
+ * @category Keboola\Elasticsearch
+ * @package Keboola\Elasticsearch\Endpoints\Indices\Exists
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co
@@ -17,7 +17,7 @@ use Keboola\Elasticsearch\Common\Exceptions;
 class Types extends AbstractEndpoint
 {
     /**
-     * @throws \Elasticsearch\Common\Exceptions\RuntimeException
+     * @throws \Keboola\Elasticsearch\Common\Exceptions\RuntimeException
      * @return string
      */
     public function getURI()

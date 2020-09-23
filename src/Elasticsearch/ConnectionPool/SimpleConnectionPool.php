@@ -1,10 +1,10 @@
 <?php
 
-namespace Elasticsearch\ConnectionPool;
+namespace Keboola\Elasticsearch\ConnectionPool;
 
-use Elasticsearch\ConnectionPool\Selectors\SelectorInterface;
-use Elasticsearch\Connections\Connection;
-use Elasticsearch\Connections\ConnectionFactoryInterface;
+use Keboola\Elasticsearch\ConnectionPool\Selectors\SelectorInterface;
+use Keboola\Elasticsearch\Connections\Connection;
+use Keboola\Elasticsearch\Connections\ConnectionFactoryInterface;
 
 class SimpleConnectionPool extends AbstractConnectionPool implements ConnectionPoolInterface
 {
@@ -21,7 +21,7 @@ class SimpleConnectionPool extends AbstractConnectionPool implements ConnectionP
      * @param bool $force
      *
      * @return Connection
-     * @throws \Elasticsearch\Common\Exceptions\NoNodesAvailableException
+     * @throws \Keboola\Elasticsearch\Common\Exceptions\NoNodesAvailableException
      */
     public function nextConnection($force = false)
     {

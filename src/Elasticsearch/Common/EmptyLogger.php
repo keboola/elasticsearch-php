@@ -11,8 +11,8 @@ use Psr\Log\LoggerInterface;
  * Logger that doesn't do anything.  Similar to Monolog's NullHandler,
  * but avoids the overhead of partially loading Monolog
  *
- * @category Elasticsearch
- * @package  Elasticsearch\Common
+ * @category Keboola\Elasticsearch
+ * @package  Keboola\Elasticsearch\Common
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co

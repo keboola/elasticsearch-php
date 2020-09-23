@@ -5,8 +5,8 @@ namespace Keboola\Elasticsearch\Namespaces;
 /**
  * Class NodesNamespace
  *
- * @category Elasticsearch
- * @package  Elasticsearch\Namespaces\NodesNamespace
+ * @category Keboola\Elasticsearch
+ * @package Keboola\Elasticsearch\Namespaces\NodesNamespace
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co

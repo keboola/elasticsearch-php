@@ -23,7 +23,7 @@ use Symfony\Component\Yaml\Yaml;
  * Class YamlRunnerTest
  *
  * @category   Tests
- * @package    Elasticsearch
+ * @package    Keboola\Elasticsearch
  * @subpackage Tests
  * @author     Zachary Tong <zachary.tong@elasticsearch.com>
  * @license    http://www.apache.org/licenses/LICENSE-2.0 Apache2
@@ -34,7 +34,7 @@ class YamlRunnerTest extends \PHPUnit_Framework_TestCase
     /** @var Parser Yaml parser for reading integrations tests */
     private $yaml;
 
-    /** @var Elasticsearch\Client client used by elasticsearch */
+    /** @var Keboola\Elasticsearch\Client client used by elasticsearch */
     private $client;
 
     /** @var string Es version */
@@ -317,7 +317,7 @@ class YamlRunnerTest extends \PHPUnit_Framework_TestCase
         }
 
         // TODO remove this after cat testing situation resolved
-        if ($caller instanceof Elasticsearch\Namespaces\CatNamespace) {
+        if ($caller instanceof Keboola\Elasticsearch\Namespaces\CatNamespace) {
             if (!isset($endpointParams->format)) {
                 $endpointParams->format = 'text';
             }

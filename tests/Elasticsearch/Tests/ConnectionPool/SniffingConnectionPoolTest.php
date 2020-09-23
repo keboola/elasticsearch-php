@@ -8,7 +8,7 @@ use Mockery as m;
  * Class SniffingConnectionPoolTest
  *
  * @category   Tests
- * @package    Elasticsearch
+ * @package    Keboola\Elasticsearch
  * @subpackage Tests/SniffingConnectionPoolTest
  * @author     Zachary Tong <zachary.tong@elasticsearch.com>
  * @license    http://www.apache.org/licenses/LICENSE-2.0 Apache2
@@ -191,7 +191,7 @@ class SniffingConnectionPoolTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Elasticsearch\Common\Exceptions\NoNodesAvailableException
+     * @expectedException Keboola\Elasticsearch\Common\Exceptions\NoNodesAvailableException
      */
     public function testAddTenNodesAllTimeout()
     {
@@ -268,7 +268,7 @@ class SniffingConnectionPoolTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Elasticsearch\Common\Exceptions\NoNodesAvailableException
+     * @expectedException Keboola\Elasticsearch\Common\Exceptions\NoNodesAvailableException
      */
     public function testAddSeed_SniffTwo_TimeoutTwo()
     {
@@ -369,7 +369,7 @@ class SniffingConnectionPoolTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Elasticsearch\Common\Exceptions\NoNodesAvailableException
+     * @expectedException Keboola\Elasticsearch\Common\Exceptions\NoNodesAvailableException
      */
     public function testTen_TimeoutNine_SniffTenth_AddTwoDead_TimeoutEveryone()
     {

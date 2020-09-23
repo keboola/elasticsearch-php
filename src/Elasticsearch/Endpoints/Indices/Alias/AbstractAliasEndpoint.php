@@ -8,8 +8,8 @@ use Keboola\Elasticsearch\Endpoints\AbstractEndpoint;
 /**
  * Class AbstractAliasEndpoint
  *
- * @category Elasticsearch
- * @package Elasticsearch\Endpoints\Indices\Alias
+ * @category Keboola\Elasticsearch
+ * @package Keboola\Elasticsearch\Endpoints\Indices\Alias
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co

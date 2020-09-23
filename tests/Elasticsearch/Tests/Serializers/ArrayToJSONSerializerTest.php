@@ -8,7 +8,7 @@ use Mockery as m;
 
 /**
  * Class ArrayToJSONSerializerTest
- * @package Elasticsearch\Tests\Serializers
+ * @package Keboola\Elasticsearch\Tests\Serializers
  */
 class ArrayToJSONSerializerTest extends PHPUnit_Framework_TestCase
 {

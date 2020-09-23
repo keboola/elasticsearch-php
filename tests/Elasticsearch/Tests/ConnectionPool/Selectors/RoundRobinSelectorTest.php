@@ -8,7 +8,7 @@ use Keboola\Elasticsearch;
  * Class SnifferTest
  *
  * @category   Tests
- * @package    Elasticsearch
+ * @package    Keboola\Elasticsearch
  * @subpackage Tests\ConnectionPool\RoundRobinSelectorTest
  * @author     Zachary Tong <zachary.tong@elasticsearch.com>
  * @license    http://www.apache.org/licenses/LICENSE-2.0 Apache2
@@ -19,13 +19,13 @@ class RoundRobinSelectorTest extends \PHPUnit_Framework_TestCase
     /**
      * Add Ten connections, select 15 to verify round robin
      *
-     * @covers \Elasticsearch\ConnectionPool\Selectors\RoundRobinSelector::select
+     * @covers \Keboola\Elasticsearch\ConnectionPool\Selectors\RoundRobinSelector::select
      *
      * @return void
      */
     public function testTenConnections()
     {
-        $roundRobin = new Elasticsearch\ConnectionPool\Selectors\RoundRobinSelector();
+        $roundRobin = new Keboola\Elasticsearch\ConnectionPool\Selectors\RoundRobinSelector();
 
         $mockConnections = array();
         foreach (range(0, 10) as $index) {
@@ -46,13 +46,13 @@ class RoundRobinSelectorTest extends \PHPUnit_Framework_TestCase
      * Add Ten connections, select five, remove thre, test another 10 to check
      * that the round-robining works after removing connections
      *
-     * @covers \Elasticsearch\ConnectionPool\Selectors\RoundRobinSelector::select
+     * @covers \Keboola\Elasticsearch\ConnectionPool\Selectors\RoundRobinSelector::select
      *
      * @return void
      */
     public function testAddTenConnectionsestFiveTRemoveThree()
     {
-        $roundRobin = new Elasticsearch\ConnectionPool\Selectors\RoundRobinSelector();
+        $roundRobin = new Keboola\Elasticsearch\ConnectionPool\Selectors\RoundRobinSelector();
 
         $mockConnections = array();
         foreach (range(0, 10) as $index) {

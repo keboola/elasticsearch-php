@@ -12,8 +12,8 @@ use Psr\Log\LoggerInterface;
 /**
  * Class Transport
  *
- * @category Elasticsearch
- * @package  Elasticsearch
+ * @category Keboola\Elasticsearch
+ * @package Keboola\Elasticsearch
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co

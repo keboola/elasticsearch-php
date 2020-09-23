@@ -7,8 +7,8 @@ use Iterator;
 /**
  * Class SearchHitIterator
  *
- * @category Elasticsearch
- * @package  Elasticsearch\Helper\Iterators
+ * @category Keboola\Elasticsearch
+ * @package Keboola\Elasticsearch\Helper\Iterators
  * @author   Arturo Mejia <arturo.mejia@kreatetechnology.com>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co

@@ -10,7 +10,7 @@ use Mockery as m;
  * Class StaticConnectionPoolTest
  *
  * @category   Tests
- * @package    Elasticsearch
+ * @package    Keboola\Elasticsearch
  * @subpackage Tests/StaticConnectionPoolTest
  * @author     Zachary Tong <zachary.tong@elasticsearch.com>
  * @license    http://www.apache.org/licenses/LICENSE-2.0 Apache2
@@ -113,7 +113,7 @@ class StaticConnectionPoolTest extends \PHPUnit_Framework_TestCase
         $connectionFactory = m::mock('\Elasticsearch\Connections\ConnectionFactory');
 
         $randomizeHosts = false;
-        $connectionPool = new Elasticsearch\ConnectionPool\StaticConnectionPool($connections, $selector, $connectionFactory, $randomizeHosts);
+        $connectionPool = new Keboola\Elasticsearch\ConnectionPool\StaticConnectionPool($connections, $selector, $connectionFactory, $randomizeHosts);
 
         $connectionPool->nextConnection();
     }
@@ -158,7 +158,7 @@ class StaticConnectionPoolTest extends \PHPUnit_Framework_TestCase
         $connectionFactory = m::mock('\Elasticsearch\Connections\ConnectionFactory');
 
         $randomizeHosts = false;
-        $connectionPool = new Elasticsearch\ConnectionPool\StaticConnectionPool($connections, $selector, $connectionFactory, $randomizeHosts);
+        $connectionPool = new Keboola\Elasticsearch\ConnectionPool\StaticConnectionPool($connections, $selector, $connectionFactory, $randomizeHosts);
 
         $ret = $connectionPool->nextConnection();
         $this->assertEquals($goodConnection, $ret);
@@ -204,7 +204,7 @@ class StaticConnectionPoolTest extends \PHPUnit_Framework_TestCase
         $connectionFactory = m::mock('\Elasticsearch\Connections\ConnectionFactory');
 
         $randomizeHosts = false;
-        $connectionPool = new Elasticsearch\ConnectionPool\StaticConnectionPool($connections, $selector, $connectionFactory, $randomizeHosts);
+        $connectionPool = new Keboola\Elasticsearch\ConnectionPool\StaticConnectionPool($connections, $selector, $connectionFactory, $randomizeHosts);
 
         $ret = $connectionPool->nextConnection();
         $this->assertEquals($goodConnection, $ret);
@@ -212,7 +212,7 @@ class StaticConnectionPoolTest extends \PHPUnit_Framework_TestCase
 
     public function testCustomConnectionPoolIT()
     {
-        $clientBuilder = \Elasticsearch\ClientBuilder::create();
+        $clientBuilder = \Keboola\Elasticsearch\ClientBuilder::create();
         $clientBuilder->setHosts(['localhost:1']);
         $client = $clientBuilder
             ->setRetries(0)

@@ -5,8 +5,8 @@ namespace Keboola\Elasticsearch\Namespaces;
 /**
  * Class CatNamespace
  *
- * @category Elasticsearch
- * @package  Elasticsearch\Namespaces\CatNamespace
+ * @category Keboola\Elasticsearch
+ * @package Keboola\Elasticsearch\Namespaces\CatNamespace
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co
@@ -274,7 +274,7 @@ class CatNamespace extends AbstractNamespace
         /** @var callback $endpointBuilder */
         $endpointBuilder = $this->endpoints;
 
-        /** @var \Elasticsearch\Endpoints\Cat\Recovery $endpoint */
+        /** @var \Keboola\Elasticsearch\Endpoints\Cat\Recovery $endpoint */
         $endpoint = $endpointBuilder('Cat\Recovery');
         $endpoint->setIndex($index);
         $endpoint->setParams($params);
@@ -298,7 +298,7 @@ class CatNamespace extends AbstractNamespace
         /** @var callback $endpointBuilder */
         $endpointBuilder = $this->endpoints;
 
-        /** @var \Elasticsearch\Endpoints\Cat\Repositories $endpoint */
+        /** @var \Keboola\Elasticsearch\Endpoints\Cat\Repositories $endpoint */
         $endpoint = $endpointBuilder('Cat\Repositories');
         $endpoint->setParams($params);
 
@@ -324,7 +324,7 @@ class CatNamespace extends AbstractNamespace
         /** @var callback $endpointBuilder */
         $endpointBuilder = $this->endpoints;
 
-        /** @var \Elasticsearch\Endpoints\Cat\Shards $endpoint */
+        /** @var \Keboola\Elasticsearch\Endpoints\Cat\Shards $endpoint */
         $endpoint = $endpointBuilder('Cat\Shards');
         $endpoint->setIndex($index);
         $endpoint->setParams($params);
@@ -352,7 +352,7 @@ class CatNamespace extends AbstractNamespace
         /** @var callback $endpointBuilder */
         $endpointBuilder = $this->endpoints;
 
-        /** @var \Elasticsearch\Endpoints\Cat\Snapshots $endpoint */
+        /** @var \Keboola\Elasticsearch\Endpoints\Cat\Snapshots $endpoint */
         $endpoint = $endpointBuilder('Cat\Snapshots');
         $endpoint->setRepository($repository);
         $endpoint->setParams($params);
@@ -380,7 +380,7 @@ class CatNamespace extends AbstractNamespace
         /** @var callback $endpointBuilder */
         $endpointBuilder = $this->endpoints;
 
-        /** @var \Elasticsearch\Endpoints\Cat\ThreadPool $endpoint */
+        /** @var \Keboola\Elasticsearch\Endpoints\Cat\ThreadPool $endpoint */
         $endpoint = $endpointBuilder('Cat\ThreadPool');
         $endpoint->setIndex($index);
         $endpoint->setParams($params);
@@ -408,7 +408,7 @@ class CatNamespace extends AbstractNamespace
         /** @var callback $endpointBuilder */
         $endpointBuilder = $this->endpoints;
 
-        /** @var \Elasticsearch\Endpoints\Cat\Fielddata $endpoint */
+        /** @var \Keboola\Elasticsearch\Endpoints\Cat\Fielddata $endpoint */
         $endpoint = $endpointBuilder('Cat\Fielddata');
         $endpoint->setFields($fields);
         $endpoint->setParams($params);
@@ -432,7 +432,7 @@ class CatNamespace extends AbstractNamespace
         /** @var callback $endpointBuilder */
         $endpointBuilder = $this->endpoints;
 
-        /** @var \Elasticsearch\Endpoints\Cat\Plugins $endpoint */
+        /** @var \Keboola\Elasticsearch\Endpoints\Cat\Plugins $endpoint */
         $endpoint = $endpointBuilder('Cat\Plugins');
         $endpoint->setParams($params);
 
@@ -455,7 +455,7 @@ class CatNamespace extends AbstractNamespace
         /** @var callback $endpointBuilder */
         $endpointBuilder = $this->endpoints;
 
-        /** @var \Elasticsearch\Endpoints\Cat\Segments $endpoint */
+        /** @var \Keboola\Elasticsearch\Endpoints\Cat\Segments $endpoint */
         $endpoint = $endpointBuilder('Cat\Segments');
         $endpoint->setIndex($index);
         $endpoint->setParams($params);
@@ -484,7 +484,7 @@ class CatNamespace extends AbstractNamespace
         /** @var callback $endpointBuilder */
         $endpointBuilder = $this->endpoints;
 
-        /** @var \Elasticsearch\Endpoints\Cat\Tasks $endpoint */
+        /** @var \Keboola\Elasticsearch\Endpoints\Cat\Tasks $endpoint */
         $endpoint = $endpointBuilder('Cat\Tasks');
         $endpoint->setParams($params);
 
@@ -510,7 +510,7 @@ class CatNamespace extends AbstractNamespace
         /** @var callback $endpointBuilder */
         $endpointBuilder = $this->endpoints;
 
-        /** @var \Elasticsearch\Endpoints\Cat\Templates $endpoint */
+        /** @var \Keboola\Elasticsearch\Endpoints\Cat\Templates $endpoint */
         $endpoint = $endpointBuilder('Cat\Templates');
         $endpoint->setName($name)
             ->setParams($params);

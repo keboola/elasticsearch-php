@@ -8,8 +8,8 @@ use Keboola\Elasticsearch\Common\Exceptions;
 /**
  * Class Exists
  *
- * @category Elasticsearch
- * @package  Elasticsearch\Endpoints\Indices\Type
+ * @category Keboola\Elasticsearch
+ * @package Keboola\Elasticsearch\Endpoints\Indices\Type
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co

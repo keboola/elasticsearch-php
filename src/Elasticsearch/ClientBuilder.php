@@ -26,8 +26,8 @@ use Monolog\Processor\IntrospectionProcessor;
 /**
  * Class ClientBuilder
  *
- * @category Elasticsearch
- * @package  Elasticsearch\Common\Exceptions
+ * @category Keboola\Elasticsearch
+ * @package  Keboola\Elasticsearch\Common\Exceptions
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co
@@ -55,13 +55,13 @@ class ClientBuilder
     private $tracer;
 
     /** @var string */
-    private $connectionPool = '\Elasticsearch\ConnectionPool\StaticNoPingConnectionPool';
+    private $connectionPool = '\Keboola\Elasticsearch\ConnectionPool\StaticNoPingConnectionPool';
 
     /** @var  string */
-    private $serializer = '\Elasticsearch\Serializers\SmartSerializer';
+    private $serializer = '\Keboola\Elasticsearch\Serializers\SmartSerializer';
 
     /** @var  string */
-    private $selector = '\Elasticsearch\ConnectionPool\Selectors\RoundRobinSelector';
+    private $selector = '\Keboola\Elasticsearch\ConnectionPool\Selectors\RoundRobinSelector';
 
     /** @var  array */
     private $connectionPoolArgs = [

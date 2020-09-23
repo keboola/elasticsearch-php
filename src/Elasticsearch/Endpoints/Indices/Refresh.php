@@ -7,8 +7,8 @@ use Keboola\Elasticsearch\Endpoints\AbstractEndpoint;
 /**
  * Class Refresh
  *
- * @category Elasticsearch
- * @package  Elasticsearch\Endpoints\Indices
+ * @category Keboola\Elasticsearch
+ * @package Keboola\Elasticsearch\Endpoints\Indices
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co

@@ -8,8 +8,8 @@ use Keboola\Elasticsearch\Endpoints\AbstractEndpoint;
 /**
  * Class Get
  *
- * @category Elasticsearch
- * @package  Elasticsearch\Endpoints\Tasks
+ * @category Keboola\Elasticsearch
+ * @package Keboola\Elasticsearch\Endpoints\Tasks
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co
@@ -21,7 +21,7 @@ class Get extends AbstractEndpoint
     /**
      * @param string $taskId
      *
-     * @throws \Elasticsearch\Common\Exceptions\InvalidArgumentException
+     * @throws \Keboola\Elasticsearch\Common\Exceptions\InvalidArgumentException
      * @return $this
      */
     public function setTaskId($taskId)
@@ -36,7 +36,7 @@ class Get extends AbstractEndpoint
     }
 
     /**
-     * @throws \Elasticsearch\Common\Exceptions\RuntimeException
+     * @throws \Keboola\Elasticsearch\Common\Exceptions\RuntimeException
      * @return string
      */
     public function getURI()

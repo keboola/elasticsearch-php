@@ -25,7 +25,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Elasticsearch\Common\Exceptions\InvalidArgumentException
+     * @expectedException \Keboola\Elasticsearch\Common\Exceptions\InvalidArgumentException
      */
     public function testConstructorIllegalPort()
     {
@@ -45,7 +45,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Elasticsearch\Common\Exceptions\RuntimeException
+     * @expectedException \Keboola\Elasticsearch\Common\Exceptions\RuntimeException
      */
     public function testFromConfigBadParam()
     {

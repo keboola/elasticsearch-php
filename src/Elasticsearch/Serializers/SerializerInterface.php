@@ -1,6 +1,6 @@
 <?php
 
-namespace Elasticsearch\Serializers;
+namespace KBC\Elasticsearch\Serializers;
 
 /**
  * Interface SerializerInterface

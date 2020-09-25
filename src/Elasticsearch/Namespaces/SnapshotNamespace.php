@@ -1,6 +1,6 @@
 <?php
 
-namespace Elasticsearch\Namespaces;
+namespace KBC\Elasticsearch\Namespaces;
 
 /**
  * Class SnapshotNamespace

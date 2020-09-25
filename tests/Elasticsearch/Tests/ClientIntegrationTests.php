@@ -4,7 +4,7 @@
  * Class ClientTest
  *
  * @category   Tests
- * @package    Keboola\Elasticsearch
+ * @package    KBC\Elasticsearch
  * @subpackage Tests
  * @author     Zachary Tong <zachary.tong@elasticsearch.com>
  * @license    http://www.apache.org/licenses/LICENSE-2.0 Apache2
@@ -16,7 +16,7 @@ class ClientIntegrationTests extends \PHPUnit_Framework_TestCase
     {
         $params = array();
 
-        $client = Keboola\Elasticsearch\ClientBuilder::create()->setHosts([$_SERVER['ES_TEST_HOST']])->build();
+        $client = KBC\Elasticsearch\ClientBuilder::create()->setHosts([$_SERVER['ES_TEST_HOST']])->build();
 
         $getParams = array(
             'index' => 'test',

@@ -5,8 +5,8 @@ namespace Elasticsearch\Serializers;
 /**
  * Class EverythingToJSONSerializer
  *
- * @category Keboola\Elasticsearch
- * @package Keboola\Elasticsearch\Serializers
+ * @category KBC\Elasticsearch
+ * @package KBC\Elasticsearch\Serializers
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co

@@ -1,16 +1,16 @@
 <?php
 
-namespace Keboola\Elasticsearch\Connections;
+namespace KBC\Elasticsearch\Connections;
 
-use Keboola\Elasticsearch\Serializers\SerializerInterface;
-use Keboola\Elasticsearch\Transport;
+use KBC\Elasticsearch\Serializers\SerializerInterface;
+use KBC\Elasticsearch\Transport;
 use Psr\Log\LoggerInterface;
 
 /**
  * Interface ConnectionInterface
  *
- * @category Keboola\Elasticsearch
- * @package Keboola\Elasticsearch\Connections
+ * @category KBC\Elasticsearch
+ * @package KBC\Elasticsearch\Connections
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co
@@ -23,7 +23,7 @@ interface ConnectionInterface
      * @param $handler
      * @param array $hostDetails
      * @param array $connectionParams connection-specific parameters
-     * @param \Keboola\Elasticsearch\Serializers\SerializerInterface $serializer
+     * @param \KBC\Elasticsearch\Serializers\SerializerInterface $serializer
      * @param \Psr\Log\LoggerInterface $log          Logger object
      * @param \Psr\Log\LoggerInterface $trace        Logger object
      */
@@ -92,7 +92,7 @@ interface ConnectionInterface
      * @param null $params
      * @param null $body
      * @param array $options
-     * @param \Keboola\Elasticsearch\Transport $transport
+     * @param \KBC\Elasticsearch\Transport $transport
      * @return mixed
      */
     public function performRequest($method, $uri, $params = null, $body = null, $options = [], Transport $transport);

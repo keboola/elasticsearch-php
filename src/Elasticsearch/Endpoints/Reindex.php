@@ -1,12 +1,12 @@
 <?php
 
-namespace Keboola\Elasticsearch\Endpoints;
+namespace KBC\Elasticsearch\Endpoints;
 
 /**
  * Class Reindex
  *
- * @category Keboola\Elasticsearch
- * @package Keboola\Elasticsearch\Endpoints\Indices
+ * @category KBC\Elasticsearch
+ * @package KBC\Elasticsearch\Endpoints\Indices
  * @author   Augustin Husson <husson.augustin@gmail.com>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co
@@ -49,7 +49,7 @@ class Reindex extends AbstractEndpoint
      * @param array $body
      *
      * @return $this
-     * @throws \Keboola\Elasticsearch\Common\Exceptions\InvalidArgumentException
+     * @throws \KBC\Elasticsearch\Common\Exceptions\InvalidArgumentException
      */
     public function setBody($body)
     {

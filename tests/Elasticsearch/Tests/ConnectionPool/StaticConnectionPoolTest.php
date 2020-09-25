@@ -1,16 +1,16 @@
 <?php
 
-namespace Keboola\Elasticsearch\Tests\ConnectionPool;
+namespace KBC\Elasticsearch\Tests\ConnectionPool;
 
-use Keboola\Elasticsearch;
-use Keboola\Elasticsearch\Common\Exceptions\NoNodesAvailableException;
+use KBC\Elasticsearch;
+use KBC\Elasticsearch\Common\Exceptions\NoNodesAvailableException;
 use Mockery as m;
 
 /**
  * Class StaticConnectionPoolTest
  *
  * @category   Tests
- * @package    Keboola\Elasticsearch
+ * @package    KBC\Elasticsearch
  * @subpackage Tests/StaticConnectionPoolTest
  * @author     Zachary Tong <zachary.tong@elasticsearch.com>
  * @license    http://www.apache.org/licenses/LICENSE-2.0 Apache2
@@ -25,7 +25,7 @@ class StaticConnectionPoolTest extends \PHPUnit_Framework_TestCase
 
     public function testAddOneHostThenGetConnection()
     {
-        $mockConnection = m::mock('\Keboola\Elasticsearch\Connections\Connection')
+        $mockConnection = m::mock('\KBC\Elasticsearch\Connections\Connection')
                           ->shouldReceive('ping')
                           ->andReturn(true)
                           ->getMock()
@@ -36,15 +36,15 @@ class StaticConnectionPoolTest extends \PHPUnit_Framework_TestCase
 
         $connections = array($mockConnection);
 
-        $selector = m::mock('\Keboola\Elasticsearch\ConnectionPool\Selectors\RoundRobinSelector')
+        $selector = m::mock('\KBC\Elasticsearch\ConnectionPool\Selectors\RoundRobinSelector')
                     ->shouldReceive('select')
                     ->andReturn($connections[0])
                     ->getMock();
 
-        $connectionFactory = m::mock('\Keboola\Elasticsearch\Connections\ConnectionFactory');
+        $connectionFactory = m::mock('\KBC\Elasticsearch\Connections\ConnectionFactory');
 
         $randomizeHosts = false;
-        $connectionPool = new Keboola\Elasticsearch\ConnectionPool\StaticConnectionPool($connections, $selector, $connectionFactory, $randomizeHosts);
+        $connectionPool = new KBC\Elasticsearch\ConnectionPool\StaticConnectionPool($connections, $selector, $connectionFactory, $randomizeHosts);
 
         $retConnection = $connectionPool->nextConnection();
 
@@ -56,7 +56,7 @@ class StaticConnectionPoolTest extends \PHPUnit_Framework_TestCase
         $connections = array();
 
         foreach (range(1, 10) as $index) {
-            $mockConnection = m::mock('\Keboola\Elasticsearch\Connections\Connection')
+            $mockConnection = m::mock('\KBC\Elasticsearch\Connections\Connection')
                               ->shouldReceive('ping')
                               ->andReturn(true)
                               ->getMock()
@@ -68,15 +68,15 @@ class StaticConnectionPoolTest extends \PHPUnit_Framework_TestCase
             $connections[] = $mockConnection;
         }
 
-        $selector = m::mock('\Keboola\Elasticsearch\ConnectionPool\Selectors\RoundRobinSelector')
+        $selector = m::mock('\KBC\Elasticsearch\ConnectionPool\Selectors\RoundRobinSelector')
             ->shouldReceive('select')
             ->andReturn($connections[0])
             ->getMock();
 
-        $connectionFactory = m::mock('\Keboola\Elasticsearch\Connections\ConnectionFactory');
+        $connectionFactory = m::mock('\KBC\Elasticsearch\Connections\ConnectionFactory');
 
         $randomizeHosts = false;
-        $connectionPool = new Keboola\Elasticsearch\ConnectionPool\StaticConnectionPool($connections, $selector, $connectionFactory, $randomizeHosts);
+        $connectionPool = new KBC\Elasticsearch\ConnectionPool\StaticConnectionPool($connections, $selector, $connectionFactory, $randomizeHosts);
 
         $retConnection = $connectionPool->nextConnection();
 
@@ -84,7 +84,7 @@ class StaticConnectionPoolTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException Keboola\Elasticsearch\Common\Exceptions\NoNodesAvailableException
+     * @expectedException KBC\Elasticsearch\Common\Exceptions\NoNodesAvailableException
      */
     public function testAllHostsFailPing()
     {
@@ -113,7 +113,7 @@ class StaticConnectionPoolTest extends \PHPUnit_Framework_TestCase
         $connectionFactory = m::mock('\Elasticsearch\Connections\ConnectionFactory');
 
         $randomizeHosts = false;
-        $connectionPool = new Keboola\Elasticsearch\ConnectionPool\StaticConnectionPool($connections, $selector, $connectionFactory, $randomizeHosts);
+        $connectionPool = new KBC\Elasticsearch\ConnectionPool\StaticConnectionPool($connections, $selector, $connectionFactory, $randomizeHosts);
 
         $connectionPool->nextConnection();
     }
@@ -158,7 +158,7 @@ class StaticConnectionPoolTest extends \PHPUnit_Framework_TestCase
         $connectionFactory = m::mock('\Elasticsearch\Connections\ConnectionFactory');
 
         $randomizeHosts = false;
-        $connectionPool = new Keboola\Elasticsearch\ConnectionPool\StaticConnectionPool($connections, $selector, $connectionFactory, $randomizeHosts);
+        $connectionPool = new KBC\Elasticsearch\ConnectionPool\StaticConnectionPool($connections, $selector, $connectionFactory, $randomizeHosts);
 
         $ret = $connectionPool->nextConnection();
         $this->assertEquals($goodConnection, $ret);
@@ -204,7 +204,7 @@ class StaticConnectionPoolTest extends \PHPUnit_Framework_TestCase
         $connectionFactory = m::mock('\Elasticsearch\Connections\ConnectionFactory');
 
         $randomizeHosts = false;
-        $connectionPool = new Keboola\Elasticsearch\ConnectionPool\StaticConnectionPool($connections, $selector, $connectionFactory, $randomizeHosts);
+        $connectionPool = new KBC\Elasticsearch\ConnectionPool\StaticConnectionPool($connections, $selector, $connectionFactory, $randomizeHosts);
 
         $ret = $connectionPool->nextConnection();
         $this->assertEquals($goodConnection, $ret);
@@ -212,7 +212,7 @@ class StaticConnectionPoolTest extends \PHPUnit_Framework_TestCase
 
     public function testCustomConnectionPoolIT()
     {
-        $clientBuilder = \Keboola\Elasticsearch\ClientBuilder::create();
+        $clientBuilder = \KBC\Elasticsearch\ClientBuilder::create();
         $clientBuilder->setHosts(['localhost:1']);
         $client = $clientBuilder
             ->setRetries(0)

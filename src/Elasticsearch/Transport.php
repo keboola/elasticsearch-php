@@ -1,19 +1,19 @@
 <?php
 
-namespace Keboola\Elasticsearch;
+namespace KBC\Elasticsearch;
 
-use Keboola\Elasticsearch\Common\Exceptions;
-use Keboola\Elasticsearch\ConnectionPool\AbstractConnectionPool;
-use Keboola\Elasticsearch\Connections\Connection;
-use Keboola\Elasticsearch\Connections\ConnectionInterface;
+use KBC\Elasticsearch\Common\Exceptions;
+use KBC\Elasticsearch\ConnectionPool\AbstractConnectionPool;
+use KBC\Elasticsearch\Connections\Connection;
+use KBC\Elasticsearch\Connections\ConnectionInterface;
 use GuzzleHttp\Ring\Future\FutureArrayInterface;
 use Psr\Log\LoggerInterface;
 
 /**
  * Class Transport
  *
- * @category Keboola\Elasticsearch
- * @package Keboola\Elasticsearch
+ * @category KBC\Elasticsearch
+ * @package KBC\Elasticsearch
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co

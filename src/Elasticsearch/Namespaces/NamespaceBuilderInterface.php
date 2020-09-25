@@ -2,18 +2,18 @@
 /**
  * Class RegisteredNamespaceInterface
  *
- * @category Keboola\Elasticsearch
- * @package Keboola\Elasticsearch\Namespaces
+ * @category KBC\Elasticsearch
+ * @package KBC\Elasticsearch\Namespaces
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co
  */
 
-namespace Keboola\Elasticsearch\Namespaces;
+namespace KBC\Elasticsearch\Namespaces;
 
 
-use Keboola\Elasticsearch\Serializers\SerializerInterface;
-use Keboola\Elasticsearch\Transport;
+use KBC\Elasticsearch\Serializers\SerializerInterface;
+use KBC\Elasticsearch\Transport;
 
 interface NamespaceBuilderInterface
 {

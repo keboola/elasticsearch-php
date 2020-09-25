@@ -1,12 +1,12 @@
 <?php
 
-namespace Keboola\Elasticsearch\Common\Exceptions;
+namespace KBC\Elasticsearch\Common\Exceptions;
 
 /**
  * BadRequest400Exception, thrown on 400 conflict http error
  *
- * @category Keboola\Elasticsearch
- * @package  Keboola\Elasticsearch\Common\Exceptions
+ * @category KBC\Elasticsearch
+ * @package  KBC\Elasticsearch\Common\Exceptions
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co

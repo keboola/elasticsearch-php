@@ -1,11 +1,11 @@
 <?php
-namespace Keboola\Elasticsearch\Tests\Connections;
+namespace KBC\Elasticsearch\Tests\Connections;
 
-use Keboola\Elasticsearch\Client;
-use Keboola\Elasticsearch\ClientBuilder;
-use Keboola\Elasticsearch\Connections\Connection;
-use Keboola\Elasticsearch\Serializers\SerializerInterface;
-use Keboola\Elasticsearch\Serializers\SmartSerializer;
+use KBC\Elasticsearch\Client;
+use KBC\Elasticsearch\ClientBuilder;
+use KBC\Elasticsearch\Connections\Connection;
+use KBC\Elasticsearch\Serializers\SerializerInterface;
+use KBC\Elasticsearch\Serializers\SmartSerializer;
 use Psr\Log\LoggerInterface;
 
 class ConnectionTest extends \PHPUnit\Framework\TestCase

@@ -1,15 +1,15 @@
 <?php
 
-namespace Keboola\Elasticsearch\Connections;
+namespace KBC\Elasticsearch\Connections;
 
-use Keboola\Elasticsearch\Serializers\SerializerInterface;
+use KBC\Elasticsearch\Serializers\SerializerInterface;
 use Psr\Log\LoggerInterface;
 
 /**
  * Class AbstractConnection
  *
- * @category Keboola\Elasticsearch
- * @package Keboola\Elasticsearch\Connections
+ * @category KBC\Elasticsearch
+ * @package KBC\Elasticsearch\Connections
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co

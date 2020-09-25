@@ -1,17 +1,17 @@
 <?php
 
-namespace Keboola\Elasticsearch\Tests;
+namespace KBC\Elasticsearch\Tests;
 
-use Keboola\Elasticsearch;
-use Keboola\Elasticsearch\ClientBuilder;
-use Keboola\Elasticsearch\Connections\Connection;
+use KBC\Elasticsearch;
+use KBC\Elasticsearch\ClientBuilder;
+use KBC\Elasticsearch\Connections\Connection;
 use Mockery as m;
 
 /**
  * Class ClientTest
  *
  * @category   Tests
- * @package    Keboola\Elasticsearch
+ * @package    KBC\Elasticsearch
  * @subpackage Tests
  * @author     Zachary Tong <zachary.tong@elasticsearch.com>
  * @license    http://www.apache.org/licenses/LICENSE-2.0 Apache2
@@ -25,7 +25,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Keboola\Elasticsearch\Common\Exceptions\InvalidArgumentException
+     * @expectedException \KBC\Elasticsearch\Common\Exceptions\InvalidArgumentException
      */
     public function testConstructorIllegalPort()
     {
@@ -45,7 +45,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Keboola\Elasticsearch\Common\Exceptions\RuntimeException
+     * @expectedException \KBC\Elasticsearch\Common\Exceptions\RuntimeException
      */
     public function testFromConfigBadParam()
     {

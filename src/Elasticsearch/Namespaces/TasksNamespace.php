@@ -1,15 +1,15 @@
 <?php
 
-namespace Keboola\Elasticsearch\Namespaces;
+namespace KBC\Elasticsearch\Namespaces;
 
-use Keboola\Elasticsearch\Endpoints\Tasks\Cancel;
-use Keboola\Elasticsearch\Endpoints\Tasks\Get;
+use KBC\Elasticsearch\Endpoints\Tasks\Cancel;
+use KBC\Elasticsearch\Endpoints\Tasks\Get;
 
 /**
  * Class TasksNamespace
  *
- * @category Keboola\Elasticsearch
- * @package Keboola\Elasticsearch\Namespaces\TasksNamespace
+ * @category KBC\Elasticsearch
+ * @package KBC\Elasticsearch\Namespaces\TasksNamespace
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co

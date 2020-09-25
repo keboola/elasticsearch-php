@@ -1,11 +1,11 @@
 <?php
 
-namespace Keboola\Elasticsearch\ConnectionPool;
+namespace KBC\Elasticsearch\ConnectionPool;
 
-use Keboola\Elasticsearch\Common\Exceptions\NoNodesAvailableException;
-use Keboola\Elasticsearch\ConnectionPool\Selectors\SelectorInterface;
-use Keboola\Elasticsearch\Connections\Connection;
-use Keboola\Elasticsearch\Connections\ConnectionFactoryInterface;
+use KBC\Elasticsearch\Common\Exceptions\NoNodesAvailableException;
+use KBC\Elasticsearch\ConnectionPool\Selectors\SelectorInterface;
+use KBC\Elasticsearch\Connections\Connection;
+use KBC\Elasticsearch\Connections\ConnectionFactoryInterface;
 
 class StaticNoPingConnectionPool extends AbstractConnectionPool implements ConnectionPoolInterface
 {
@@ -31,7 +31,7 @@ class StaticNoPingConnectionPool extends AbstractConnectionPool implements Conne
      * @param bool $force
      *
      * @return Connection
-     * @throws \Keboola\Elasticsearch\Common\Exceptions\NoNodesAvailableException
+     * @throws \KBC\Elasticsearch\Common\Exceptions\NoNodesAvailableException
      */
     public function nextConnection($force = false)
     {
@@ -56,7 +56,7 @@ class StaticNoPingConnectionPool extends AbstractConnectionPool implements Conne
     }
 
     /**
-     * @param \Keboola\Elasticsearch\Connections\Connection $connection
+     * @param \KBC\Elasticsearch\Connections\Connection $connection
      *
      * @return bool
      */

@@ -1,14 +1,14 @@
 <?php
 
-namespace Keboola\Elasticsearch\Endpoints;
+namespace KBC\Elasticsearch\Endpoints;
 
-use Keboola\Elasticsearch\Common\Exceptions;
+use KBC\Elasticsearch\Common\Exceptions;
 
 /**
  * Class UpdateByQuery
  *
- * @category Keboola\Elasticsearch
- * @package Keboola\Elasticsearch\Endpoints *
+ * @category KBC\Elasticsearch
+ * @package KBC\Elasticsearch\Endpoints *
  * @author   Zachary Tong <zachary.tong@elasticsearch.com>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elasticsearch.org
@@ -19,7 +19,7 @@ class UpdateByQuery extends AbstractEndpoint
      * @param array $body
      *
      * @return $this
-     * @throws \Keboola\Elasticsearch\Common\Exceptions\InvalidArgumentException
+     * @throws \KBC\Elasticsearch\Common\Exceptions\InvalidArgumentException
      */
     public function setBody($body)
     {
@@ -40,7 +40,7 @@ class UpdateByQuery extends AbstractEndpoint
 
     /**
      * @return string
-     * @throws \Keboola\Elasticsearch\Common\Exceptions\BadMethodCallException
+     * @throws \KBC\Elasticsearch\Common\Exceptions\BadMethodCallException
      */
     public function getURI()
     {

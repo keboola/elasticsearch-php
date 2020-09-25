@@ -1,14 +1,14 @@
 <?php
 
-namespace Keboola\Elasticsearch\Endpoints\Cluster;
+namespace KBC\Elasticsearch\Endpoints\Cluster;
 
-use Keboola\Elasticsearch\Endpoints\AbstractEndpoint;
+use KBC\Elasticsearch\Endpoints\AbstractEndpoint;
 
 /**
  * Class State
  *
- * @category Keboola\Elasticsearch
- * @package Keboola\Elasticsearch\Endpoints\Cluster
+ * @category KBC\Elasticsearch
+ * @package KBC\Elasticsearch\Endpoints\Cluster
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co

@@ -1,14 +1,14 @@
 <?php
 
-namespace Keboola\Keboola\Elasticsearch\Endpoints\Cluster;
+namespace Keboola\KBC\Elasticsearch\Endpoints\Cluster;
 
-use Keboola\Elasticsearch\Endpoints\AbstractEndpoint;
+use KBC\Elasticsearch\Endpoints\AbstractEndpoint;
 
 /**
  * Class AllocationExplain
  *
- * @category Keboola\Elasticsearch
- * @package Keboola\Elasticsearch\Endpoints\Cluster
+ * @category KBC\Elasticsearch
+ * @package KBC\Elasticsearch\Endpoints\Cluster
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co
@@ -19,7 +19,7 @@ class AllocationExplain extends AbstractEndpoint
     /**
      * @param array $body
      *
-     * @throws \Keboola\Elasticsearch\Common\Exceptions\InvalidArgumentException
+     * @throws \KBC\Elasticsearch\Common\Exceptions\InvalidArgumentException
      * @return $this
      */
     public function setBody($body)

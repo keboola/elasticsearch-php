@@ -1,14 +1,14 @@
 <?php
 
-namespace Keboola\Elasticsearch\Endpoints\Indices\Mapping;
+namespace KBC\Elasticsearch\Endpoints\Indices\Mapping;
 
-use Keboola\Elasticsearch\Endpoints\AbstractEndpoint;
+use KBC\Elasticsearch\Endpoints\AbstractEndpoint;
 
 /**
  * Class Get
  *
- * @category Keboola\Elasticsearch
- * @package Keboola\Elasticsearch\Endpoints\Indices\Mapping
+ * @category KBC\Elasticsearch
+ * @package KBC\Elasticsearch\Endpoints\Indices\Mapping
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co

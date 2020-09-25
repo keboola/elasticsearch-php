@@ -1,15 +1,15 @@
 <?php
 
-namespace Keboola\Elasticsearch\Tests\ConnectionPool\Selectors;
+namespace KBC\Elasticsearch\Tests\ConnectionPool\Selectors;
 
-use Keboola\Elasticsearch;
+use KBC\Elasticsearch;
 use Mockery as m;
 
 /**
  * Class StickyRoundRobinSelectorTest
  *
  * @category   Tests
- * @package    Keboola\Elasticsearch
+ * @package    KBC\Elasticsearch
  * @subpackage Tests\ConnectionPool\StickyRoundRobinSelectorTest
  * @author     Zachary Tong <zachary.tong@elasticsearch.com>
  * @license    http://www.apache.org/licenses/LICENSE-2.0 Apache2

@@ -1,14 +1,14 @@
 <?php
 
-namespace Keboola\Elasticsearch\Endpoints\Indices;
+namespace KBC\Elasticsearch\Endpoints\Indices;
 
-use Keboola\Elasticsearch\Endpoints\AbstractEndpoint;
-use Keboola\Elasticsearch\Common\Exceptions;
+use KBC\Elasticsearch\Endpoints\AbstractEndpoint;
+use KBC\Elasticsearch\Common\Exceptions;
 
 /**
  * Class Shrink.
  *
- * @category Keboola\Elasticsearch
+ * @category KBC\Elasticsearch
  *
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
@@ -22,7 +22,7 @@ class Shrink extends AbstractEndpoint
     /**
      * @param array $body
      *
-     * @throws \Keboola\Elasticsearch\Common\Exceptions\InvalidArgumentException
+     * @throws \KBC\Elasticsearch\Common\Exceptions\InvalidArgumentException
      *
      * @return $this
      */
@@ -53,7 +53,7 @@ class Shrink extends AbstractEndpoint
     }
 
     /**
-     * @throws \Keboola\Elasticsearch\Common\Exceptions\BadMethodCallException
+     * @throws \KBC\Elasticsearch\Common\Exceptions\BadMethodCallException
      *
      * @return string
      */

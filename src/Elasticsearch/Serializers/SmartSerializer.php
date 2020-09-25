@@ -1,14 +1,14 @@
 <?php
 
-namespace Keboola\Elasticsearch\Serializers;
+namespace KBC\Elasticsearch\Serializers;
 
-use Keboola\Elasticsearch\Common\Exceptions\Serializer\JsonErrorException;
+use KBC\Elasticsearch\Common\Exceptions\Serializer\JsonErrorException;
 
 /**
  * Class SmartSerializer
  *
- * @category Keboola\Elasticsearch
- * @package  Keboola\Elasticsearch\Serializers\JSONSerializer
+ * @category KBC\Elasticsearch
+ * @package  KBC\Elasticsearch\Serializers\JSONSerializer
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co

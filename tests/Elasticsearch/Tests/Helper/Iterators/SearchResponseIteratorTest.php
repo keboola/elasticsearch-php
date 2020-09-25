@@ -1,13 +1,13 @@
 <?php
 
-namespace Keboola\Elasticsearch\Tests\Helper\Iterators;
+namespace KBC\Elasticsearch\Tests\Helper\Iterators;
 
-use Keboola\Elasticsearch\Helper\Iterators\SearchResponseIterator;
+use KBC\Elasticsearch\Helper\Iterators\SearchResponseIterator;
 use Mockery as m;
 
 /**
  * Class SearchResponseIteratorTest
- * @package Keboola\Elasticsearch\Tests\Helper\Iterators
+ * @package KBC\Elasticsearch\Tests\Helper\Iterators
  * @author  Arturo Mejia <arturo.mejia@kreatetechnology.com>
  * @license http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link    http://Elasticsearch.org

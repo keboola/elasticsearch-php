@@ -1,18 +1,18 @@
 <?php
 
-namespace Keboola\Elasticsearch\Tests;
+namespace KBC\Elasticsearch\Tests;
 
-use Keboola\Elasticsearch;
-use Keboola\Elasticsearch\ClientBuilder;
-use Keboola\Elasticsearch\Serializers\SerializerInterface;
-use Keboola\Elasticsearch\Transport;
+use KBC\Elasticsearch;
+use KBC\Elasticsearch\ClientBuilder;
+use KBC\Elasticsearch\Serializers\SerializerInterface;
+use KBC\Elasticsearch\Transport;
 use Mockery as m;
 
 /**
  * Class RegisteredNamespaceTest
  *
  * @category   Tests
- * @package    Keboola\Elasticsearch
+ * @package    KBC\Elasticsearch
  * @subpackage Tests
  * @author     Zachary Tong <zachary.tong@elasticsearch.com>
  * @license    http://www.apache.org/licenses/LICENSE-2.0 Apache2
@@ -33,7 +33,7 @@ class RegisteredNamespaceTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Keboola\Elasticsearch\Common\Exceptions\BadMethodCallException
+     * @expectedException \KBC\Elasticsearch\Common\Exceptions\BadMethodCallException
      */
     public function testNonExistingNamespace()
     {
@@ -43,7 +43,7 @@ class RegisteredNamespaceTest extends \PHPUnit_Framework_TestCase
     }
 }
 
-class FooNamespaceBuilder implements Keboola\Elasticsearch\Namespaces\NamespaceBuilderInterface
+class FooNamespaceBuilder implements KBC\Elasticsearch\Namespaces\NamespaceBuilderInterface
 {
     public function getName()
     {

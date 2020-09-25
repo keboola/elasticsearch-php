@@ -1,15 +1,15 @@
 <?php
 
-namespace Keboola\Elasticsearch\Endpoints\Cluster\Settings;
+namespace KBC\Elasticsearch\Endpoints\Cluster\Settings;
 
-use Keboola\Elasticsearch\Endpoints\AbstractEndpoint;
-use Keboola\Elasticsearch\Common\Exceptions;
+use KBC\Elasticsearch\Endpoints\AbstractEndpoint;
+use KBC\Elasticsearch\Common\Exceptions;
 
 /**
  * Class Put
  *
- * @category Keboola\Elasticsearch
- * @package Keboola\Elasticsearch\Endpoints\Cluster\Settings
+ * @category KBC\Elasticsearch
+ * @package KBC\Elasticsearch\Endpoints\Cluster\Settings
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co
@@ -20,7 +20,7 @@ class Put extends AbstractEndpoint
      * @param array $body
      *
      * @return $this
-     * @throws \Keboola\Elasticsearch\Common\Exceptions\InvalidArgumentException
+     * @throws \KBC\Elasticsearch\Common\Exceptions\InvalidArgumentException
      */
     public function setBody($body)
     {

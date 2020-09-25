@@ -1,15 +1,15 @@
 <?php
 
-namespace Keboola\Elasticsearch\Endpoints\Indices\Alias;
+namespace KBC\Elasticsearch\Endpoints\Indices\Alias;
 
-use Keboola\Elasticsearch\Endpoints\AbstractEndpoint;
-use Keboola\Elasticsearch\Common\Exceptions;
+use KBC\Elasticsearch\Endpoints\AbstractEndpoint;
+use KBC\Elasticsearch\Common\Exceptions;
 
 /**
  * Class Delete
  *
- * @category Keboola\Elasticsearch
- * @package Keboola\Elasticsearch\Endpoints\Indices\Alias
+ * @category KBC\Elasticsearch
+ * @package KBC\Elasticsearch\Endpoints\Indices\Alias
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co
@@ -36,7 +36,7 @@ class Delete extends AbstractEndpoint
     }
 
     /**
-     * @throws \Keboola\Elasticsearch\Common\Exceptions\RuntimeException
+     * @throws \KBC\Elasticsearch\Common\Exceptions\RuntimeException
      * @return string
      */
     public function getURI()

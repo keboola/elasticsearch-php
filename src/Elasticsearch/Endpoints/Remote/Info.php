@@ -1,13 +1,13 @@
 <?php
 
-namespace Keboola\Elasticsearch\Endpoints\Remote;
-use Keboola\Elasticsearch\Endpoints\AbstractEndpoint;
+namespace KBC\Elasticsearch\Endpoints\Remote;
+use KBC\Elasticsearch\Endpoints\AbstractEndpoint;
 
 /**
  * Class Info
  *
- * @category Keboola\Elasticsearch
- * @package Keboola\Elasticsearch\Endpoints\Cluster\Nodes
+ * @category KBC\Elasticsearch
+ * @package KBC\Elasticsearch\Endpoints\Cluster\Nodes
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co

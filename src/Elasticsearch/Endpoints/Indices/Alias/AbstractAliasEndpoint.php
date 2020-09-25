@@ -1,15 +1,15 @@
 <?php
 
-namespace Keboola\Elasticsearch\Endpoints\Indices\Alias;
+namespace KBC\Elasticsearch\Endpoints\Indices\Alias;
 
-use Keboola\Elasticsearch\Common\Exceptions\InvalidArgumentException;
-use Keboola\Elasticsearch\Endpoints\AbstractEndpoint;
+use KBC\Elasticsearch\Common\Exceptions\InvalidArgumentException;
+use KBC\Elasticsearch\Endpoints\AbstractEndpoint;
 
 /**
  * Class AbstractAliasEndpoint
  *
- * @category Keboola\Elasticsearch
- * @package Keboola\Elasticsearch\Endpoints\Indices\Alias
+ * @category KBC\Elasticsearch
+ * @package KBC\Elasticsearch\Endpoints\Indices\Alias
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co
@@ -23,7 +23,7 @@ abstract class AbstractAliasEndpoint extends AbstractEndpoint
      * @param $name
      *
      * @return $this
-     * @throws \Keboola\Elasticsearch\Common\Exceptions\InvalidArgumentException
+     * @throws \KBC\Elasticsearch\Common\Exceptions\InvalidArgumentException
      *
      */
     public function setName($name)

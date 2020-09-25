@@ -1,14 +1,14 @@
 <?php
 
-namespace Keboola\Elasticsearch\Tests\Serializers;
+namespace KBC\Elasticsearch\Tests\Serializers;
 
-use Keboola\Elasticsearch\Serializers\ArrayToJSONSerializer;
+use KBC\Elasticsearch\Serializers\ArrayToJSONSerializer;
 use PHPUnit_Framework_TestCase;
 use Mockery as m;
 
 /**
  * Class ArrayToJSONSerializerTest
- * @package Keboola\Elasticsearch\Tests\Serializers
+ * @package KBC\Elasticsearch\Tests\Serializers
  */
 class ArrayToJSONSerializerTest extends PHPUnit_Framework_TestCase
 {

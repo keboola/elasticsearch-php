@@ -1,15 +1,15 @@
 <?php
 
-namespace Keboola\Elasticsearch\Endpoints;
+namespace KBC\Elasticsearch\Endpoints;
 
-use Keboola\Elasticsearch\Serializers\SerializerInterface;
-use Keboola\Elasticsearch\Transport;
+use KBC\Elasticsearch\Serializers\SerializerInterface;
+use KBC\Elasticsearch\Transport;
 
 /**
  * Class Bulk
  *
- * @category Keboola\Elasticsearch
- * @package Keboola\Elasticsearch\Endpoints
+ * @category KBC\Elasticsearch
+ * @package KBC\Elasticsearch\Endpoints
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co

@@ -1,11 +1,11 @@
 <?php
-use Keboola\Elasticsearch\ClientBuilder;
+use KBC\Elasticsearch\ClientBuilder;
 
 /**
  * Class SniffingConnectionPoolIntegrationTest
  *
  * @category   Tests
- * @package    Keboola\Elasticsearch
+ * @package    KBC\Elasticsearch
  * @subpackage Tests/SniffingConnectionPoolTest
  * @author     Zachary Tong <zachary.tong@elasticsearch.com>
  * @license    http://www.apache.org/licenses/LICENSE-2.0 Apache2

@@ -1,22 +1,22 @@
 <?php
 
-namespace Keboola\Elasticsearch\Namespaces;
+namespace KBC\Elasticsearch\Namespaces;
 
-use Keboola\Elasticsearch\Endpoints\AbstractEndpoint;
-use Keboola\Elasticsearch\Transport;
+use KBC\Elasticsearch\Endpoints\AbstractEndpoint;
+use KBC\Elasticsearch\Transport;
 
 /**
  * Class AbstractNamespace
  *
- * @category Keboola\Elasticsearch
- * @package Keboola\Elasticsearch\Namespaces
+ * @category KBC\Elasticsearch
+ * @package KBC\Elasticsearch\Namespaces
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co
  */
 abstract class AbstractNamespace
 {
-    /** @var \Keboola\Elasticsearch\Transport  */
+    /** @var \KBC\Elasticsearch\Transport  */
     protected $transport;
 
     /** @var  callback */

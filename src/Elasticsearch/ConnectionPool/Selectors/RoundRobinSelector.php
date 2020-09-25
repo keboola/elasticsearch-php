@@ -1,14 +1,14 @@
 <?php
 
-namespace Keboola\Elasticsearch\ConnectionPool\Selectors;
+namespace KBC\Elasticsearch\ConnectionPool\Selectors;
 
-use Keboola\Elasticsearch\Connections\ConnectionInterface;
+use KBC\Elasticsearch\Connections\ConnectionInterface;
 
 /**
  * Class RoundRobinSelector
  *
- * @category Keboola\Elasticsearch
- * @package Keboola\Elasticsearch\ConnectionPool\Selectors\ConnectionPool
+ * @category KBC\Elasticsearch
+ * @package KBC\Elasticsearch\ConnectionPool\Selectors\ConnectionPool
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co
@@ -25,7 +25,7 @@ class RoundRobinSelector implements SelectorInterface
      *
      * @param  ConnectionInterface[] $connections an array of ConnectionInterface instances to choose from
      *
-     * @return \Keboola\Elasticsearch\Connections\ConnectionInterface
+     * @return \KBC\Elasticsearch\Connections\ConnectionInterface
      */
     public function select($connections)
     {

@@ -1,14 +1,14 @@
 <?php
 
-namespace Keboola\Elasticsearch\Endpoints\Snapshot\Repository;
+namespace KBC\Elasticsearch\Endpoints\Snapshot\Repository;
 
-use Keboola\Elasticsearch\Endpoints\AbstractEndpoint;
+use KBC\Elasticsearch\Endpoints\AbstractEndpoint;
 
 /**
  * Class Get
  *
- * @category Keboola\Elasticsearch
- * @package Keboola\Elasticsearch\Endpoints\Snapshot\Repository
+ * @category KBC\Elasticsearch
+ * @package KBC\Elasticsearch\Endpoints\Snapshot\Repository
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co

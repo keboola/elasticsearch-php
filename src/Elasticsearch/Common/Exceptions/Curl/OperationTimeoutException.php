@@ -1,15 +1,15 @@
 <?php
 
-namespace Keboola\Elasticsearch\Common\Exceptions\Curl;
+namespace KBC\Elasticsearch\Common\Exceptions\Curl;
 
-use Keboola\Elasticsearch\Common\Exceptions\ElasticsearchException;
-use Keboola\Elasticsearch\Common\Exceptions\TransportException;
+use KBC\Elasticsearch\Common\Exceptions\ElasticsearchException;
+use KBC\Elasticsearch\Common\Exceptions\TransportException;
 
 /**
  * Class OperationTimeoutException
  *
- * @category Keboola\Elasticsearch
- * @package  Keboola\Elasticsearch\Common\Exceptions\Curl
+ * @category KBC\Elasticsearch
+ * @package  KBC\Elasticsearch\Common\Exceptions\Curl
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co

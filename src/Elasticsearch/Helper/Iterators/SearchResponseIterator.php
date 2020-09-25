@@ -1,15 +1,15 @@
 <?php
 
-namespace Keboola\Elasticsearch\Helper\Iterators;
+namespace KBC\Elasticsearch\Helper\Iterators;
 
-use Keboola\Elasticsearch\Client;
+use KBC\Elasticsearch\Client;
 use Iterator;
 
 /**
  * Class SearchResponseIterator
  *
- * @category Keboola\Elasticsearch
- * @package Keboola\Elasticsearch\Helper\Iterators
+ * @category KBC\Elasticsearch
+ * @package KBC\Elasticsearch\Helper\Iterators
  * @author   Arturo Mejia <arturo.mejia@kreatetechnology.com>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co

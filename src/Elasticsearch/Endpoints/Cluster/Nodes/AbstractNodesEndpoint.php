@@ -1,15 +1,15 @@
 <?php
 
-namespace Keboola\Elasticsearch\Endpoints\Cluster\Nodes;
+namespace KBC\Elasticsearch\Endpoints\Cluster\Nodes;
 
-use Keboola\Elasticsearch\Common\Exceptions\InvalidArgumentException;
-use Keboola\Elasticsearch\Endpoints\AbstractEndpoint;
+use KBC\Elasticsearch\Common\Exceptions\InvalidArgumentException;
+use KBC\Elasticsearch\Endpoints\AbstractEndpoint;
 
 /**
  * Class AbstractNodesEndpoint
  *
- * @category Keboola\Elasticsearch
- * @package Keboola\Elasticsearch\Endpoints\Cluster\Nodes
+ * @category KBC\Elasticsearch
+ * @package KBC\Elasticsearch\Endpoints\Cluster\Nodes
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co
@@ -22,7 +22,7 @@ abstract class AbstractNodesEndpoint extends AbstractEndpoint
     /**
      * @param $nodeID
      *
-     * @throws \Keboola\Elasticsearch\Common\Exceptions\InvalidArgumentException
+     * @throws \KBC\Elasticsearch\Common\Exceptions\InvalidArgumentException
      *
      * @return $this
      */

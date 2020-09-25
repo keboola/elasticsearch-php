@@ -1,18 +1,18 @@
 <?php
 
-namespace Keboola\Elasticsearch\Namespaces;
+namespace KBC\Elasticsearch\Namespaces;
 
-use Keboola\Elasticsearch\Common\Exceptions\Missing404Exception;
-use Keboola\Elasticsearch\Common\Exceptions\RoutingMissingException;
-use Keboola\Elasticsearch\Endpoints\AbstractEndpoint;
-use Keboola\Elasticsearch\Transport;
+use KBC\Elasticsearch\Common\Exceptions\Missing404Exception;
+use KBC\Elasticsearch\Common\Exceptions\RoutingMissingException;
+use KBC\Elasticsearch\Endpoints\AbstractEndpoint;
+use KBC\Elasticsearch\Transport;
 use GuzzleHttp\Ring\Future\FutureArrayInterface;
 
 /**
  * Trait AbstractNamespace
  *
- * @category Keboola\Elasticsearch
- * @package Keboola\Elasticsearch\Namespaces
+ * @category KBC\Elasticsearch
+ * @package KBC\Elasticsearch\Namespaces
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co

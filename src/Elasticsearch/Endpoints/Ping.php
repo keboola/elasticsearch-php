@@ -1,12 +1,12 @@
 <?php
 
-namespace Keboola\Elasticsearch\Endpoints;
+namespace KBC\Elasticsearch\Endpoints;
 
 /**
  * Class Ping
  *
- * @category Keboola\Elasticsearch
- * @package Keboola\Elasticsearch\Endpoints
+ * @category KBC\Elasticsearch
+ * @package KBC\Elasticsearch\Endpoints
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co

@@ -1,12 +1,12 @@
 <?php
 
-namespace Keboola\Elasticsearch\Namespaces;
+namespace KBC\Elasticsearch\Namespaces;
 
 /**
  * Class NodesNamespace
  *
- * @category Keboola\Elasticsearch
- * @package Keboola\Elasticsearch\Namespaces\NodesNamespace
+ * @category KBC\Elasticsearch
+ * @package KBC\Elasticsearch\Namespaces\NodesNamespace
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co
@@ -45,7 +45,7 @@ class NodesNamespace extends AbstractNamespace
         /** @var callback $endpointBuilder */
         $endpointBuilder = $this->endpoints;
 
-        /** @var \Keboola\Elasticsearch\Endpoints\Cluster\Nodes\Stats $endpoint */
+        /** @var \KBC\Elasticsearch\Endpoints\Cluster\Nodes\Stats $endpoint */
         $endpoint = $endpointBuilder('Cluster\Nodes\Stats');
         $endpoint->setNodeID($nodeID)
                  ->setMetric($metric)
@@ -74,7 +74,7 @@ class NodesNamespace extends AbstractNamespace
         /** @var callback $endpointBuilder */
         $endpointBuilder = $this->endpoints;
 
-        /** @var \Keboola\Elasticsearch\Endpoints\Cluster\Nodes\Info $endpoint */
+        /** @var \KBC\Elasticsearch\Endpoints\Cluster\Nodes\Info $endpoint */
         $endpoint = $endpointBuilder('Cluster\Nodes\Info');
         $endpoint->setNodeID($nodeID)->setMetric($metric);
         $endpoint->setParams($params);
@@ -100,7 +100,7 @@ class NodesNamespace extends AbstractNamespace
         /** @var callback $endpointBuilder */
         $endpointBuilder = $this->endpoints;
 
-        /** @var \Keboola\Elasticsearch\Endpoints\Cluster\Nodes\HotThreads $endpoint */
+        /** @var \KBC\Elasticsearch\Endpoints\Cluster\Nodes\HotThreads $endpoint */
         $endpoint = $endpointBuilder('Cluster\Nodes\HotThreads');
         $endpoint->setNodeID($nodeID);
         $endpoint->setParams($params);
@@ -124,7 +124,7 @@ class NodesNamespace extends AbstractNamespace
         /** @var callback $endpointBuilder */
         $endpointBuilder = $this->endpoints;
 
-        /** @var \Keboola\Elasticsearch\Endpoints\Cluster\Nodes\Shutdown $endpoint */
+        /** @var \KBC\Elasticsearch\Endpoints\Cluster\Nodes\Shutdown $endpoint */
         $endpoint = $endpointBuilder('Cluster\Nodes\Shutdown');
         $endpoint->setNodeID($nodeID);
         $endpoint->setParams($params);

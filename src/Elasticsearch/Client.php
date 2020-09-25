@@ -1,31 +1,31 @@
 <?php
 
-namespace Keboola\Elasticsearch;
+namespace KBC\Elasticsearch;
 
-use Keboola\Elasticsearch\Common\Exceptions\BadMethodCallException;
-use Keboola\Elasticsearch\Common\Exceptions\InvalidArgumentException;
-use Keboola\Elasticsearch\Common\Exceptions\NoNodesAvailableException;
-use Keboola\Elasticsearch\Common\Exceptions\BadRequest400Exception;
-use Keboola\Elasticsearch\Common\Exceptions\Missing404Exception;
-use Keboola\Elasticsearch\Common\Exceptions\TransportException;
-use Keboola\Elasticsearch\Endpoints\AbstractEndpoint;
-use Keboola\Elasticsearch\Namespaces\AbstractNamespace;
-use Keboola\Elasticsearch\Namespaces\CatNamespace;
-use Keboola\Elasticsearch\Namespaces\ClusterNamespace;
-use Keboola\Elasticsearch\Namespaces\IndicesNamespace;
-use Keboola\Elasticsearch\Namespaces\IngestNamespace;
-use Keboola\Elasticsearch\Namespaces\NamespaceBuilderInterface;
-use Keboola\Elasticsearch\Namespaces\NodesNamespace;
-use Keboola\Elasticsearch\Namespaces\RemoteNamespace;
-use Keboola\Elasticsearch\Namespaces\SnapshotNamespace;
-use Keboola\Elasticsearch\Namespaces\BooleanRequestWrapper;
-use Keboola\Elasticsearch\Namespaces\TasksNamespace;
+use KBC\Elasticsearch\Common\Exceptions\BadMethodCallException;
+use KBC\Elasticsearch\Common\Exceptions\InvalidArgumentException;
+use KBC\Elasticsearch\Common\Exceptions\NoNodesAvailableException;
+use KBC\Elasticsearch\Common\Exceptions\BadRequest400Exception;
+use KBC\Elasticsearch\Common\Exceptions\Missing404Exception;
+use KBC\Elasticsearch\Common\Exceptions\TransportException;
+use KBC\Elasticsearch\Endpoints\AbstractEndpoint;
+use KBC\Elasticsearch\Namespaces\AbstractNamespace;
+use KBC\Elasticsearch\Namespaces\CatNamespace;
+use KBC\Elasticsearch\Namespaces\ClusterNamespace;
+use KBC\Elasticsearch\Namespaces\IndicesNamespace;
+use KBC\Elasticsearch\Namespaces\IngestNamespace;
+use KBC\Elasticsearch\Namespaces\NamespaceBuilderInterface;
+use KBC\Elasticsearch\Namespaces\NodesNamespace;
+use KBC\Elasticsearch\Namespaces\RemoteNamespace;
+use KBC\Elasticsearch\Namespaces\SnapshotNamespace;
+use KBC\Elasticsearch\Namespaces\BooleanRequestWrapper;
+use KBC\Elasticsearch\Namespaces\TasksNamespace;
 
 /**
  * Class Client
  *
- * @category Keboola\Elasticsearch
- * @package  Keboola\Elasticsearch
+ * @category KBC\Elasticsearch
+ * @package  KBC\Elasticsearch
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co
@@ -121,7 +121,7 @@ class Client
         /** @var callback $endpointBuilder */
         $endpointBuilder = $this->endpoints;
 
-        /** @var \Keboola\Elasticsearch\Endpoints\Info $endpoint */
+        /** @var \KBC\Elasticsearch\Endpoints\Info $endpoint */
         $endpoint = $endpointBuilder('Info');
         $endpoint->setParams($params);
 
@@ -138,7 +138,7 @@ class Client
         /** @var callback $endpointBuilder */
         $endpointBuilder = $this->endpoints;
 
-        /** @var \Keboola\Elasticsearch\Endpoints\Ping $endpoint */
+        /** @var \KBC\Elasticsearch\Endpoints\Ping $endpoint */
         $endpoint = $endpointBuilder('Ping');
         $endpoint->setParams($params);
 
@@ -183,7 +183,7 @@ class Client
         /** @var callback $endpointBuilder */
         $endpointBuilder = $this->endpoints;
 
-        /** @var \Keboola\Elasticsearch\Endpoints\Get $endpoint */
+        /** @var \KBC\Elasticsearch\Endpoints\Get $endpoint */
         $endpoint = $endpointBuilder('Get');
         $endpoint->setID($id)
                  ->setIndex($index)
@@ -217,7 +217,7 @@ class Client
         /** @var callback $endpointBuilder */
         $endpointBuilder = $this->endpoints;
 
-        /** @var \Keboola\Elasticsearch\Endpoints\Get $endpoint */
+        /** @var \KBC\Elasticsearch\Endpoints\Get $endpoint */
         $endpoint = $endpointBuilder('Get');
         $endpoint->setID($id)
                  ->setIndex($index)
@@ -257,7 +257,7 @@ class Client
         /** @var callback $endpointBuilder */
         $endpointBuilder = $this->endpoints;
 
-        /** @var \Keboola\Elasticsearch\Endpoints\Delete $endpoint */
+        /** @var \KBC\Elasticsearch\Endpoints\Delete $endpoint */
         $endpoint = $endpointBuilder('Delete');
         $endpoint->setID($id)
                  ->setIndex($index)
@@ -317,7 +317,7 @@ class Client
         /** @var callback $endpointBuilder */
         $endpointBuilder = $this->endpoints;
 
-        /** @var \Keboola\Elasticsearch\Endpoints\DeleteByQuery $endpoint */
+        /** @var \KBC\Elasticsearch\Endpoints\DeleteByQuery $endpoint */
         $endpoint = $endpointBuilder('DeleteByQuery');
         $endpoint->setIndex($index)
                 ->setType($type)
@@ -352,7 +352,7 @@ class Client
         /** @var callback $endpointBuilder */
         $endpointBuilder = $this->endpoints;
 
-        /** @var \Keboola\Elasticsearch\Endpoints\Count $endpoint */
+        /** @var \KBC\Elasticsearch\Endpoints\Count $endpoint */
         $endpoint = $endpointBuilder('Count');
         $endpoint->setIndex($index)
                  ->setType($type)
@@ -393,7 +393,7 @@ class Client
         /** @var callback $endpointBuilder */
         $endpointBuilder = $this->endpoints;
 
-        /** @var \Keboola\Elasticsearch\Endpoints\CountPercolate $endpoint */
+        /** @var \KBC\Elasticsearch\Endpoints\CountPercolate $endpoint */
         $endpoint = $endpointBuilder('CountPercolate');
         $endpoint->setIndex($index)
                  ->setType($type)
@@ -426,7 +426,7 @@ class Client
         /** @var callback $endpointBuilder */
         $endpointBuilder = $this->endpoints;
 
-        /** @var \Keboola\Elasticsearch\Endpoints\Percolate $endpoint */
+        /** @var \KBC\Elasticsearch\Endpoints\Percolate $endpoint */
         $endpoint = $endpointBuilder('Percolate');
         $endpoint->setIndex($index)
                  ->setType($type)
@@ -459,7 +459,7 @@ class Client
         /** @var callback $endpointBuilder */
         $endpointBuilder = $this->endpoints;
 
-        /** @var \Keboola\Elasticsearch\Endpoints\MPercolate $endpoint */
+        /** @var \KBC\Elasticsearch\Endpoints\MPercolate $endpoint */
         $endpoint = $endpointBuilder('MPercolate');
         $endpoint->setIndex($index)
                  ->setType($type)
@@ -497,7 +497,7 @@ class Client
         /** @var callback $endpointBuilder */
         $endpointBuilder = $this->endpoints;
 
-        /** @var \Keboola\Elasticsearch\Endpoints\TermVectors $endpoint */
+        /** @var \KBC\Elasticsearch\Endpoints\TermVectors $endpoint */
         $endpoint = $endpointBuilder('TermVectors');
         $endpoint->setIndex($index)
                  ->setType($type)
@@ -536,7 +536,7 @@ class Client
         /** @var callback $endpointBuilder */
         $endpointBuilder = $this->endpoints;
 
-        /** @var \Keboola\Elasticsearch\Endpoints\MTermVectors $endpoint */
+        /** @var \KBC\Elasticsearch\Endpoints\MTermVectors $endpoint */
         $endpoint = $endpointBuilder('MTermVectors');
         $endpoint->setIndex($index)
                  ->setType($type)
@@ -572,7 +572,7 @@ class Client
         /** @var callback $endpointBuilder */
         $endpointBuilder = $this->endpoints;
 
-        /** @var \Keboola\Elasticsearch\Endpoints\Exists $endpoint */
+        /** @var \KBC\Elasticsearch\Endpoints\Exists $endpoint */
         $endpoint = $endpointBuilder('Exists');
         $endpoint->setID($id)
                  ->setIndex($index)
@@ -609,7 +609,7 @@ class Client
         /** @var callback $endpointBuilder */
         $endpointBuilder = $this->endpoints;
 
-        /** @var \Keboola\Elasticsearch\Endpoints\Mget $endpoint */
+        /** @var \KBC\Elasticsearch\Endpoints\Mget $endpoint */
         $endpoint = $endpointBuilder('Mget');
         $endpoint->setIndex($index)
                  ->setType($type)
@@ -638,7 +638,7 @@ class Client
         /** @var callback $endpointBuilder */
         $endpointBuilder = $this->endpoints;
 
-        /** @var \Keboola\Elasticsearch\Endpoints\Msearch $endpoint */
+        /** @var \KBC\Elasticsearch\Endpoints\Msearch $endpoint */
         $endpoint = $endpointBuilder('Msearch');
         $endpoint->setIndex($index)
                  ->setType($type)
@@ -668,7 +668,7 @@ class Client
         /** @var callback $endpointBuilder */
         $endpointBuilder = $this->endpoints;
 
-        /** @var \Keboola\Elasticsearch\Endpoints\MsearchTemplate $endpoint */
+        /** @var \KBC\Elasticsearch\Endpoints\MsearchTemplate $endpoint */
         $endpoint = $endpointBuilder('MsearchTemplate');
         $endpoint->setIndex($index)
             ->setType($type)
@@ -708,7 +708,7 @@ class Client
         /** @var callback $endpointBuilder */
         $endpointBuilder = $this->endpoints;
 
-        /** @var \Keboola\Elasticsearch\Endpoints\Create $endpoint */
+        /** @var \KBC\Elasticsearch\Endpoints\Create $endpoint */
         $endpoint = $endpointBuilder('Create');
         $endpoint->setID($id)
                  ->setIndex($index)
@@ -741,7 +741,7 @@ class Client
         /** @var callback $endpointBuilder */
         $endpointBuilder = $this->endpoints;
 
-        /** @var \Keboola\Elasticsearch\Endpoints\Bulk $endpoint */
+        /** @var \KBC\Elasticsearch\Endpoints\Bulk $endpoint */
         $endpoint = $endpointBuilder('Bulk');
         $endpoint->setIndex($index)
                  ->setType($type)
@@ -782,7 +782,7 @@ class Client
         /** @var callback $endpointBuilder */
         $endpointBuilder = $this->endpoints;
 
-        /** @var \Keboola\Elasticsearch\Endpoints\Index $endpoint */
+        /** @var \KBC\Elasticsearch\Endpoints\Index $endpoint */
         $endpoint = $endpointBuilder('Index');
         $endpoint->setID($id)
                  ->setIndex($index)
@@ -811,7 +811,7 @@ class Client
 
         /** @var callback $endpointBuilder */
         $endpointBuilder = $this->endpoints;
-        /** @var \Keboola\Elasticsearch\Endpoints\Reindex $endpoint */
+        /** @var \KBC\Elasticsearch\Endpoints\Reindex $endpoint */
         $endpoint = $endpointBuilder('Reindex');
         $endpoint->setBody($body);
         $endpoint->setParams($params);
@@ -839,7 +839,7 @@ class Client
         /** @var callback $endpointBuilder */
         $endpointBuilder = $this->endpoints;
 
-        /** @var \Keboola\Elasticsearch\Endpoints\Suggest $endpoint */
+        /** @var \KBC\Elasticsearch\Endpoints\Suggest $endpoint */
         $endpoint = $endpointBuilder('Suggest');
         $endpoint->setIndex($index)
                  ->setBody($body);
@@ -883,7 +883,7 @@ class Client
         /** @var callback $endpointBuilder */
         $endpointBuilder = $this->endpoints;
 
-        /** @var \Keboola\Elasticsearch\Endpoints\Explain $endpoint */
+        /** @var \KBC\Elasticsearch\Endpoints\Explain $endpoint */
         $endpoint = $endpointBuilder('Explain');
         $endpoint->setID($id)
                  ->setIndex($index)
@@ -944,7 +944,7 @@ class Client
         /** @var callback $endpointBuilder */
         $endpointBuilder = $this->endpoints;
 
-        /** @var \Keboola\Elasticsearch\Endpoints\Search $endpoint */
+        /** @var \KBC\Elasticsearch\Endpoints\Search $endpoint */
         $endpoint = $endpointBuilder('Search');
         $endpoint->setIndex($index)
                  ->setType($type)
@@ -976,7 +976,7 @@ class Client
         /** @var callback $endpointBuilder */
         $endpointBuilder = $this->endpoints;
 
-        /** @var \Keboola\Elasticsearch\Endpoints\SearchShards $endpoint */
+        /** @var \KBC\Elasticsearch\Endpoints\SearchShards $endpoint */
         $endpoint = $endpointBuilder('SearchShards');
         $endpoint->setIndex($index)
                  ->setType($type);
@@ -1002,7 +1002,7 @@ class Client
         /** @var callback $endpointBuilder */
         $endpointBuilder = $this->endpoints;
 
-        /** @var \Keboola\Elasticsearch\Endpoints\Search $endpoint */
+        /** @var \KBC\Elasticsearch\Endpoints\Search $endpoint */
         $endpoint = $endpointBuilder('SearchTemplate');
         $endpoint->setIndex($index)
                  ->setType($type)
@@ -1030,7 +1030,7 @@ class Client
         /** @var callback $endpointBuilder */
         $endpointBuilder = $this->endpoints;
 
-        /** @var \Keboola\Elasticsearch\Endpoints\Scroll $endpoint */
+        /** @var \KBC\Elasticsearch\Endpoints\Scroll $endpoint */
         $endpoint = $endpointBuilder('Scroll');
         $endpoint->setScrollID($scrollID)
                  ->setScroll($scroll)
@@ -1057,7 +1057,7 @@ class Client
         /** @var callback $endpointBuilder */
         $endpointBuilder = $this->endpoints;
 
-        /** @var \Keboola\Elasticsearch\Endpoints\ClearScroll $endpoint */
+        /** @var \KBC\Elasticsearch\Endpoints\ClearScroll $endpoint */
         $endpoint = $endpointBuilder('ClearScroll');
         $endpoint->setScrollID($scrollID)
                  ->setBody($body);
@@ -1099,7 +1099,7 @@ class Client
         /** @var callback $endpointBuilder */
         $endpointBuilder = $this->endpoints;
 
-        /** @var \Keboola\Elasticsearch\Endpoints\Update $endpoint */
+        /** @var \KBC\Elasticsearch\Endpoints\Update $endpoint */
         $endpoint = $endpointBuilder('Update');
         $endpoint->setID($id)
                  ->setIndex($index)
@@ -1192,7 +1192,7 @@ class Client
         /** @var callback $endpointBuilder */
         $endpointBuilder = $this->endpoints;
 
-        /** @var \Keboola\Elasticsearch\Endpoints\UpdateByQuery $endpoint */
+        /** @var \KBC\Elasticsearch\Endpoints\UpdateByQuery $endpoint */
         $endpoint = $endpointBuilder('UpdateByQuery');
         $endpoint->setIndex($index)
             ->setType($type)
@@ -1218,7 +1218,7 @@ class Client
         /** @var callback $endpointBuilder */
         $endpointBuilder = $this->endpoints;
 
-        /** @var \Keboola\Elasticsearch\Endpoints\Script\Get $endpoint */
+        /** @var \KBC\Elasticsearch\Endpoints\Script\Get $endpoint */
         $endpoint = $endpointBuilder('Script\Get');
         $endpoint->setID($id)
                  ->setLang($lang);
@@ -1243,7 +1243,7 @@ class Client
         /** @var callback $endpointBuilder */
         $endpointBuilder = $this->endpoints;
 
-        /** @var \Keboola\Elasticsearch\Endpoints\Script\Delete $endpoint */
+        /** @var \KBC\Elasticsearch\Endpoints\Script\Delete $endpoint */
         $endpoint = $endpointBuilder('Script\Delete');
         $endpoint->setID($id)
                  ->setLang($lang);
@@ -1269,7 +1269,7 @@ class Client
         /** @var callback $endpointBuilder */
         $endpointBuilder = $this->endpoints;
 
-        /** @var \Keboola\Elasticsearch\Endpoints\Script\Put $endpoint */
+        /** @var \KBC\Elasticsearch\Endpoints\Script\Put $endpoint */
         $endpoint = $endpointBuilder('Script\Put');
         $endpoint->setID($id)
                  ->setLang($lang)
@@ -1293,7 +1293,7 @@ class Client
         /** @var callback $endpointBuilder */
         $endpointBuilder = $this->endpoints;
 
-        /** @var \Keboola\Elasticsearch\Endpoints\Template\Get $endpoint */
+        /** @var \KBC\Elasticsearch\Endpoints\Template\Get $endpoint */
         $endpoint = $endpointBuilder('Template\Get');
         $endpoint->setID($id);
         $endpoint->setParams($params);
@@ -1315,7 +1315,7 @@ class Client
         /** @var callback $endpointBuilder */
         $endpointBuilder = $this->endpoints;
 
-        /** @var \Keboola\Elasticsearch\Endpoints\Template\Delete $endpoint */
+        /** @var \KBC\Elasticsearch\Endpoints\Template\Delete $endpoint */
         $endpoint = $endpointBuilder('Template\Delete');
         $endpoint->setID($id);
         $endpoint->setParams($params);
@@ -1338,7 +1338,7 @@ class Client
         /** @var callback $endpointBuilder */
         $endpointBuilder = $this->endpoints;
 
-        /** @var \Keboola\Elasticsearch\Endpoints\Template\Put $endpoint */
+        /** @var \KBC\Elasticsearch\Endpoints\Template\Put $endpoint */
         $endpoint = $endpointBuilder('Template\Put');
         $endpoint->setID($id)
             ->setBody($body)
@@ -1367,7 +1367,7 @@ class Client
         /** @var callback $endpointBuilder */
         $endpointBuilder = $this->endpoints;
 
-        /** @var \Keboola\Elasticsearch\Endpoints\FieldStats $endpoint */
+        /** @var \KBC\Elasticsearch\Endpoints\FieldStats $endpoint */
         $endpoint = $endpointBuilder('FieldStats');
         $endpoint->setIndex($index)
             ->setBody($body)
@@ -1394,7 +1394,7 @@ class Client
         /** @var callback $endpointBuilder */
         $endpointBuilder = $this->endpoints;
 
-        /** @var \Keboola\Elasticsearch\Endpoints\FieldCaps $endpoint */
+        /** @var \KBC\Elasticsearch\Endpoints\FieldCaps $endpoint */
         $endpoint = $endpointBuilder('FieldCaps');
         $endpoint->setIndex($index)
             ->setBody($body)
@@ -1418,7 +1418,7 @@ class Client
         /** @var callback $endpointBuilder */
         $endpointBuilder = $this->endpoints;
 
-        /** @var \Keboola\Elasticsearch\Endpoints\RenderSearchTemplate $endpoint */
+        /** @var \KBC\Elasticsearch\Endpoints\RenderSearchTemplate $endpoint */
         $endpoint = $endpointBuilder('RenderSearchTemplate');
         $endpoint->setBody($body)
             ->setID($id);

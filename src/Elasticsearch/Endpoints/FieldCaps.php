@@ -1,15 +1,15 @@
 <?php
 
-namespace Keboola\Elasticsearch\Endpoints;
+namespace KBC\Elasticsearch\Endpoints;
 
-use Keboola\Elasticsearch\Common\Exceptions\InvalidArgumentException;
-use Keboola\Elasticsearch\Common\Exceptions;
+use KBC\Elasticsearch\Common\Exceptions\InvalidArgumentException;
+use KBC\Elasticsearch\Common\Exceptions;
 
 /**
  * Class FieldCaps
  *
- * @category Keboola\Elasticsearch
- * @package Keboola\Elasticsearch\Endpoints
+ * @category KBC\Elasticsearch
+ * @package KBC\Elasticsearch\Endpoints
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co
@@ -19,7 +19,7 @@ class FieldCaps extends AbstractEndpoint
     /**
      * @param array $body
      *
-     * @throws \Keboola\Elasticsearch\Common\Exceptions\InvalidArgumentException
+     * @throws \KBC\Elasticsearch\Common\Exceptions\InvalidArgumentException
      * @return $this
      */
     public function setBody($body)

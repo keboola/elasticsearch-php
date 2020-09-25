@@ -1,17 +1,17 @@
 <?php
 
-namespace Keboola\Elasticsearch\Namespaces;
+namespace KBC\Elasticsearch\Namespaces;
 
-use Keboola\Elasticsearch\Endpoints\Ingest\Pipeline\Delete;
-use Keboola\Elasticsearch\Endpoints\Ingest\Pipeline\Get;
-use Keboola\Elasticsearch\Endpoints\Ingest\Pipeline\Put;
-use Keboola\Elasticsearch\Endpoints\Ingest\Simulate;
+use KBC\Elasticsearch\Endpoints\Ingest\Pipeline\Delete;
+use KBC\Elasticsearch\Endpoints\Ingest\Pipeline\Get;
+use KBC\Elasticsearch\Endpoints\Ingest\Pipeline\Put;
+use KBC\Elasticsearch\Endpoints\Ingest\Simulate;
 
 /**
  * Class IngestNamespace
  *
- * @category Keboola\Elasticsearch
- * @package Keboola\Elasticsearch\Namespaces\IngestNamespace
+ * @category KBC\Elasticsearch
+ * @package KBC\Elasticsearch\Namespaces\IngestNamespace
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co

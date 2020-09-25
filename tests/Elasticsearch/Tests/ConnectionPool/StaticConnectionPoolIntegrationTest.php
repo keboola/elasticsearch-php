@@ -4,7 +4,7 @@
  * Class StaticConnectionPoolIntegrationTest
  *
  * @category   Tests
- * @package    Keboola\Elasticsearch
+ * @package    KBC\Elasticsearch
  * @subpackage Tests/StaticConnectionPoolTest
  * @author     Zachary Tong <zachary.tong@elasticsearch.com>
  * @license    http://www.apache.org/licenses/LICENSE-2.0 Apache2
@@ -14,9 +14,9 @@ class StaticConnectionPoolIntegrationTest extends \PHPUnit_Framework_TestCase
 {
     // Issue #636
     public function test404Liveness() {
-        $client = \Keboola\Elasticsearch\ClientBuilder::create()
+        $client = \KBC\Elasticsearch\ClientBuilder::create()
             ->setHosts([$_SERVER['ES_TEST_HOST']])
-            ->setConnectionPool(\Keboola\Elasticsearch\ConnectionPool\StaticConnectionPool::class)
+            ->setConnectionPool(\KBC\Elasticsearch\ConnectionPool\StaticConnectionPool::class)
             ->build();
 
         $connection = $client->transport->getConnection();

@@ -1,15 +1,15 @@
 <?php
 
-namespace Keboola\Elasticsearch\Endpoints\Tasks;
+namespace KBC\Elasticsearch\Endpoints\Tasks;
 
-use Keboola\Elasticsearch\Common\Exceptions;
-use Keboola\Elasticsearch\Endpoints\AbstractEndpoint;
+use KBC\Elasticsearch\Common\Exceptions;
+use KBC\Elasticsearch\Endpoints\AbstractEndpoint;
 
 /**
  * Class Get
  *
- * @category Keboola\Elasticsearch
- * @package Keboola\Elasticsearch\Endpoints\Tasks
+ * @category KBC\Elasticsearch
+ * @package KBC\Elasticsearch\Endpoints\Tasks
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co
@@ -21,7 +21,7 @@ class Get extends AbstractEndpoint
     /**
      * @param string $taskId
      *
-     * @throws \Keboola\Elasticsearch\Common\Exceptions\InvalidArgumentException
+     * @throws \KBC\Elasticsearch\Common\Exceptions\InvalidArgumentException
      * @return $this
      */
     public function setTaskId($taskId)
@@ -36,7 +36,7 @@ class Get extends AbstractEndpoint
     }
 
     /**
-     * @throws \Keboola\Elasticsearch\Common\Exceptions\RuntimeException
+     * @throws \KBC\Elasticsearch\Common\Exceptions\RuntimeException
      * @return string
      */
     public function getURI()

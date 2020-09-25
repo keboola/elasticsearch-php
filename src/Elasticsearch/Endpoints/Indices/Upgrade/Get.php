@@ -5,16 +5,16 @@
  * Time: 14:34:49 pm
  */
 
-namespace Keboola\Elasticsearch\Endpoints\Indices\Upgrade;
+namespace KBC\Elasticsearch\Endpoints\Indices\Upgrade;
 
-use Keboola\Elasticsearch\Endpoints\AbstractEndpoint;
-use Keboola\Elasticsearch\Common\Exceptions;
+use KBC\Elasticsearch\Endpoints\AbstractEndpoint;
+use KBC\Elasticsearch\Common\Exceptions;
 
 /**
  * Class Post
  *
- * @category Keboola\Elasticsearch
- * @package Keboola\Elasticsearch\Endpoints\Indices
+ * @category KBC\Elasticsearch
+ * @package KBC\Elasticsearch\Endpoints\Indices
  * @author   Zachary Tong <zach@elastic.co>
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link     http://elastic.co

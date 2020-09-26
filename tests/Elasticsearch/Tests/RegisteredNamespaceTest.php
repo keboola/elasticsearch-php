@@ -2,8 +2,8 @@
 
 namespace KBC\Elasticsearch\Tests;
 
-use KBC\Elasticsearch;
 use KBC\Elasticsearch\ClientBuilder;
+use KBC\Elasticsearch\Namespaces\NamespaceBuilderInterface;
 use KBC\Elasticsearch\Serializers\SerializerInterface;
 use KBC\Elasticsearch\Transport;
 use Mockery as m;
@@ -43,7 +43,7 @@ class RegisteredNamespaceTest extends \PHPUnit_Framework_TestCase
     }
 }
 
-class FooNamespaceBuilder implements KBC\Elasticsearch\Namespaces\NamespaceBuilderInterface
+class FooNamespaceBuilder implements NamespaceBuilderInterface
 {
     public function getName()
     {

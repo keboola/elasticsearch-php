@@ -3,7 +3,8 @@
 namespace KBC\Elasticsearch\Tests;
 
 use Doctrine\Common\Inflector\Inflector;
-use KBC\Elasticsearch;
+use KBC\Elasticsearch\Client;
+use KBC\Elasticsearch\ClientBuilder;
 use KBC\Elasticsearch\Common\Exceptions\BadRequest400Exception;
 use KBC\Elasticsearch\Common\Exceptions\Conflict409Exception;
 use KBC\Elasticsearch\Common\Exceptions\Forbidden403Exception;
@@ -12,7 +13,7 @@ use KBC\Elasticsearch\Common\Exceptions\RequestTimeout408Exception;
 use KBC\Elasticsearch\Common\Exceptions\ServerErrorResponseException;
 use KBC\Elasticsearch\Common\Exceptions\RoutingMissingException;
 use GuzzleHttp\Ring\Future\FutureArrayInterface;
-use stdClass;
+use KBC\Elasticsearch\Namespaces\CatNamespace;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Finder\SplFileInfo;
 use Symfony\Component\Yaml\Exception\ParseException;
@@ -34,7 +35,7 @@ class YamlRunnerTest extends \PHPUnit_Framework_TestCase
     /** @var Parser Yaml parser for reading integrations tests */
     private $yaml;
 
-    /** @var KBC\Elasticsearch\Client client used by elasticsearch */
+    /** @var Client client used by elasticsearch */
     private $client;
 
     /** @var string Es version */
@@ -105,7 +106,7 @@ class YamlRunnerTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->clean();
-        $builder = KBC\Elasticsearch\ClientBuilder::create()->setHosts([self::getHost()]);
+        $builder = ClientBuilder::create()->setHosts([self::getHost()]);
         if (version_compare(phpversion(), '5.6.6', '<') || ! defined('JSON_PRESERVE_ZERO_FRACTION')) {
             $builder->allowBadJSONSerialization();
         }
@@ -317,7 +318,7 @@ class YamlRunnerTest extends \PHPUnit_Framework_TestCase
         }
 
         // TODO remove this after cat testing situation resolved
-        if ($caller instanceof KBC\Elasticsearch\Namespaces\CatNamespace) {
+        if ($caller instanceof CatNamespace) {
             if (!isset($endpointParams->format)) {
                 $endpointParams->format = 'text';
             }

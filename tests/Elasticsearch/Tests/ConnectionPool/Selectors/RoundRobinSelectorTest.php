@@ -19,13 +19,13 @@ class RoundRobinSelectorTest extends \PHPUnit_Framework_TestCase
     /**
      * Add Ten connections, select 15 to verify round robin
      *
-     * @covers \KBC\Elasticsearch\ConnectionPool\Selectors\RoundRobinSelector::select
+     * @covers \RoundRobinSelector()::select
      *
      * @return void
      */
     public function testTenConnections()
     {
-        $roundRobin = new KBC\Elasticsearch\ConnectionPool\Selectors\RoundRobinSelector();
+        $roundRobin = new Elasticsearch\ConnectionPool\Selectors\RoundRobinSelector();
 
         $mockConnections = array();
         foreach (range(0, 10) as $index) {
@@ -46,13 +46,13 @@ class RoundRobinSelectorTest extends \PHPUnit_Framework_TestCase
      * Add Ten connections, select five, remove thre, test another 10 to check
      * that the round-robining works after removing connections
      *
-     * @covers \KBC\Elasticsearch\ConnectionPool\Selectors\RoundRobinSelector::select
+     * @covers \KBC\Elasticsearch\ConnectionPool\Selectors\RoundRobinSelector()::select
      *
      * @return void
      */
     public function testAddTenConnectionsestFiveTRemoveThree()
     {
-        $roundRobin = new KBC\Elasticsearch\ConnectionPool\Selectors\RoundRobinSelector();
+        $roundRobin = new Elasticsearch\ConnectionPool\Selectors\RoundRobinSelector();
 
         $mockConnections = array();
         foreach (range(0, 10) as $index) {

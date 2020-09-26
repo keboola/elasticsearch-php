@@ -34,7 +34,7 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "KBC\\Elasticsearch\\Tests\\":      "tests/Elasticsearch/Tests/"
+      "KBC\\Elasticsearch\\Tests\\": "tests/Elasticsearch/Tests/"
     }
   }
 }

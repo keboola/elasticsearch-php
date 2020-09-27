@@ -1,6 +1,6 @@
 <?php
 
-namespace Keboola\KBC\Elasticsearch\Endpoints;
+namespace KBC\Elasticsearch\Endpoints;
 
 use KBC\Elasticsearch\Common\Exceptions;
 

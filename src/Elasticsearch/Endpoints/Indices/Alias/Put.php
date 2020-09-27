@@ -1,6 +1,6 @@
 <?php
 
-namespace Keboola\KBC\Elasticsearch\Endpoints\Indices\Alias;
+namespace KBC\Elasticsearch\Endpoints\Indices\Alias;
 
 use KBC\Elasticsearch\Endpoints\AbstractEndpoint;
 use KBC\Elasticsearch\Common\Exceptions;

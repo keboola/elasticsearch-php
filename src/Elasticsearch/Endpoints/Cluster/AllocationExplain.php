@@ -1,6 +1,6 @@
 <?php
 
-namespace Keboola\KBC\Elasticsearch\Endpoints\Cluster;
+namespace KBC\Elasticsearch\Endpoints\Cluster;
 
 use KBC\Elasticsearch\Endpoints\AbstractEndpoint;
 

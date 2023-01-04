@@ -578,7 +578,7 @@ class ClientBuilder
         }
 
         if (is_null($this->transport)) {
-            $this->transport = new Transport($this->retries, $this->connectionPool, $this->logger, $this->sniffOnStart);
+            $this->transport = new Transport($this->retries, $this->connectionPool, $this->sniffOnStart, $this->logger);
         }
     }
 

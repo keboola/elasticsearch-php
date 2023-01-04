@@ -4,6 +4,8 @@ docker run --rm -it --entrypoint=/usr/local/bin/php --volume $(pwd):/app prooph/
 
 docker run --rm -it --entrypoint=/usr/local/bin/php --volume $(pwd):/app prooph/composer:8.0 /app/vendor/bin/rector
 
+docker run --rm -it --entrypoint=/usr/local/bin/php --volume $(pwd):/app prooph/composer:8.0 /app/vendor/bin/phpstan analyse src
+
 
 elasticsearch-php
 =================

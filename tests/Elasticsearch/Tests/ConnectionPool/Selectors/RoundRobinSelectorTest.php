@@ -14,7 +14,7 @@ use KBC\Elasticsearch;
  * @license    http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link       http://elasticsearch.org
  */
-class RoundRobinSelectorTest extends \PHPUnit_Framework_TestCase
+class RoundRobinSelectorTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * Add Ten connections, select 15 to verify round robin
@@ -29,9 +29,7 @@ class RoundRobinSelectorTest extends \PHPUnit_Framework_TestCase
 
         $mockConnections = [];
         foreach (range(0, 10) as $index) {
-            $mockConnections[$index] = $this->getMockBuilder('\Elasticsearch\Connections\CurlMultiConnection')
-                ->disableOriginalConstructor()
-                ->getMock();
+            $mockConnections[$index] = $this->createMock('\Elasticsearch\Connections\CurlMultiConnection');
         }
 
         foreach (range(0, 15) as $index) {
@@ -56,9 +54,7 @@ class RoundRobinSelectorTest extends \PHPUnit_Framework_TestCase
 
         $mockConnections = [];
         foreach (range(0, 10) as $index) {
-            $mockConnections[$index] = $this->getMockBuilder('\Elasticsearch\Connections\CurlMultiConnection')
-                ->disableOriginalConstructor()
-                ->getMock();
+            $mockConnections[$index] = $this->createMock('\Elasticsearch\Connections\CurlMultiConnection');
         }
 
         foreach (range(0, 4) as $index) {

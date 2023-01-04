@@ -4,7 +4,7 @@ namespace KBC\Elasticsearch\Tests\Endpoints;
 
 use KBC\Elasticsearch\Endpoints\AbstractEndpoint;
 
-class AbstractEndpointTest extends \PHPUnit_Framework_TestCase
+class AbstractEndpointTest extends \PHPUnit\Framework\TestCase
 {
     private $endpoint;
 

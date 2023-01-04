@@ -142,7 +142,7 @@ class Client
 
         try {
             $this->performRequest($endpoint);
-        } catch (Missing404Exception|TransportException|NoNodesAvailableException $exception) {
+        } catch (Missing404Exception|TransportException|NoNodesAvailableException) {
             return false;
         }
 

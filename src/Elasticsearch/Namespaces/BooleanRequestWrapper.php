@@ -49,7 +49,7 @@ trait BooleanRequestWrapper
                 // async mode, can't easily resolve this...punt to user
                 return $response;
             }
-        } catch (Missing404Exception|RoutingMissingException $exception) {
+        } catch (Missing404Exception|RoutingMissingException) {
             return false;
         }
     }

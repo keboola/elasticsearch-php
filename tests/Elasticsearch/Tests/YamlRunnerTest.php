@@ -30,7 +30,7 @@ use Symfony\Component\Yaml\Yaml;
  * @license    http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link       http://elasticsearch.org
  */
-class YamlRunnerTest extends \PHPUnit_Framework_TestCase
+class YamlRunnerTest extends \PHPUnit\Framework\TestCase
 {
     /** @var Parser Yaml parser for reading integrations tests */
     private $yaml;
@@ -888,7 +888,7 @@ class YamlRunnerTest extends \PHPUnit_Framework_TestCase
         foreach ($documents as $documentString) {
             try {
                 if (!$setupSkip) {
-                    $documentParsed = $this->yaml->parse($documentString, false, false, true);
+                    $documentParsed = $this->yaml->parse($documentString, false);
                     $skip = false;
                 }
             } catch (ParseException $exception) {

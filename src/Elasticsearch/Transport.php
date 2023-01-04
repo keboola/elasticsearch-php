@@ -45,10 +45,9 @@ class Transport
      *
      * @param $retries
      * @param bool $sniffOnStart
-     * @param ConnectionPool\AbstractConnectionPool $connectionPool
      * @param \Psr\Log\LoggerInterface $log    Monolog logger object
      */
-    public function __construct($retries, $sniffOnStart = false, AbstractConnectionPool $connectionPool, LoggerInterface $log)
+    public function __construct($retries, LoggerInterface $log, AbstractConnectionPool $connectionPool, $sniffOnStart = false)
     {
         $this->log            = $log;
         $this->connectionPool = $connectionPool;
@@ -93,15 +92,15 @@ class Transport
             throw $exception;
         }
 
-        $response             = array();
+        $response             = [];
         $caughtException      = null;
         $this->lastConnection = $connection;
 
         $future = $connection->performRequest(
             $method,
             $uri,
-            $params,
             $body,
+            $params,
             $options,
             $this
         );
@@ -134,7 +133,7 @@ class Transport
     public function resultOrFuture($result, $options = [])
     {
         $response = null;
-        $async = isset($options['client']['future']) ? $options['client']['future'] : null;
+        $async = $options['client']['future'] ?? null;
         if (is_null($async) || $async === false) {
             do {
                 $result = $result->wait();

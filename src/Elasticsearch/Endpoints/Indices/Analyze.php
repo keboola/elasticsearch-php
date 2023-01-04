@@ -53,20 +53,7 @@ class Analyze extends AbstractEndpoint
      */
     public function getParamWhitelist()
     {
-        return array(
-            'analyzer',
-            'field',
-            'filter',
-            'index',
-            'prefer_local',
-            'text',
-            'tokenizer',
-            'format',
-            'char_filter',
-            'explain',
-            'attributes',
-            'format'
-        );
+        return ['analyzer', 'field', 'filter', 'index', 'prefer_local', 'text', 'tokenizer', 'format', 'char_filter', 'explain', 'attributes', 'format'];
     }
 
     /**

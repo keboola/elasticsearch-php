@@ -92,11 +92,7 @@ class Rollover extends AbstractEndpoint
      */
     public function getParamWhitelist()
     {
-        return array(
-            'timeout',
-            'master_timeout',
-            'wait_for_active_shards',
-        );
+        return ['timeout', 'master_timeout', 'wait_for_active_shards'];
     }
 
     /**

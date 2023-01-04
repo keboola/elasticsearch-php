@@ -29,8 +29,6 @@ interface NamespaceBuilderInterface
      * and serializer objects are provided so that your namespace may do whatever custom
      * logic is required.
      *
-     * @param Transport $transport
-     * @param SerializerInterface $serializer
      * @return Object
      */
     public function getObject(Transport $transport, SerializerInterface $serializer);

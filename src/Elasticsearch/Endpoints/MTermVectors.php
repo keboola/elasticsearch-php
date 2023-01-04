@@ -45,19 +45,7 @@ class MTermVectors extends AbstractEndpoint
      */
     public function getParamWhitelist()
     {
-        return array(
-            'ids',
-            'term_statistics',
-            'field_statistics',
-            'fields',
-            'offsets',
-            'positions',
-            'payloads',
-            'preference',
-            'routing',
-            'parent',
-            'realtime'
-        );
+        return ['ids', 'term_statistics', 'field_statistics', 'fields', 'offsets', 'positions', 'payloads', 'preference', 'routing', 'parent', 'realtime'];
     }
 
     /**

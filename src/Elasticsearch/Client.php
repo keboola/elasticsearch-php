@@ -32,7 +32,7 @@ use KBC\Elasticsearch\Namespaces\TasksNamespace;
  */
 class Client
 {
-    const VERSION = '5.5.0';
+    public const VERSION = '5.5.0';
 
     /**
      * @var Transport
@@ -93,8 +93,6 @@ class Client
     /**
      * Client constructor
      *
-     * @param Transport $transport
-     * @param callable $endpoint
      * @param AbstractNamespace[] $registeredNamespaces
      */
     public function __construct(Transport $transport, callable $endpoint, array $registeredNamespaces)
@@ -144,11 +142,7 @@ class Client
 
         try {
             $this->performRequest($endpoint);
-        } catch (Missing404Exception $exception) {
-            return false;
-        } catch (TransportException $exception) {
-            return false;
-        } catch (NoNodesAvailableException $exception) {
+        } catch (Missing404Exception|TransportException|NoNodesAvailableException) {
             return false;
         }
 
@@ -306,7 +300,7 @@ class Client
      *
      * @return array
      */
-    public function deleteByQuery($params = array())
+    public function deleteByQuery($params = [])
     {
         $index = $this->extractArgument($params, 'index');
 
@@ -343,7 +337,7 @@ class Client
      *
      * @return array
      */
-    public function count($params = array())
+    public function count($params = [])
     {
         $index = $this->extractArgument($params, 'index');
         $type = $this->extractArgument($params, 'type');
@@ -383,7 +377,7 @@ class Client
      *
      * @deprecated
      */
-    public function countPercolate($params = array())
+    public function countPercolate($params = [])
     {
         $index = $this->extractArgument($params, 'index');
         $type  = $this->extractArgument($params, 'type');
@@ -450,7 +444,7 @@ class Client
      *
      * @deprecated
      */
-    public function mpercolate($params = array())
+    public function mpercolate($params = [])
     {
         $index = $this->extractArgument($params, 'index');
         $type = $this->extractArgument($params, 'type');
@@ -487,7 +481,7 @@ class Client
      *
      * @return array
      */
-    public function termvectors($params = array())
+    public function termvectors($params = [])
     {
         $index = $this->extractArgument($params, 'index');
         $type  = $this->extractArgument($params, 'type');
@@ -527,7 +521,7 @@ class Client
      *
      * @return array
      */
-    public function mtermvectors($params = array())
+    public function mtermvectors($params = [])
     {
         $index = $this->extractArgument($params, 'index');
         $type  = $this->extractArgument($params, 'type');
@@ -600,7 +594,7 @@ class Client
      *
      * @return array
      */
-    public function mget($params = array())
+    public function mget($params = [])
     {
         $index = $this->extractArgument($params, 'index');
         $type = $this->extractArgument($params, 'type');
@@ -629,7 +623,7 @@ class Client
      *
      * @return array
      */
-    public function msearch($params = array())
+    public function msearch($params = [])
     {
         $index = $this->extractArgument($params, 'index');
         $type = $this->extractArgument($params, 'type');
@@ -659,7 +653,7 @@ class Client
      *
      * @return array
      */
-    public function msearchTemplate($params = array())
+    public function msearchTemplate($params = [])
     {
         $index = $this->extractArgument($params, 'index');
         $type = $this->extractArgument($params, 'type');
@@ -732,7 +726,7 @@ class Client
      *
      * @return array
      */
-    public function bulk($params = array())
+    public function bulk($params = [])
     {
         $index = $this->extractArgument($params, 'index');
         $type = $this->extractArgument($params, 'type');
@@ -831,7 +825,7 @@ class Client
      *
      * @return array
      */
-    public function suggest($params = array())
+    public function suggest($params = [])
     {
         $index = $this->extractArgument($params, 'index');
         $body = $this->extractArgument($params, 'body');
@@ -935,7 +929,7 @@ class Client
      *
      * @return array
      */
-    public function search($params = array())
+    public function search($params = [])
     {
         $index = $this->extractArgument($params, 'index');
         $type = $this->extractArgument($params, 'type');
@@ -968,7 +962,7 @@ class Client
      *
      * @return array
      */
-    public function searchShards($params = array())
+    public function searchShards($params = [])
     {
         $index = $this->extractArgument($params, 'index');
         $type = $this->extractArgument($params, 'type');
@@ -993,7 +987,7 @@ class Client
      *
      * @return array
      */
-    public function searchTemplate($params = array())
+    public function searchTemplate($params = [])
     {
         $index = $this->extractArgument($params, 'index');
         $type = $this->extractArgument($params, 'type');
@@ -1021,7 +1015,7 @@ class Client
      *
      * @return array
      */
-    public function scroll($params = array())
+    public function scroll($params = [])
     {
         $scrollID = $this->extractArgument($params, 'scroll_id');
         $body = $this->extractArgument($params, 'body');
@@ -1049,7 +1043,7 @@ class Client
      *
      * @return array
      */
-    public function clearScroll($params = array())
+    public function clearScroll($params = [])
     {
         $scrollID = $this->extractArgument($params, 'scroll_id');
         $body = $this->extractArgument($params, 'body');
@@ -1181,7 +1175,7 @@ class Client
      *
      * @return array
      */
-    public function updateByQuery($params = array())
+    public function updateByQuery($params = [])
     {
         $index = $this->extractArgument($params, 'index');
 
@@ -1359,7 +1353,7 @@ class Client
      *
      * @return array
      */
-    public function fieldStats($params = array())
+    public function fieldStats($params = [])
     {
         $index = $this->extractArgument($params, 'index');
         $body = $this->extractArgument($params, 'body');
@@ -1386,7 +1380,7 @@ class Client
      *
      * @return array
      */
-    public function fieldCaps($params = array())
+    public function fieldCaps($params = [])
     {
         $index = $this->extractArgument($params, 'index');
         $body = $this->extractArgument($params, 'body');
@@ -1410,7 +1404,7 @@ class Client
      *
      * @return array
      */
-    public function renderSearchTemplate($params = array())
+    public function renderSearchTemplate($params = [])
     {
         $body = $this->extractArgument($params, 'body');
         $id   = $this->extractArgument($params, 'id');

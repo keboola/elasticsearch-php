@@ -56,14 +56,12 @@ class StaticNoPingConnectionPool extends AbstractConnectionPool implements Conne
     }
 
     /**
-     * @param \KBC\Elasticsearch\Connections\Connection $connection
-     *
      * @return bool
      */
     private function readyToRevive(Connection $connection)
     {
         $timeout = min(
-            $this->pingTimeout * pow(2, $connection->getPingFailures()),
+            $this->pingTimeout * 2 ** $connection->getPingFailures(),
             $this->maxPingTimeout
         );
 

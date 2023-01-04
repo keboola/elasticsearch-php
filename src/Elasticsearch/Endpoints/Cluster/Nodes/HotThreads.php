@@ -33,12 +33,7 @@ class HotThreads extends AbstractNodesEndpoint
      */
     public function getParamWhitelist()
     {
-        return array(
-            'interval',
-            'snapshots',
-            'threads',
-            'type',
-        );
+        return ['interval', 'snapshots', 'threads', 'type'];
     }
 
     /**

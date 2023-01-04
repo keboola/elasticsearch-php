@@ -53,15 +53,7 @@ class Exists extends AbstractEndpoint
      */
     public function getParamWhitelist()
     {
-        return array(
-            'parent',
-            'preference',
-            'realtime',
-            'refresh',
-            'routing',
-            'version',
-            'stored_fields'
-        );
+        return ['parent', 'preference', 'realtime', 'refresh', 'routing', 'version', 'stored_fields'];
     }
 
     /**

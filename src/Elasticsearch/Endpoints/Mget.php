@@ -57,17 +57,7 @@ class Mget extends AbstractEndpoint
      */
     public function getParamWhitelist()
     {
-        return array(
-            'fields',
-            'preference',
-            'realtime',
-            'refresh',
-            '_source',
-            '_source_exclude',
-            '_source_include',
-            'routing',
-            'stored_fields'
-        );
+        return ['fields', 'preference', 'realtime', 'refresh', '_source', '_source_exclude', '_source_include', 'routing', 'stored_fields'];
     }
 
     /**

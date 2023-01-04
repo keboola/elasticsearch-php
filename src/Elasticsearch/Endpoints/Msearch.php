@@ -17,9 +17,6 @@ use KBC\Elasticsearch\Transport;
  */
 class Msearch extends AbstractEndpoint
 {
-    /**
-     * @param SerializerInterface $serializer
-     */
     public function __construct(SerializerInterface $serializer)
     {
         $this->serializer = $serializer;
@@ -75,10 +72,7 @@ class Msearch extends AbstractEndpoint
      */
     public function getParamWhitelist()
     {
-        return array(
-            'search_type',
-            'typed_keys',
-        );
+        return ['search_type', 'typed_keys'];
     }
 
     /**

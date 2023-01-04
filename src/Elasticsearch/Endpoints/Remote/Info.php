@@ -27,7 +27,7 @@ class Info extends AbstractEndpoint
      */
     public function getParamWhitelist()
     {
-        return array();
+        return [];
     }
 
     /**

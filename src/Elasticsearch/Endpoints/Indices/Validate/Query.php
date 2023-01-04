@@ -46,19 +46,7 @@ class Query extends AbstractEndpoint
      */
     public function getParamWhitelist()
     {
-        return array(
-            'explain',
-            'ignore_indices',
-            'operation_threading',
-            'source',
-            'q',
-            'df',
-            'default_operator',
-            'analyzer',
-            'analyze_wildcard',
-            'lenient',
-            'lowercase_expanded_terms'
-        );
+        return ['explain', 'ignore_indices', 'operation_threading', 'source', 'q', 'df', 'default_operator', 'analyzer', 'analyze_wildcard', 'lenient', 'lowercase_expanded_terms'];
     }
 
     /**

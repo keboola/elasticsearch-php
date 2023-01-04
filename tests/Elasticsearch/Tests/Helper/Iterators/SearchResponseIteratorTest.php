@@ -12,7 +12,7 @@ use Mockery as m;
  * @license http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link    http://Elasticsearch.org
  */
-class SearchResponseIteratorTest extends \PHPUnit_Framework_TestCase
+class SearchResponseIteratorTest extends \PHPUnit\Framework\TestCase
 {
 
     public function tearDown()
@@ -22,16 +22,7 @@ class SearchResponseIteratorTest extends \PHPUnit_Framework_TestCase
 
     public function testWithNoResults()
     {
-        $search_params = array(
-            'scroll'      => '5m',
-            'index'       => 'twitter',
-            'size'        => 1000,
-            'body'        => array(
-                'query' => array(
-                    'match_all' => new \stdClass
-                )
-            )
-        );
+        $search_params = ['scroll'      => '5m', 'index'       => 'twitter', 'size'        => 1000, 'body'        => ['query' => ['match_all' => new \stdClass]]];
 
         $mock_client = m::mock('\Elasticsearch\Client');
 
@@ -39,7 +30,7 @@ class SearchResponseIteratorTest extends \PHPUnit_Framework_TestCase
             ->once()
             ->ordered()
             ->with($search_params)
-            ->andReturn(array('_scroll_id' => 'scroll_id_01'));
+            ->andReturn(['_scroll_id' => 'scroll_id_01']);
 
         $mock_client->shouldReceive('scroll')
             ->never();
@@ -52,21 +43,12 @@ class SearchResponseIteratorTest extends \PHPUnit_Framework_TestCase
 
         $responses = new SearchResponseIterator($mock_client, $search_params);
 
-        $this->assertCount(0, $responses);
+        static::assertCount(0, $responses);
     }
 
     public function testWithHits()
     {
-        $search_params = array(
-            'scroll'      => '5m',
-            'index'       => 'twitter',
-            'size'        => 1000,
-            'body'        => array(
-                'query' => array(
-                    'match_all' => new \stdClass
-                )
-            )
-        );
+        $search_params = ['scroll'      => '5m', 'index'       => 'twitter', 'size'        => 1000, 'body'        => ['query' => ['match_all' => new \stdClass]]];
 
         $mock_client = m::mock('\Elasticsearch\Client');
 
@@ -162,6 +144,6 @@ class SearchResponseIteratorTest extends \PHPUnit_Framework_TestCase
 
         $responses = new SearchResponseIterator($mock_client, $search_params);
 
-        $this->assertCount(4, $responses);
+        static::assertCount(4, $responses);
     }
 }

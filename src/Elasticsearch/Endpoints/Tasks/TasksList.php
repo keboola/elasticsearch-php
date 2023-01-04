@@ -31,16 +31,7 @@ class TasksList extends AbstractEndpoint
      */
     public function getParamWhitelist()
     {
-        return array(
-            'node_id',
-            'actions',
-            'detailed',
-            'parent_node',
-            'parent_task',
-            'wait_for_completion',
-            'group_by',
-            'task_id'
-        );
+        return ['node_id', 'actions', 'detailed', 'parent_node', 'parent_task', 'wait_for_completion', 'group_by', 'task_id'];
     }
 
     /**

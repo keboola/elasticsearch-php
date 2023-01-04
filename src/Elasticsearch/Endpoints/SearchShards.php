@@ -38,14 +38,7 @@ class SearchShards extends AbstractEndpoint
      */
     public function getParamWhitelist()
     {
-        return array(
-            'preference',
-            'routing',
-            'local',
-            'ignore_unavailable',
-            'allow_no_indices',
-            'expand_wildcards'
-        );
+        return ['preference', 'routing', 'local', 'ignore_unavailable', 'allow_no_indices', 'expand_wildcards'];
     }
 
     /**

@@ -35,7 +35,7 @@ class SmartSerializer implements SerializerInterface
             return $data;
         } else {
             if (version_compare($this->PHP_VERSION, '5.6.6', '<') || ! defined('JSON_PRESERVE_ZERO_FRACTION')) {
-                $data = json_encode($data);
+                $data = json_encode($data, JSON_THROW_ON_ERROR);
             } else {
                 $data = json_encode($data, JSON_PRESERVE_ZERO_FRACTION);
             }
@@ -60,7 +60,7 @@ class SmartSerializer implements SerializerInterface
     public function deserialize($data, $headers)
     {
         if (isset($headers['content_type']) === true) {
-            if (strpos($headers['content_type'], 'json') !== false) {
+            if (str_contains($headers['content_type'], 'json')) {
                 return $this->decode($data);
             } else {
                 //Not json, return as string

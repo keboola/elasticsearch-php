@@ -54,10 +54,7 @@ class Stats extends AbstractEndpoint
      */
     public function getParamWhitelist()
     {
-        return array(
-            'flat_settings',
-            'human',
-        );
+        return ['flat_settings', 'human'];
     }
 
     /**

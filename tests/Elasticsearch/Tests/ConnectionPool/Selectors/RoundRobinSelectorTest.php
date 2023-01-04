@@ -14,7 +14,7 @@ use KBC\Elasticsearch;
  * @license    http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link       http://elasticsearch.org
  */
-class RoundRobinSelectorTest extends \PHPUnit_Framework_TestCase
+class RoundRobinSelectorTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * Add Ten connections, select 15 to verify round robin
@@ -27,18 +27,16 @@ class RoundRobinSelectorTest extends \PHPUnit_Framework_TestCase
     {
         $roundRobin = new Elasticsearch\ConnectionPool\Selectors\RoundRobinSelector();
 
-        $mockConnections = array();
+        $mockConnections = [];
         foreach (range(0, 10) as $index) {
-            $mockConnections[$index] = $this->getMockBuilder('\Elasticsearch\Connections\CurlMultiConnection')
-                ->disableOriginalConstructor()
-                ->getMock();
+            $mockConnections[$index] = $this->createMock('\Elasticsearch\Connections\CurlMultiConnection');
         }
 
         foreach (range(0, 15) as $index) {
             $retConnection = $roundRobin->select($mockConnections);
 
             $nextIndex = ($index % 10) + 1;
-            $this->assertEquals($mockConnections[$nextIndex], $retConnection);
+            static::assertEquals($mockConnections[$nextIndex], $retConnection);
         }
     }
 
@@ -54,18 +52,16 @@ class RoundRobinSelectorTest extends \PHPUnit_Framework_TestCase
     {
         $roundRobin = new Elasticsearch\ConnectionPool\Selectors\RoundRobinSelector();
 
-        $mockConnections = array();
+        $mockConnections = [];
         foreach (range(0, 10) as $index) {
-            $mockConnections[$index] = $this->getMockBuilder('\Elasticsearch\Connections\CurlMultiConnection')
-                ->disableOriginalConstructor()
-                ->getMock();
+            $mockConnections[$index] = $this->createMock('\Elasticsearch\Connections\CurlMultiConnection');
         }
 
         foreach (range(0, 4) as $index) {
             $retConnection = $roundRobin->select($mockConnections);
 
             $nextIndex = ($index % (count($mockConnections)-1)) + 1;
-            $this->assertEquals($mockConnections[$nextIndex], $retConnection);
+            static::assertEquals($mockConnections[$nextIndex], $retConnection);
         }
 
         unset($mockConnections[8]);
@@ -76,7 +72,7 @@ class RoundRobinSelectorTest extends \PHPUnit_Framework_TestCase
             $retConnection = $roundRobin->select($mockConnections);
 
             $nextIndex = ($index % (count($mockConnections)-1)) + 1;
-            $this->assertEquals($mockConnections[$nextIndex], $retConnection);
+            static::assertEquals($mockConnections[$nextIndex], $retConnection);
         }
     }
 }

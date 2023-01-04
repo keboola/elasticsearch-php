@@ -63,10 +63,7 @@ class Get extends AbstractEndpoint
      */
     public function getParamWhitelist()
     {
-        return array(
-            'version_type',
-            'version'
-        );
+        return ['version_type', 'version'];
     }
 
     /**

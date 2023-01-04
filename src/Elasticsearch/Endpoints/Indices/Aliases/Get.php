@@ -59,10 +59,7 @@ class Get extends AbstractEndpoint
      */
     public function getParamWhitelist()
     {
-        return array(
-            'timeout',
-            'local',
-        );
+        return ['timeout', 'local'];
     }
 
     /**

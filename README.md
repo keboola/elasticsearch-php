@@ -1,3 +1,10 @@
+docker run --rm -it --volume $(pwd):/app prooph/composer:7.4 install
+
+docker run --rm -it --entrypoint=/usr/local/bin/php --volume $(pwd):/app prooph/composer:7.4 /app/vendor/bin/phpstan analyse src util --generate-baseline
+
+docker run --rm -it --entrypoint=/usr/local/bin/php --volume $(pwd):/app prooph/composer:8.0 /app/vendor/bin/rector
+
+
 elasticsearch-php
 =================
 

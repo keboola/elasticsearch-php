@@ -26,7 +26,7 @@ class StickyRoundRobinSelectorTest extends \PHPUnit_Framework_TestCase
     {
         $roundRobin = new Elasticsearch\ConnectionPool\Selectors\StickyRoundRobinSelector();
 
-        $mockConnections = array();
+        $mockConnections = [];
         $mockConnections[] = m::mock('\Elasticsearch\Connections\GuzzleConnection')
                              ->shouldReceive('isAlive')->times(16)->andReturn(true)->getMock();
 
@@ -37,7 +37,7 @@ class StickyRoundRobinSelectorTest extends \PHPUnit_Framework_TestCase
         foreach (range(0, 15) as $index) {
             $retConnection = $roundRobin->select($mockConnections);
 
-            $this->assertEquals($mockConnections[0], $retConnection);
+            static::assertEquals($mockConnections[0], $retConnection);
         }
     }
 
@@ -45,7 +45,7 @@ class StickyRoundRobinSelectorTest extends \PHPUnit_Framework_TestCase
     {
         $roundRobin = new Elasticsearch\ConnectionPool\Selectors\StickyRoundRobinSelector();
 
-        $mockConnections = array();
+        $mockConnections = [];
         $mockConnections[] = m::mock('\Elasticsearch\Connections\GuzzleConnection')
                              ->shouldReceive('isAlive')->once()->andReturn(false)->getMock();
 
@@ -59,7 +59,7 @@ class StickyRoundRobinSelectorTest extends \PHPUnit_Framework_TestCase
         foreach (range(0, 15) as $index) {
             $retConnection = $roundRobin->select($mockConnections);
 
-            $this->assertEquals($mockConnections[1], $retConnection);
+            static::assertEquals($mockConnections[1], $retConnection);
         }
     }
 }

@@ -30,16 +30,7 @@ class Nodes extends AbstractEndpoint
      */
     public function getParamWhitelist()
     {
-        return array(
-            'local',
-            'master_timeout',
-            'h',
-            'help',
-            'v',
-            's',
-            'full_id',
-            'format',
-        );
+        return ['local', 'master_timeout', 'h', 'help', 'v', 's', 'full_id', 'format'];
     }
 
     /**

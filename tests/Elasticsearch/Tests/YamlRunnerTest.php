@@ -98,7 +98,7 @@ class YamlRunnerTest extends \PHPUnit_Framework_TestCase
         $response = curl_exec($ch);
         curl_close($ch);
 
-        $response = json_decode($response, true);
+        $response = json_decode($response, true, 512, JSON_THROW_ON_ERROR);
         static::$esVersion = $response['version']['number'];
         echo "ES Version: ".static::$esVersion."\n";
     }
@@ -303,7 +303,7 @@ class YamlRunnerTest extends \PHPUnit_Framework_TestCase
             $endpointParams->client['headers'] = $headers;
         }
 
-        list($method, $namespace) = $this->mapEndpoint($method, $namespace);
+        [$method, $namespace] = $this->mapEndpoint($method, $namespace);
 
         if (null !== $namespace) {
             $caller = $caller->$namespace();
@@ -314,7 +314,7 @@ class YamlRunnerTest extends \PHPUnit_Framework_TestCase
         }
 
         if (!method_exists($caller, $method)) {
-            self::markTestIncomplete(sprintf('Method "%s" not implement in "%s"', $method, get_class($caller)));
+            self::markTestIncomplete(sprintf('Method "%s" not implement in "%s"', $method, $caller::class));
         }
 
         // TODO remove this after cat testing situation resolved
@@ -325,7 +325,7 @@ class YamlRunnerTest extends \PHPUnit_Framework_TestCase
         }
 
         // Exist* methods have to be manually 'unwrapped' into true/false for async
-        if (strpos($method, "exist") !== false && $async === true) {
+        if (str_contains($method, "exist") && $async === true) {
             return $this->executeAsyncExistRequest($caller, $method, $endpointParams, $expectedError, $expectedWarnings, $testName);
         }
 
@@ -363,7 +363,7 @@ class YamlRunnerTest extends \PHPUnit_Framework_TestCase
             }
 
             $msg = $exception->getMessage()
-                ."\nException in ".get_class($caller)." with [$method].\n Context:\n"
+                ."\nException in ".$caller::class." with [$method].\n Context:\n"
                 .var_export($endpointParams, true);
             throw new \Exception($msg, 0, $exception);
         }
@@ -400,9 +400,7 @@ class YamlRunnerTest extends \PHPUnit_Framework_TestCase
             } else {
                 return false;
             }
-        } catch (Missing404Exception $exception) {
-            return false;
-        } catch (RoutingMissingException $exception) {
+        } catch (Missing404Exception|RoutingMissingException $exception) {
             return false;
         } catch (\Exception $exception) {
             if (null !== $expectedError) {
@@ -424,7 +422,7 @@ class YamlRunnerTest extends \PHPUnit_Framework_TestCase
                     //$position = array_search($warning, $expectedWarnings);
                     $position = false;
                     foreach ($expectedWarnings as $index => $value) {
-                        if (stristr($warning, $value) !== false) {
+                        if (stristr($warning, (string) $value) !== false) {
                             $position = $index;
                             break;
                         }
@@ -437,7 +435,7 @@ class YamlRunnerTest extends \PHPUnit_Framework_TestCase
                         //throw new \Exception("Expected to find warning [$warning] but did not.");
                     }
                 }
-                if (count($expectedWarnings) > 0) {
+                if ((is_countable($expectedWarnings) ? count($expectedWarnings) : 0) > 0) {
                     print_r($last['response']);
                     throw new \Exception("Expected to find more warnings: ". print_r($expectedWarnings, true));
                 }
@@ -515,8 +513,8 @@ class YamlRunnerTest extends \PHPUnit_Framework_TestCase
 
         if ($expected instanceof \stdClass) {
             // Avoid stdClass / array mismatch
-            $expected = json_decode(json_encode($expected), true);
-            $match = json_decode(json_encode($match), true);
+            $expected = json_decode(json_encode($expected, JSON_THROW_ON_ERROR), true, 512, JSON_THROW_ON_ERROR);
+            $match = json_decode(json_encode($match, JSON_THROW_ON_ERROR), true, 512, JSON_THROW_ON_ERROR);
 
             static::assertEquals($expected, $match, $msg);
         } elseif (is_string($expected) && preg_match('#^/.+?/$#s', $expected)) {
@@ -648,11 +646,11 @@ class YamlRunnerTest extends \PHPUnit_Framework_TestCase
         if (property_exists($operation, 'features')) {
             if (is_array($operation->features)) {
                 if (count(array_intersect($operation->features, static::$supportedFeatures)) != count($operation->features)) {
-                    static::markTestSkipped(sprintf('Feature(s) %s not supported in test "%s"', json_encode($operation->features), $testName));
+                    static::markTestSkipped(sprintf('Feature(s) %s not supported in test "%s"', json_encode($operation->features, JSON_THROW_ON_ERROR), $testName));
                 }
             } else {
                 if (!in_array($operation->features, static::$supportedFeatures, true)) {
-                    static::markTestSkipped(sprintf('Feature(s) %s not supported in test "%s"', json_encode($operation->features), $testName));
+                    static::markTestSkipped(sprintf('Feature(s) %s not supported in test "%s"', json_encode($operation->features, JSON_THROW_ON_ERROR), $testName));
                 }
             }
         }
@@ -685,10 +683,8 @@ class YamlRunnerTest extends \PHPUnit_Framework_TestCase
     /**
      * Assert an expected error
      *
-     * @param \Exception $exception
      * @param            $expectedError
      * @param            $testName
-     *
      * @return array
      */
     private function assertException(\Exception $exception, $expectedError, $testName)
@@ -714,10 +710,10 @@ class YamlRunnerTest extends \PHPUnit_Framework_TestCase
         }
 
         if ($exception->getPrevious() !== null) {
-            return json_decode($exception->getPrevious()->getMessage(), true);
+            return json_decode($exception->getPrevious()->getMessage(), true, 512, JSON_THROW_ON_ERROR);
         }
 
-        return json_decode($exception->getMessage(), true);
+        return json_decode($exception->getMessage(), true, 512, JSON_THROW_ON_ERROR);
     }
 
     /**
@@ -736,7 +732,7 @@ class YamlRunnerTest extends \PHPUnit_Framework_TestCase
         $finder->files();
         $finder->name('*.yaml');
 
-        $filter = isset($_SERVER['TEST_CASE']) ? $_SERVER['TEST_CASE'] : null;
+        $filter = $_SERVER['TEST_CASE'] ?? null;
 
         /** @var SplFileInfo $file */
         foreach ($finder as $file) {
@@ -822,7 +818,7 @@ class YamlRunnerTest extends \PHPUnit_Framework_TestCase
         do {
             $key = array_shift($operationSplit);
 
-            if (substr($key, -1) === '\\') {
+            if (str_ends_with($key, '\\')) {
                 $key = substr($key, 0, -1) . '.' . array_shift($operationSplit);
             }
 
@@ -872,9 +868,7 @@ class YamlRunnerTest extends \PHPUnit_Framework_TestCase
         $fileContent = str_replace('"#', '" #', $fileContent);
 
         $documents = explode("---\n", $fileContent);
-        $documents = array_filter($documents, function ($item) {
-            return trim($item) !== '';
-        });
+        $documents = array_filter($documents, fn($item) => trim($item) !== '');
 
         $documentsParsed = [];
         $setup = null;
@@ -972,7 +966,7 @@ class YamlRunnerTest extends \PHPUnit_Framework_TestCase
         $response = curl_exec($ch);
         curl_close($ch);
         if ($response != "{}") {
-            $response = json_decode($response, true);
+            $response = json_decode($response, true, 512, JSON_THROW_ON_ERROR);
             foreach ($response as $repo => $settings) {
                 if ($settings['type'] == 'fs') {
                     $ch = curl_init($host."/_snapshot/$repo/_all?ignore_unavailable");
@@ -980,7 +974,7 @@ class YamlRunnerTest extends \PHPUnit_Framework_TestCase
                     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
                     curl_setopt($ch, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_1_0);
 
-                    $snapshots = json_decode(curl_exec($ch), true);
+                    $snapshots = json_decode(curl_exec($ch), true, 512, JSON_THROW_ON_ERROR);
                     curl_close($ch);
                     foreach ($snapshots['snapshots'] as $snapshot) {
                         $snapshotName = $snapshot['snapshot'];
@@ -1025,12 +1019,12 @@ class YamlRunnerTest extends \PHPUnit_Framework_TestCase
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
         curl_setopt($ch, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_1_0);
 
-        $response = json_decode(curl_exec($ch), true);
+        $response = json_decode(curl_exec($ch), true, 512, JSON_THROW_ON_ERROR);
 
         $counter = 0;
         while ($response['status'] === 'red') {
             sleep(0.5);
-            $response = json_decode(curl_exec($ch), true);
+            $response = json_decode(curl_exec($ch), true, 512, JSON_THROW_ON_ERROR);
             ++$counter;
 
             if ($counter > 10) {

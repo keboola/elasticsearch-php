@@ -27,7 +27,7 @@ class RoundRobinSelectorTest extends \PHPUnit_Framework_TestCase
     {
         $roundRobin = new Elasticsearch\ConnectionPool\Selectors\RoundRobinSelector();
 
-        $mockConnections = array();
+        $mockConnections = [];
         foreach (range(0, 10) as $index) {
             $mockConnections[$index] = $this->getMockBuilder('\Elasticsearch\Connections\CurlMultiConnection')
                 ->disableOriginalConstructor()
@@ -38,7 +38,7 @@ class RoundRobinSelectorTest extends \PHPUnit_Framework_TestCase
             $retConnection = $roundRobin->select($mockConnections);
 
             $nextIndex = ($index % 10) + 1;
-            $this->assertEquals($mockConnections[$nextIndex], $retConnection);
+            static::assertEquals($mockConnections[$nextIndex], $retConnection);
         }
     }
 
@@ -54,7 +54,7 @@ class RoundRobinSelectorTest extends \PHPUnit_Framework_TestCase
     {
         $roundRobin = new Elasticsearch\ConnectionPool\Selectors\RoundRobinSelector();
 
-        $mockConnections = array();
+        $mockConnections = [];
         foreach (range(0, 10) as $index) {
             $mockConnections[$index] = $this->getMockBuilder('\Elasticsearch\Connections\CurlMultiConnection')
                 ->disableOriginalConstructor()
@@ -65,7 +65,7 @@ class RoundRobinSelectorTest extends \PHPUnit_Framework_TestCase
             $retConnection = $roundRobin->select($mockConnections);
 
             $nextIndex = ($index % (count($mockConnections)-1)) + 1;
-            $this->assertEquals($mockConnections[$nextIndex], $retConnection);
+            static::assertEquals($mockConnections[$nextIndex], $retConnection);
         }
 
         unset($mockConnections[8]);
@@ -76,7 +76,7 @@ class RoundRobinSelectorTest extends \PHPUnit_Framework_TestCase
             $retConnection = $roundRobin->select($mockConnections);
 
             $nextIndex = ($index % (count($mockConnections)-1)) + 1;
-            $this->assertEquals($mockConnections[$nextIndex], $retConnection);
+            static::assertEquals($mockConnections[$nextIndex], $retConnection);
         }
     }
 }

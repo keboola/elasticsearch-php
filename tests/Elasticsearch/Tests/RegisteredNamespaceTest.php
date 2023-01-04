@@ -29,7 +29,7 @@ class RegisteredNamespaceTest extends \PHPUnit_Framework_TestCase
     {
         $builder = new FooNamespaceBuilder();
         $client = ClientBuilder::create()->registerNamespace($builder)->build();
-        $this->assertEquals("123", $client->foo()->fooMethod());
+        static::assertEquals("123", $client->foo()->fooMethod());
     }
 
     /**
@@ -39,7 +39,7 @@ class RegisteredNamespaceTest extends \PHPUnit_Framework_TestCase
     {
         $builder = new FooNamespaceBuilder();
         $client = ClientBuilder::create()->registerNamespace($builder)->build();
-        $this->assertEquals("123", $client->bar()->fooMethod());
+        static::assertEquals("123", $client->bar()->fooMethod());
     }
 }
 

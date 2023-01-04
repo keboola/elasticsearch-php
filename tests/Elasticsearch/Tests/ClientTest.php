@@ -81,8 +81,8 @@ class ClientTest extends \PHPUnit_Framework_TestCase
                 'type' => 'test',
                 'id' => 'test'
             ]);
-            $this->fail("InvalidArgumentException was not thrown");
-        } catch (Elasticsearch\Common\Exceptions\InvalidArgumentException $e) {
+            static::fail("InvalidArgumentException was not thrown");
+        } catch (Elasticsearch\Common\Exceptions\InvalidArgumentException) {
             // all good
         }
 
@@ -92,8 +92,8 @@ class ClientTest extends \PHPUnit_Framework_TestCase
                 'type' => null,
                 'id' => 'test'
             ]);
-            $this->fail("InvalidArgumentException was not thrown");
-        } catch (Elasticsearch\Common\Exceptions\InvalidArgumentException $e) {
+            static::fail("InvalidArgumentException was not thrown");
+        } catch (Elasticsearch\Common\Exceptions\InvalidArgumentException) {
             // all good
         }
 
@@ -103,8 +103,8 @@ class ClientTest extends \PHPUnit_Framework_TestCase
                 'type' => 'test',
                 'id' => null
             ]);
-            $this->fail("InvalidArgumentException was not thrown");
-        } catch (Elasticsearch\Common\Exceptions\InvalidArgumentException $e) {
+            static::fail("InvalidArgumentException was not thrown");
+        } catch (Elasticsearch\Common\Exceptions\InvalidArgumentException) {
             // all good
         }
     }
@@ -119,8 +119,8 @@ class ClientTest extends \PHPUnit_Framework_TestCase
                 'type' => 'test',
                 'id' => 'test'
             ]);
-            $this->fail("InvalidArgumentException was not thrown");
-        } catch (Elasticsearch\Common\Exceptions\InvalidArgumentException $e) {
+            static::fail("InvalidArgumentException was not thrown");
+        } catch (Elasticsearch\Common\Exceptions\InvalidArgumentException) {
             // all good
         }
 
@@ -130,8 +130,8 @@ class ClientTest extends \PHPUnit_Framework_TestCase
                 'type' => '',
                 'id' => 'test'
             ]);
-            $this->fail("InvalidArgumentException was not thrown");
-        } catch (Elasticsearch\Common\Exceptions\InvalidArgumentException $e) {
+            static::fail("InvalidArgumentException was not thrown");
+        } catch (Elasticsearch\Common\Exceptions\InvalidArgumentException) {
             // all good
         }
 
@@ -141,8 +141,8 @@ class ClientTest extends \PHPUnit_Framework_TestCase
                 'type' => 'test',
                 'id' => ''
             ]);
-            $this->fail("InvalidArgumentException was not thrown");
-        } catch (Elasticsearch\Common\Exceptions\InvalidArgumentException $e) {
+            static::fail("InvalidArgumentException was not thrown");
+        } catch (Elasticsearch\Common\Exceptions\InvalidArgumentException) {
             // all good
         }
     }
@@ -157,8 +157,8 @@ class ClientTest extends \PHPUnit_Framework_TestCase
                 'type' => 'test',
                 'id' => 'test'
             ]);
-            $this->fail("InvalidArgumentException was not thrown");
-        } catch (Elasticsearch\Common\Exceptions\InvalidArgumentException $e) {
+            static::fail("InvalidArgumentException was not thrown");
+        } catch (Elasticsearch\Common\Exceptions\InvalidArgumentException) {
             // all good
         }
 
@@ -168,8 +168,8 @@ class ClientTest extends \PHPUnit_Framework_TestCase
                 'type' => ['', '', ''],
                 'id' => 'test'
             ]);
-            $this->fail("InvalidArgumentException was not thrown");
-        } catch (Elasticsearch\Common\Exceptions\InvalidArgumentException $e) {
+            static::fail("InvalidArgumentException was not thrown");
+        } catch (Elasticsearch\Common\Exceptions\InvalidArgumentException) {
             // all good
         }
     }
@@ -184,8 +184,8 @@ class ClientTest extends \PHPUnit_Framework_TestCase
                 'type' => 'test',
                 'id' => 'test'
             ]);
-            $this->fail("InvalidArgumentException was not thrown");
-        } catch (Elasticsearch\Common\Exceptions\InvalidArgumentException $e) {
+            static::fail("InvalidArgumentException was not thrown");
+        } catch (Elasticsearch\Common\Exceptions\InvalidArgumentException) {
             // all good
         }
 
@@ -195,8 +195,8 @@ class ClientTest extends \PHPUnit_Framework_TestCase
                 'type' => [null, null, null],
                 'id' => 'test'
             ]);
-            $this->fail("InvalidArgumentException was not thrown");
-        } catch (Elasticsearch\Common\Exceptions\InvalidArgumentException $e) {
+            static::fail("InvalidArgumentException was not thrown");
+        } catch (Elasticsearch\Common\Exceptions\InvalidArgumentException) {
             // all good
         }
     }
@@ -208,15 +208,11 @@ class ClientTest extends \PHPUnit_Framework_TestCase
             ->setRetries(0)
             ->build();
 
-        $searchParams = array(
-            'index' => 'test',
-            'type' => 'test',
-            'body' => [
-                'query' => [
-                    'match_all' => []
-                ]
+        $searchParams = ['index' => 'test', 'type' => 'test', 'body' => [
+            'query' => [
+                'match_all' => []
             ]
-        );
+        ]];
 
         $client = Elasticsearch\ClientBuilder::create()
             ->setHosts(["localhost:1"])
@@ -225,11 +221,11 @@ class ClientTest extends \PHPUnit_Framework_TestCase
 
         try {
             $client->search($searchParams);
-            $this->fail("Should have thrown CouldNotConnectToHost");
+            static::fail("Should have thrown CouldNotConnectToHost");
         } catch (Elasticsearch\Common\Exceptions\Curl\CouldNotConnectToHost $e) {
             // All good
             $previous = $e->getPrevious();
-            $this->assertInstanceOf('Elasticsearch\Common\Exceptions\MaxRetriesException', $previous);
+            static::assertInstanceOf('Elasticsearch\Common\Exceptions\MaxRetriesException', $previous);
         } catch (\Exception $e) {
             throw $e;
         }
@@ -242,11 +238,11 @@ class ClientTest extends \PHPUnit_Framework_TestCase
 
         try {
             $client->search($searchParams);
-            $this->fail("Should have thrown TransportException");
+            static::fail("Should have thrown TransportException");
         } catch (Elasticsearch\Common\Exceptions\TransportException $e) {
             // All good
             $previous = $e->getPrevious();
-            $this->assertInstanceOf('Elasticsearch\Common\Exceptions\MaxRetriesException', $previous);
+            static::assertInstanceOf('Elasticsearch\Common\Exceptions\MaxRetriesException', $previous);
         } catch (\Exception $e) {
             throw $e;
         }
@@ -258,39 +254,39 @@ class ClientTest extends \PHPUnit_Framework_TestCase
             'localhost:9200'
         ])->build();
         $host = $client->transport->getConnection();
-        $this->assertEquals("localhost:9200", $host->getHost());
-        $this->assertEquals("http", $host->getTransportSchema());
+        static::assertEquals("localhost:9200", $host->getHost());
+        static::assertEquals("http", $host->getTransportSchema());
 
 
         $client = Elasticsearch\ClientBuilder::create()->setHosts([
             'http://localhost:9200'
         ])->build();
         $host = $client->transport->getConnection();
-        $this->assertEquals("localhost:9200", $host->getHost());
-        $this->assertEquals("http", $host->getTransportSchema());
+        static::assertEquals("localhost:9200", $host->getHost());
+        static::assertEquals("http", $host->getTransportSchema());
 
         $client = Elasticsearch\ClientBuilder::create()->setHosts([
             'http://foo.com:9200'
         ])->build();
         $host = $client->transport->getConnection();
-        $this->assertEquals("foo.com:9200", $host->getHost());
-        $this->assertEquals("http", $host->getTransportSchema());
+        static::assertEquals("foo.com:9200", $host->getHost());
+        static::assertEquals("http", $host->getTransportSchema());
 
         $client = Elasticsearch\ClientBuilder::create()->setHosts([
             'https://foo.com:9200'
         ])->build();
         $host = $client->transport->getConnection();
-        $this->assertEquals("foo.com:9200", $host->getHost());
-        $this->assertEquals("https", $host->getTransportSchema());
+        static::assertEquals("foo.com:9200", $host->getHost());
+        static::assertEquals("https", $host->getTransportSchema());
 
 
         $client = Elasticsearch\ClientBuilder::create()->setHosts([
             'https://user:pass@foo.com:9200'
         ])->build();
         $host = $client->transport->getConnection();
-        $this->assertEquals("foo.com:9200", $host->getHost());
-        $this->assertEquals("https", $host->getTransportSchema());
-        $this->assertEquals("user:pass", $host->getUserPass());
+        static::assertEquals("foo.com:9200", $host->getHost());
+        static::assertEquals("https", $host->getTransportSchema());
+        static::assertEquals("user:pass", $host->getUserPass());
     }
 
     public function testExtendedHosts()
@@ -303,8 +299,8 @@ class ClientTest extends \PHPUnit_Framework_TestCase
             ]
         ])->build();
         $host = $client->transport->getConnection();
-        $this->assertEquals("localhost:9200", $host->getHost());
-        $this->assertEquals("http", $host->getTransportSchema());
+        static::assertEquals("localhost:9200", $host->getHost());
+        static::assertEquals("http", $host->getTransportSchema());
 
 
         $client = Elasticsearch\ClientBuilder::create()->setHosts([
@@ -315,8 +311,8 @@ class ClientTest extends \PHPUnit_Framework_TestCase
             ]
         ])->build();
         $host = $client->transport->getConnection();
-        $this->assertEquals("foo.com:9200", $host->getHost());
-        $this->assertEquals("http", $host->getTransportSchema());
+        static::assertEquals("foo.com:9200", $host->getHost());
+        static::assertEquals("http", $host->getTransportSchema());
 
 
         $client = Elasticsearch\ClientBuilder::create()->setHosts([
@@ -327,8 +323,8 @@ class ClientTest extends \PHPUnit_Framework_TestCase
             ]
         ])->build();
         $host = $client->transport->getConnection();
-        $this->assertEquals("foo.com:9200", $host->getHost());
-        $this->assertEquals("https", $host->getTransportSchema());
+        static::assertEquals("foo.com:9200", $host->getHost());
+        static::assertEquals("https", $host->getTransportSchema());
 
 
         $client = Elasticsearch\ClientBuilder::create()->setHosts([
@@ -338,8 +334,8 @@ class ClientTest extends \PHPUnit_Framework_TestCase
             ]
         ])->build();
         $host = $client->transport->getConnection();
-        $this->assertEquals("foo.com:9200", $host->getHost());
-        $this->assertEquals("http", $host->getTransportSchema());
+        static::assertEquals("foo.com:9200", $host->getHost());
+        static::assertEquals("http", $host->getTransportSchema());
 
 
         $client = Elasticsearch\ClientBuilder::create()->setHosts([
@@ -348,8 +344,8 @@ class ClientTest extends \PHPUnit_Framework_TestCase
             ]
         ])->build();
         $host = $client->transport->getConnection();
-        $this->assertEquals("foo.com:9200", $host->getHost());
-        $this->assertEquals("http", $host->getTransportSchema());
+        static::assertEquals("foo.com:9200", $host->getHost());
+        static::assertEquals("http", $host->getTransportSchema());
 
 
         $client = Elasticsearch\ClientBuilder::create()->setHosts([
@@ -360,8 +356,8 @@ class ClientTest extends \PHPUnit_Framework_TestCase
             ]
         ])->build();
         $host = $client->transport->getConnection();
-        $this->assertEquals("foo.com:9500", $host->getHost());
-        $this->assertEquals("https", $host->getTransportSchema());
+        static::assertEquals("foo.com:9500", $host->getHost());
+        static::assertEquals("https", $host->getTransportSchema());
 
 
         try {
@@ -371,8 +367,8 @@ class ClientTest extends \PHPUnit_Framework_TestCase
                     'scheme' => 'http'
                 ]
             ])->build();
-            $this->fail("Expected RuntimeException from missing host, none thrown");
-        } catch (Elasticsearch\Common\Exceptions\RuntimeException $e) {
+            static::fail("Expected RuntimeException from missing host, none thrown");
+        } catch (Elasticsearch\Common\Exceptions\RuntimeException) {
             // good
         }
 
@@ -383,8 +379,8 @@ class ClientTest extends \PHPUnit_Framework_TestCase
             ]
         ])->build();
         $host = $client->transport->getConnection();
-        $this->assertEquals("the_foo.com:9200", $host->getHost());
-        $this->assertEquals("http", $host->getTransportSchema());
+        static::assertEquals("the_foo.com:9200", $host->getHost());
+        static::assertEquals("http", $host->getTransportSchema());
 
 
         // Special characters in user/pass, would break inline
@@ -396,8 +392,8 @@ class ClientTest extends \PHPUnit_Framework_TestCase
             ]
         ])->build();
         $host = $client->transport->getConnection();
-        $this->assertEquals("foo.com:9200", $host->getHost());
-        $this->assertEquals("http", $host->getTransportSchema());
-        $this->assertEquals("user:abc#$@?%!abc", $host->getUserPass());
+        static::assertEquals("foo.com:9200", $host->getHost());
+        static::assertEquals("http", $host->getTransportSchema());
+        static::assertEquals("user:abc#$@?%!abc", $host->getUserPass());
     }
 }

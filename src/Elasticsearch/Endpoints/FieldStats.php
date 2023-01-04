@@ -53,14 +53,7 @@ class FieldStats extends AbstractEndpoint
      */
     public function getParamWhitelist()
     {
-        return array(
-            'fields',
-            'level',
-            'ignore_unavailable',
-            'allow_no_indices',
-            'expand_wildcards',
-            'fields'
-        );
+        return ['fields', 'level', 'ignore_unavailable', 'allow_no_indices', 'expand_wildcards', 'fields'];
     }
 
     /**

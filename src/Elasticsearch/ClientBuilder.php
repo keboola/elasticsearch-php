@@ -55,13 +55,13 @@ class ClientBuilder
     private $tracer;
 
     /** @var string */
-    private $connectionPool = '\KBC\Elasticsearch\ConnectionPool\StaticNoPingConnectionPool';
+    private $connectionPool = '\\' . \KBC\Elasticsearch\ConnectionPool\StaticNoPingConnectionPool::class;
 
     /** @var  string */
-    private $serializer = '\KBC\Elasticsearch\Serializers\SmartSerializer';
+    private $serializer = '\\' . \KBC\Elasticsearch\Serializers\SmartSerializer::class;
 
     /** @var  string */
-    private $selector = '\KBC\Elasticsearch\ConnectionPool\Selectors\RoundRobinSelector';
+    private $selector = '\\' . \KBC\Elasticsearch\ConnectionPool\Selectors\RoundRobinSelector::class;
 
     /** @var  array */
     private $connectionPoolArgs = [
@@ -229,7 +229,6 @@ class ClientBuilder
     }
 
     /**
-     * @param \KBC\Elasticsearch\Connections\ConnectionFactoryInterface $connectionFactory
      * @return $this
      */
     public function setConnectionFactory(ConnectionFactoryInterface $connectionFactory)
@@ -241,7 +240,6 @@ class ClientBuilder
 
     /**
      * @param \KBC\Elasticsearch\ConnectionPool\AbstractConnectionPool|string $connectionPool
-     * @param array $args
      * @return $this
      *@throws \InvalidArgumentException
      */
@@ -271,7 +269,6 @@ class ClientBuilder
     }
 
     /**
-     * @param NamespaceBuilderInterface $namespaceBuilder
      * @return $this
      */
     public function registerNamespace(NamespaceBuilderInterface $namespaceBuilder)
@@ -293,10 +290,9 @@ class ClientBuilder
     }
 
     /**
-     * @param mixed $handler
      * @return $this
      */
-    public function setHandler($handler)
+    public function setHandler(mixed $handler)
     {
         $this->handler = $handler;
 
@@ -349,7 +345,6 @@ class ClientBuilder
     }
 
     /**
-     * @param array $params
      * @return $this
      */
     public function setConnectionParams(array $params)
@@ -464,16 +459,14 @@ class ClientBuilder
         }
 
         if (!is_null($sslOptions)) {
-            $sslHandler = function (callable $handler, array $sslOptions) {
-                return function (array $request) use ($handler, $sslOptions) {
-                    // Add our custom headers
-                    foreach ($sslOptions as $key => $value) {
-                        $request['client'][$key] = $value;
-                    }
+            $sslHandler = fn(callable $handler, array $sslOptions) => function (array $request) use ($handler, $sslOptions) {
+                // Add our custom headers
+                foreach ($sslOptions as $key => $value) {
+                    $request['client'][$key] = $value;
+                }
 
-                    // Send the request using the handler and return the response.
-                    return $handler($request);
-                };
+                // Send the request using the handler and return the response.
+                return $handler($request);
             };
             $this->handler = $sslHandler($this->handler, $sslOptions);
         }
@@ -543,8 +536,6 @@ class ClientBuilder
     }
 
     /**
-     * @param Transport $transport
-     * @param callable $endpoint
      * @param Object[] $registeredNamespaces
      * @return Client
      */
@@ -587,7 +578,7 @@ class ClientBuilder
         }
 
         if (is_null($this->transport)) {
-            $this->transport = new Transport($this->retries, $this->sniffOnStart, $this->connectionPool, $this->logger);
+            $this->transport = new Transport($this->retries, $this->connectionPool, $this->logger, $this->sniffOnStart);
         }
     }
 

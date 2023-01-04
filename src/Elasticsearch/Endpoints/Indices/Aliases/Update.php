@@ -48,10 +48,7 @@ class Update extends AbstractEndpoint
      */
     public function getParamWhitelist()
     {
-        return array(
-            'timeout',
-            'master_timeout',
-        );
+        return ['timeout', 'master_timeout'];
     }
 
     /**

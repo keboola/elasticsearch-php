@@ -63,10 +63,7 @@ class Delete extends AbstractEndpoint
      */
     public function getParamWhitelist()
     {
-        return array(
-            'version',
-            'version_type'
-        );
+        return ['version', 'version_type'];
     }
 
     /**

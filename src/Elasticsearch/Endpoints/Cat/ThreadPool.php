@@ -31,18 +31,7 @@ class ThreadPool extends AbstractEndpoint
      */
     public function getParamWhitelist()
     {
-        return array(
-            'local',
-            'master_timeout',
-            'h',
-            'help',
-            'v',
-            'full_id',
-            'size',
-            'thread_pool_patterns',
-            's',
-            'format',
-        );
+        return ['local', 'master_timeout', 'h', 'help', 'v', 'full_id', 'size', 'thread_pool_patterns', 's', 'format'];
     }
 
     /**

@@ -12,9 +12,9 @@ $counter = 0;
 
 function getApiPath()
 {
-    $path = dirname(__FILE__).'/elasticsearch/rest-api-spec/api';
+    $path = __DIR__.'/elasticsearch/rest-api-spec/api';
     if (file_exists($path) !== true) {
-        $path = dirname(__FILE__).'/elasticsearch/rest-api-spec/src/main/resources/rest-api-spec/api';
+        $path = __DIR__.'/elasticsearch/rest-api-spec/src/main/resources/rest-api-spec/api';
     }
     return $path;
 }
@@ -31,12 +31,12 @@ if ($handle = opendir(getApiPath())) {
 
 function processURLPaths($data)
 {
-    $final = array();
+    $final = [];
 
     $containsType = false;
     $containsIndex = false;
     foreach ($data['url']['paths'] as $path) {
-        $params = array();
+        $params = [];
         preg_match_all('/{(.*?)}/', $path, $params);
         $params = $params[1];
         $count = count($params);
@@ -59,12 +59,7 @@ function processURLPaths($data)
         }
 
         if ($duplicate !== true) {
-            $final[] = array(
-                'path'   => $path,
-                'parsedPath' => $parsedPath,
-                'params' => $params,
-                'count'  => $count
-            );
+            $final[] = ['path'   => $path, 'parsedPath' => $parsedPath, 'params' => $params, 'count'  => $count];
         }
     }
 
@@ -76,13 +71,7 @@ function processURLPaths($data)
     }
     */
 
-    usort($final, function ($a, $b) {
-            if ($a['count'] == $b['count']) {
-                return 0;
-            }
-
-            return ($a['count'] > $b['count']) ? -1 : 1;
-        });
+    usort($final, fn($a, $b) => $b['count'] <=> $a['count']);
 
     return $final;
 }
@@ -101,29 +90,7 @@ function getDefaultPath($path)
 
 function forbid($key, $value)
 {
-    $forbid = array(
-        'GET' => array(
-            '/_nodes/hotthreads',
-            '/_nodes/{node_id}/hotthreads',
-            '/_nodes/{metric}'
-        ),
-        'HEAD' => array(),
-        'PUT' => array(
-            '/{index}/{type}/_mapping'
-        ),
-        'POST' => array(
-            '/_all/{type}/_bulk',
-            '/_all/{type}/_mget'
-        ),
-        'DELETE' => array(
-            '/{index}/{type}',
-            '/{index}/{type}/_mapping'
-        ),
-        'QS' => array(
-            'operation_threading',
-            'field_data'
-        )
-    );
+    $forbid = ['GET' => ['/_nodes/hotthreads', '/_nodes/{node_id}/hotthreads', '/_nodes/{metric}'], 'HEAD' => [], 'PUT' => ['/{index}/{type}/_mapping'], 'POST' => ['/_all/{type}/_bulk', '/_all/{type}/_mget'], 'DELETE' => ['/{index}/{type}', '/{index}/{type}/_mapping'], 'QS' => ['operation_threading', 'field_data']];
 
     if (isset($forbid['key']) && $forbid['key'] === $value) {
         return true;
@@ -134,9 +101,7 @@ function forbid($key, $value)
 
 function generateTemplate($path, $template)
 {
-    $ignoreList = array(
-        'index.json', 'bulk.json'
-    );
+    $ignoreList = ['index.json', 'bulk.json'];
 
     if (array_search($path, $ignoreList) !== false) {
         return;
@@ -144,27 +109,14 @@ function generateTemplate($path, $template)
 
     $path = getApiPath().DIRECTORY_SEPARATOR.$path;
     $json = file_get_contents($path);
-    $data = json_decode($json, true);
-
-    reset($data);
-    $namespace = key($data);
+    $data = json_decode($json, true, 512, JSON_THROW_ON_ERROR);
+    $namespace = array_key_first($data);
     $data = $data[$namespace];
     $namespace = explode('.', $namespace);
 
-    $underscoreNamespace = array(
-        'get',
-        'put',
-        'post',
-        'delete',
-        'exists',
-        'update',
-        'create'
-    );
+    $underscoreNamespace = ['get', 'put', 'post', 'delete', 'exists', 'update', 'create'];
 
-    $exceptions = array(
-        'delete_by_query',
-        'update_by_query',
-    );
+    $exceptions = ['delete_by_query', 'update_by_query'];
 
     if (strpos($namespace[count($namespace)-1], '_')) {
         $temp = explode('_', $namespace[count($namespace)-1]);
@@ -178,26 +130,21 @@ function generateTemplate($path, $template)
     }
 
     $data['url']['processed'] = processURLPaths($data);
-    $data['url']['default'] = getDefaultPath($data['url']['processed'][count($data['url']['processed'])-1]);
-    if (count($data['methods']) > 1) {
+    $data['url']['default'] = getDefaultPath($data['url']['processed'][(is_countable($data['url']['processed']) ? count($data['url']['processed']) : 0)-1]);
+    if ((is_countable($data['methods']) ? count($data['methods']) : 0) > 1) {
         if (in_array("GET", $data['methods'])) {
             $data['methods'] = "GET";
         } else {
             $data['methods'] = $data['methods'][0];
         }
     }
-    $renderVars = array(
-        'json'      => $json,
-        'data'      => $data,
-        'namespace' => $namespace,
-        'className' => ucfirst($namespace[count($namespace)-1]),
-    );
+    $renderVars = ['json'      => $json, 'data'      => $data, 'namespace' => $namespace, 'className' => ucfirst($namespace[count($namespace)-1])];
 
     $ret = $template->render($renderVars);
 
     $dir = __DIR__.'/output/'.implode('/', array_map('ucfirst', array_splice($namespace, 0, count($namespace)-1)));
 
-    if (substr($dir, -1) !== '/') {
+    if (!str_ends_with($dir, '/')) {
         $dir .= '/';
     }
     if (!file_exists($dir)) {

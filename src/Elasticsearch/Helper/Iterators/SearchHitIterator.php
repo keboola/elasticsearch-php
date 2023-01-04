@@ -44,8 +44,6 @@ class SearchHitIterator implements Iterator, \Countable
 
     /**
      * Constructor
-     *
-     * @param SearchResponseIterator $search_responses
      */
     public function __construct(SearchResponseIterator $search_responses)
     {

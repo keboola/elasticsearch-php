@@ -22,7 +22,7 @@ class AbstractEndpointTest extends \PHPUnit_Framework_TestCase
      */
     public function testInvalidParamsCauseErrorsWhenProvidedToSetParams(array $params)
     {
-        $this->endpoint->expects($this->once())
+        $this->endpoint->expects(static::once())
             ->method('getParamWhitelist')
             ->willReturn(['one', 'two']);
 

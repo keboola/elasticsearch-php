@@ -30,7 +30,7 @@ while (!$client->ping()) {
 
         foreach ($dir as $fileinfo) {
             if ($fileinfo->isDir() && !$fileinfo->isDot()) {
-                if (strpos($fileinfo->getFilename(), "elasticsearch") === 0) {
+                if (str_starts_with($fileinfo->getFilename(), "elasticsearch")) {
                     $log = file_get_contents(dirname(__DIR__)."/$fileinfo/logs/elasticsearch.log");
                     echo $log;
                     break;

@@ -51,12 +51,7 @@ class FieldCaps extends AbstractEndpoint
      */
     public function getParamWhitelist()
     {
-        return array(
-            'fields',
-            'ignore_unavailable',
-            'allow_no_indices',
-            'expand_wildcards'
-        );
+        return ['fields', 'ignore_unavailable', 'allow_no_indices', 'expand_wildcards'];
     }
 
     /**

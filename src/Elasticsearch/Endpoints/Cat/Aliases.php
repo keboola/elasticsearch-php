@@ -54,16 +54,7 @@ class Aliases extends AbstractEndpoint
      */
     public function getParamWhitelist()
     {
-        return array(
-            'local',
-            'master_timeout',
-            'h',
-            'help',
-            'v',
-            'format',
-            's',
-            'format',
-        );
+        return ['local', 'master_timeout', 'h', 'help', 'v', 'format', 's', 'format'];
     }
 
     /**

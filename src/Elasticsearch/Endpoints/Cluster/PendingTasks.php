@@ -30,10 +30,7 @@ class PendingTasks extends AbstractEndpoint
      */
     public function getParamWhitelist()
     {
-        return array(
-            'local',
-            'master_timeout',
-        );
+        return ['local', 'master_timeout'];
     }
 
     /**

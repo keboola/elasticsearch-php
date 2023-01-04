@@ -35,16 +35,7 @@ class ForceMerge extends AbstractEndpoint
      */
     public function getParamWhitelist()
     {
-        return array(
-            'flush',
-            'ignore_unavailable',
-            'allow_no_indices',
-            'expand_wildcards',
-            'max_num_segments',
-            'only_expunge_deletes',
-            'operation_threading',
-            'wait_for_merge',
-        );
+        return ['flush', 'ignore_unavailable', 'allow_no_indices', 'expand_wildcards', 'max_num_segments', 'only_expunge_deletes', 'operation_threading', 'wait_for_merge'];
     }
 
     /**

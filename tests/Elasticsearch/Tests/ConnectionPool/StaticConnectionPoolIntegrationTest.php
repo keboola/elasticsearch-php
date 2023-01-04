@@ -25,9 +25,9 @@ class StaticConnectionPoolIntegrationTest extends \PHPUnit_Framework_TestCase
         $connection->markDead();
 
         // The index doesn't exist, but the server is up so this will return a 404
-        $this->assertFalse($client->indices()->exists(['index' => 'not_existing_index']));
+        static::assertFalse($client->indices()->exists(['index' => 'not_existing_index']));
 
         // But the node should be marked as alive since the server responded
-        $this->assertTrue($connection->isAlive());
+        static::assertTrue($connection->isAlive());
     }
 }

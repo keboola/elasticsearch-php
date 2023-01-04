@@ -94,30 +94,26 @@ class SniffingConnectionPool extends AbstractConnectionPool implements Connectio
     }
 
     /**
-     * @param Connection $connection
      * @return bool
      */
     private function sniffConnection(Connection $connection)
     {
         try {
             $response = $connection->sniff();
-        } catch (OperationTimeoutException $exception) {
+        } catch (OperationTimeoutException) {
             return false;
         }
 
         $nodes = $this->parseClusterState($connection->getTransportSchema(), $response);
 
-        if (count($nodes) === 0) {
+        if ((is_countable($nodes) ? count($nodes) : 0) === 0) {
             return false;
         }
 
-        $this->connections = array();
+        $this->connections = [];
 
         foreach ($nodes as $node) {
-            $nodeDetails = array(
-                'host' => $node['host'],
-                'port' => $node['port']
-            );
+            $nodeDetails = ['host' => $node['host'], 'port' => $node['port']];
             $this->connections[] = $this->connectionFactory->create($nodeDetails);
         }
 
@@ -130,15 +126,12 @@ class SniffingConnectionPool extends AbstractConnectionPool implements Connectio
     {
         $pattern       = '/([^:]*):([0-9]+)/';
         $schemaAddress = $transportSchema . '_address';
-        $hosts         = array();
+        $hosts         = [];
 
         foreach ($nodeInfo['nodes'] as $node) {
             if (isset($node['http']) === true && isset($node['http']['publish_address']) === true) {
                 if (preg_match($pattern, $node['http']['publish_address'], $match) === 1) {
-                    $hosts[] = array(
-                        'host' => $match[1],
-                        'port' => (int) $match[2],
-                    );
+                    $hosts[] = ['host' => $match[1], 'port' => (int) $match[2]];
                 }
             }
         }

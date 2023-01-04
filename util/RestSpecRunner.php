@@ -22,8 +22,8 @@ echo "Git cwd: ".dirname(__DIR__) . "/util/elasticsearch\n";
 $git = $gitWrapper->workingCopy(dirname(__DIR__) . '/util/elasticsearch');
 
 echo "Update elasticsearch submodule\n";
-$git->fetchAll(array('verbose' => true));
+$git->fetchAll(['verbose' => true]);
 
 $hash = $_SERVER['TEST_BUILD_REF'];
 echo "Checkout yaml tests (hash: $hash)\n";
-$git->checkout($hash, array('force' => true, 'quiet' => true));
+$git->checkout($hash, ['force' => true, 'quiet' => true]);

@@ -83,20 +83,7 @@ class Get extends AbstractEndpoint
      */
     public function getParamWhitelist()
     {
-        return array(
-            'fields',
-            'parent',
-            'preference',
-            'realtime',
-            'refresh',
-            'routing',
-            '_source',
-            '_source_exclude',
-            '_source_include',
-            'version',
-            'version_type',
-            'stored_fields'
-        );
+        return ['fields', 'parent', 'preference', 'realtime', 'refresh', 'routing', '_source', '_source_exclude', '_source_include', 'version', 'version_type', 'stored_fields'];
     }
 
     /**

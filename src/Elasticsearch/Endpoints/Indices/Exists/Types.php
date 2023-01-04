@@ -46,11 +46,7 @@ class Types extends AbstractEndpoint
      */
     public function getParamWhitelist()
     {
-        return array(
-            'ignore_unavailable',
-            'allow_no_indices',
-            'expand_wildcards'
-        );
+        return ['ignore_unavailable', 'allow_no_indices', 'expand_wildcards'];
     }
 
     /**

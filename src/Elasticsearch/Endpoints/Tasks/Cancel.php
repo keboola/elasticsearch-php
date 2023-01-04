@@ -53,12 +53,7 @@ class Cancel extends AbstractEndpoint
      */
     public function getParamWhitelist()
     {
-        return array(
-            'node_id',
-            'actions',
-            'parent_node',
-            'parent_task',
-        );
+        return ['node_id', 'actions', 'parent_node', 'parent_task'];
     }
 
     /**

@@ -84,10 +84,7 @@ class Status extends AbstractEndpoint
      */
     public function getParamWhitelist()
     {
-        return array(
-            'master_timeout',
-            'ignore_unavailable'
-        );
+        return ['master_timeout', 'ignore_unavailable'];
     }
 
     /**

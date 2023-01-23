@@ -46,14 +46,7 @@ class Flush extends AbstractEndpoint
      */
     public function getParamWhitelist()
     {
-        return array(
-            'force',
-            'full',
-            'ignore_unavailable',
-            'allow_no_indices',
-            'expand_wildcards',
-            'wait_if_ongoing'
-        );
+        return ['force', 'full', 'ignore_unavailable', 'allow_no_indices', 'expand_wildcards', 'wait_if_ongoing'];
     }
 
     /**

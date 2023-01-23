@@ -94,12 +94,7 @@ class SearchResponseIterator implements Iterator
     {
         if (!empty($this->scroll_id)) {
             $this->client->clearScroll(
-                array(
-                    'scroll_id' => $this->scroll_id,
-                    'client' => array(
-                        'ignore' => 404
-                    )
-                )
+                ['scroll_id' => $this->scroll_id, 'client' => ['ignore' => 404]]
             );
             $this->scroll_id = null;
         }
@@ -130,10 +125,7 @@ class SearchResponseIterator implements Iterator
     {
         if ($this->current_key !== 0) {
             $this->current_scrolled_response = $this->client->scroll(
-                array(
-                    'scroll_id' => $this->scroll_id,
-                    'scroll'    => $this->scroll_ttl
-                )
+                ['scroll_id' => $this->scroll_id, 'scroll'    => $this->scroll_ttl]
             );
             $this->scroll_id = $this->current_scrolled_response['_scroll_id'];
         }

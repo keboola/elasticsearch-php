@@ -63,7 +63,7 @@ class StaticNoPingConnectionPool extends AbstractConnectionPool implements Conne
     private function readyToRevive(Connection $connection)
     {
         $timeout = min(
-            $this->pingTimeout * pow(2, $connection->getPingFailures()),
+            $this->pingTimeout * 2 ** $connection->getPingFailures(),
             $this->maxPingTimeout
         );
 

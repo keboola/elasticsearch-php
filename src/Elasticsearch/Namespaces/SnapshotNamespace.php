@@ -21,7 +21,7 @@ class SnapshotNamespace extends AbstractNamespace
      *
      * @return array
      */
-    public function create($params = array())
+    public function create($params = [])
     {
         $repository = $this->extractArgument($params, 'repository');
         $snapshot = $this->extractArgument($params, 'snapshot');
@@ -48,7 +48,7 @@ class SnapshotNamespace extends AbstractNamespace
      *
      * @return array
      */
-    public function createRepository($params = array())
+    public function createRepository($params = [])
     {
         $repository = $this->extractArgument($params, 'repository');
         $body = $this->extractArgument($params, 'body');
@@ -72,7 +72,7 @@ class SnapshotNamespace extends AbstractNamespace
      *
      * @return array
      */
-    public function delete($params = array())
+    public function delete($params = [])
     {
         $repository = $this->extractArgument($params, 'repository');
         $snapshot = $this->extractArgument($params, 'snapshot');
@@ -97,7 +97,7 @@ class SnapshotNamespace extends AbstractNamespace
      *
      * @return array
      */
-    public function deleteRepository($params = array())
+    public function deleteRepository($params = [])
     {
         $repository = $this->extractArgument($params, 'repository');
 
@@ -119,7 +119,7 @@ class SnapshotNamespace extends AbstractNamespace
      *
      * @return array
      */
-    public function get($params = array())
+    public function get($params = [])
     {
         $repository = $this->extractArgument($params, 'repository');
         $snapshot = $this->extractArgument($params, 'snapshot');
@@ -144,7 +144,7 @@ class SnapshotNamespace extends AbstractNamespace
      *
      * @return array
      */
-    public function getRepository($params = array())
+    public function getRepository($params = [])
     {
         $repository = $this->extractArgument($params, 'repository');
 
@@ -167,7 +167,7 @@ class SnapshotNamespace extends AbstractNamespace
      *
      * @return array
      */
-    public function restore($params = array())
+    public function restore($params = [])
     {
         $repository = $this->extractArgument($params, 'repository');
         $snapshot = $this->extractArgument($params, 'snapshot');
@@ -193,7 +193,7 @@ class SnapshotNamespace extends AbstractNamespace
      *
      * @return array
      */
-    public function status($params = array())
+    public function status($params = [])
     {
         $repository = $this->extractArgument($params, 'repository');
         $snapshot = $this->extractArgument($params, 'snapshot');
@@ -218,7 +218,7 @@ class SnapshotNamespace extends AbstractNamespace
      *
      * @return array
      */
-    public function verifyRepository($params = array())
+    public function verifyRepository($params = [])
     {
         $repository = $this->extractArgument($params, 'repository');
 

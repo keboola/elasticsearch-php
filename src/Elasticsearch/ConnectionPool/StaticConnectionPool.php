@@ -36,7 +36,7 @@ class StaticConnectionPool extends AbstractConnectionPool implements ConnectionP
      */
     public function nextConnection($force = false)
     {
-        $skipped = array();
+        $skipped = [];
 
         $total = count($this->connections);
         while ($total--) {
@@ -80,7 +80,7 @@ class StaticConnectionPool extends AbstractConnectionPool implements ConnectionP
     private function readyToRevive(Connection $connection)
     {
         $timeout = min(
-            $this->pingTimeout * pow(2, $connection->getPingFailures()),
+            $this->pingTimeout * 2 ** $connection->getPingFailures(),
             $this->maxPingTimeout
         );
 

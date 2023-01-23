@@ -34,7 +34,7 @@ class NodesNamespace extends AbstractNamespace
      *
      * @return array
      */
-    public function stats($params = array())
+    public function stats($params = [])
     {
         $nodeID = $this->extractArgument($params, 'node_id');
 
@@ -66,7 +66,7 @@ class NodesNamespace extends AbstractNamespace
      *
      * @return array
      */
-    public function info($params = array())
+    public function info($params = [])
     {
         $nodeID = $this->extractArgument($params, 'node_id');
         $metric = $this->extractArgument($params, 'metric');
@@ -93,7 +93,7 @@ class NodesNamespace extends AbstractNamespace
      *
      * @return array
      */
-    public function hotThreads($params = array())
+    public function hotThreads($params = [])
     {
         $nodeID = $this->extractArgument($params, 'node_id');
 
@@ -117,7 +117,7 @@ class NodesNamespace extends AbstractNamespace
      *
      * @return array
      */
-    public function shutdown($params = array())
+    public function shutdown($params = [])
     {
         $nodeID = $this->extractArgument($params, 'node_id');
 

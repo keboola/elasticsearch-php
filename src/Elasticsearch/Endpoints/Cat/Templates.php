@@ -44,20 +44,7 @@ class Templates extends AbstractEndpoint
      */
     public function getParamWhitelist()
     {
-        return array(
-            'format',
-            'node_id',
-            'actions',
-            'detailed',
-            'parent_node',
-            'parent_task',
-            'h',
-            'help',
-            'v',
-            's',
-            'local',
-            'master_timeout',
-        );
+        return ['format', 'node_id', 'actions', 'detailed', 'parent_node', 'parent_task', 'h', 'help', 'v', 's', 'local', 'master_timeout'];
     }
 
     /**

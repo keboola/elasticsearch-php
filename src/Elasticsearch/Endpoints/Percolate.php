@@ -65,18 +65,7 @@ class Percolate extends AbstractEndpoint
      */
     public function getParamWhitelist()
     {
-        return array(
-            'routing',
-            'preference',
-            'ignore_unavailable',
-            'allow_no_indices',
-            'expand_wildcards',
-            'percolate_index',
-            'percolate_type',
-            'version',
-            'version_type',
-            'percolate_format'
-        );
+        return ['routing', 'preference', 'ignore_unavailable', 'allow_no_indices', 'expand_wildcards', 'percolate_index', 'percolate_type', 'version', 'version_type', 'percolate_format'];
     }
 
     /**

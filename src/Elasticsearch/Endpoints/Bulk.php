@@ -59,18 +59,7 @@ class Bulk extends AbstractEndpoint implements BulkEndpointInterface
      */
     public function getParamWhitelist()
     {
-        return array(
-            'consistency',
-            'refresh',
-            'replication',
-            'type',
-            'fields',
-            'pipeline',
-            '_source',
-            '_source_include',
-            '_source_exclude',
-            'pipeline'
-        );
+        return ['consistency', 'refresh', 'replication', 'type', 'fields', 'pipeline', '_source', '_source_include', '_source_exclude', 'pipeline'];
     }
 
     /**

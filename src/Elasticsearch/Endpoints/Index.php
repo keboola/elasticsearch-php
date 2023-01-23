@@ -79,21 +79,7 @@ class Index extends AbstractEndpoint
      */
     public function getParamWhitelist()
     {
-        return array(
-            'consistency',
-            'op_type',
-            'parent',
-            'percolate',
-            'refresh',
-            'replication',
-            'routing',
-            'timeout',
-            'timestamp',
-            'ttl',
-            'version',
-            'version_type',
-            'pipeline'
-        );
+        return ['consistency', 'op_type', 'parent', 'percolate', 'refresh', 'replication', 'routing', 'timeout', 'timestamp', 'ttl', 'version', 'version_type', 'pipeline'];
     }
 
     /**

@@ -70,23 +70,7 @@ class Update extends AbstractEndpoint
      */
     public function getParamWhitelist()
     {
-        return array(
-            'consistency',
-            'fields',
-            'lang',
-            'parent',
-            'refresh',
-            'replication',
-            'retry_on_conflict',
-            'routing',
-            'script',
-            'timeout',
-            'timestamp',
-            'ttl',
-            'version',
-            'version_type',
-            '_source'
-        );
+        return ['consistency', 'fields', 'lang', 'parent', 'refresh', 'replication', 'retry_on_conflict', 'routing', 'script', 'timeout', 'timestamp', 'ttl', 'version', 'version_type', '_source'];
     }
 
     /**

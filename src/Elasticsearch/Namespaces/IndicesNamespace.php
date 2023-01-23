@@ -78,7 +78,7 @@ class IndicesNamespace extends AbstractNamespace
      *
      * @return array
      */
-    public function segments($params = array())
+    public function segments($params = [])
     {
         $index = $this->extractArgument($params, 'index');
 
@@ -124,7 +124,7 @@ class IndicesNamespace extends AbstractNamespace
      *
      * @return array
      */
-    public function delete($params = array())
+    public function delete($params = [])
     {
         $index = $this->extractArgument($params, 'index');
 
@@ -165,7 +165,7 @@ class IndicesNamespace extends AbstractNamespace
      *
      * @return array
      */
-    public function stats($params = array())
+    public function stats($params = [])
     {
         $metric = $this->extractArgument($params, 'metric');
 
@@ -191,7 +191,7 @@ class IndicesNamespace extends AbstractNamespace
      *
      * @return array
      */
-    public function putSettings($params = array())
+    public function putSettings($params = [])
     {
         $index = $this->extractArgument($params, 'index');
 
@@ -219,7 +219,7 @@ class IndicesNamespace extends AbstractNamespace
      *
      * @return array
      */
-    public function snapshotIndex($params = array())
+    public function snapshotIndex($params = [])
     {
         $index = $this->extractArgument($params, 'index');
 
@@ -244,7 +244,7 @@ class IndicesNamespace extends AbstractNamespace
      *
      * @return array
      */
-    public function shrink($params = array())
+    public function shrink($params = [])
     {
         $index = $this->extractArgument($params, 'index');
         $target = $this->extractArgument($params, 'target');
@@ -270,7 +270,7 @@ class IndicesNamespace extends AbstractNamespace
      *
      * @return array
      */
-    public function getMapping($params = array())
+    public function getMapping($params = [])
     {
         $index = $this->extractArgument($params, 'index');
 
@@ -298,7 +298,7 @@ class IndicesNamespace extends AbstractNamespace
      *
      * @return array
      */
-    public function getFieldMapping($params = array())
+    public function getFieldMapping($params = [])
     {
         $index = $this->extractArgument($params, 'index');
         $type = $this->extractArgument($params, 'type');
@@ -336,7 +336,7 @@ class IndicesNamespace extends AbstractNamespace
      *
      * @return array
      */
-    public function flush($params = array())
+    public function flush($params = [])
     {
         $index = $this->extractArgument($params, 'index');
 
@@ -364,7 +364,7 @@ class IndicesNamespace extends AbstractNamespace
      *
      * @return array
      */
-    public function flushSynced($params = array())
+    public function flushSynced($params = [])
     {
         $index = $this->extractArgument($params, 'index');
 
@@ -392,7 +392,7 @@ class IndicesNamespace extends AbstractNamespace
      *
      * @return array
      */
-    public function refresh($params = array())
+    public function refresh($params = [])
     {
         $index = $this->extractArgument($params, 'index');
 
@@ -417,7 +417,7 @@ class IndicesNamespace extends AbstractNamespace
      *
      * @return array
      */
-    public function recovery($params = array())
+    public function recovery($params = [])
     {
         $index = $this->extractArgument($params, 'index');
 
@@ -474,7 +474,7 @@ class IndicesNamespace extends AbstractNamespace
      *
      * @return array
      */
-    public function putAlias($params = array())
+    public function putAlias($params = [])
     {
         $index = $this->extractArgument($params, 'index');
 
@@ -537,7 +537,7 @@ class IndicesNamespace extends AbstractNamespace
      *
      * @return array
      */
-    public function validateQuery($params = array())
+    public function validateQuery($params = [])
     {
         $index = $this->extractArgument($params, 'index');
 
@@ -734,7 +734,7 @@ class IndicesNamespace extends AbstractNamespace
      *
      * @return array
      */
-    public function forceMerge($params = array())
+    public function forceMerge($params = [])
     {
         $index = $this->extractArgument($params, 'index');
 
@@ -818,7 +818,7 @@ class IndicesNamespace extends AbstractNamespace
      *
      * @return array
      */
-    public function analyze($params = array())
+    public function analyze($params = [])
     {
         $index = $this->extractArgument($params, 'index');
 
@@ -855,7 +855,7 @@ class IndicesNamespace extends AbstractNamespace
      *
      * @return array
      */
-    public function clearCache($params = array())
+    public function clearCache($params = [])
     {
         $index = $this->extractArgument($params, 'index');
 
@@ -879,7 +879,7 @@ class IndicesNamespace extends AbstractNamespace
      *
      * @return array
      */
-    public function updateAliases($params = array())
+    public function updateAliases($params = [])
     {
         $index = $this->extractArgument($params, 'index');
 
@@ -905,7 +905,7 @@ class IndicesNamespace extends AbstractNamespace
      *
      * @return array
      */
-    public function getAliases($params = array())
+    public function getAliases($params = [])
     {
         $index = $this->extractArgument($params, 'index');
 
@@ -966,7 +966,7 @@ class IndicesNamespace extends AbstractNamespace
      *
      * @return array
      */
-    public function status($params = array())
+    public function status($params = [])
     {
         $index = $this->extractArgument($params, 'index');
 
@@ -988,7 +988,7 @@ class IndicesNamespace extends AbstractNamespace
      *
      * @return array
      */
-    public function getSettings($params = array())
+    public function getSettings($params = [])
     {
         $index = $this->extractArgument($params, 'index');
 
@@ -1064,7 +1064,7 @@ class IndicesNamespace extends AbstractNamespace
      *
      * @return array
      */
-    public function upgrade($params = array())
+    public function upgrade($params = [])
     {
         $index = $this->extractArgument($params, 'index');
 
@@ -1092,7 +1092,7 @@ class IndicesNamespace extends AbstractNamespace
      *
      * @return array
      */
-    public function getUpgrade($params = array())
+    public function getUpgrade($params = [])
     {
         $index = $this->extractArgument($params, 'index');
 

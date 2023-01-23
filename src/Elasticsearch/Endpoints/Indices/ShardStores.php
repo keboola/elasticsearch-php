@@ -39,13 +39,7 @@ class ShardStores extends AbstractEndpoint
      */
     public function getParamWhitelist()
     {
-        return array(
-            'status',
-            'ignore_unavailable',
-            'allow_no_indices',
-            'expand_wildcards',
-            'operation_threading'
-        );
+        return ['status', 'ignore_unavailable', 'allow_no_indices', 'expand_wildcards', 'operation_threading'];
     }
 
 

@@ -56,9 +56,9 @@ abstract class AbstractConnectionPool implements ConnectionPoolInterface
      */
     public function __construct($connections, SelectorInterface $selector, ConnectionFactoryInterface $factory, $connectionPoolParams)
     {
-        $paramList = array('connections', 'selector', 'connectionPoolParams');
+        $paramList = ['connections', 'selector', 'connectionPoolParams'];
         foreach ($paramList as $param) {
-            if (isset($$param) === false) {
+            if (isset(${$param}) === false) {
                 throw new InvalidArgumentException('`' . $param . '` parameter must not be null');
             }
         }

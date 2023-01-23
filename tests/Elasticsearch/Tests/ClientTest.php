@@ -17,7 +17,7 @@ use Mockery as m;
  * @license    http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link       http://elasticsearch.org
  */
-class ClientTest extends \PHPUnit_Framework_TestCase
+class ClientTest extends \PHPUnit\Framework\TestCase
 {
     public function tearDown()
     {
@@ -208,15 +208,11 @@ class ClientTest extends \PHPUnit_Framework_TestCase
             ->setRetries(0)
             ->build();
 
-        $searchParams = array(
-            'index' => 'test',
-            'type' => 'test',
-            'body' => [
-                'query' => [
-                    'match_all' => []
-                ]
+        $searchParams = ['index' => 'test', 'type' => 'test', 'body' => [
+            'query' => [
+                'match_all' => []
             ]
-        );
+        ]];
 
         $client = Elasticsearch\ClientBuilder::create()
             ->setHosts(["localhost:1"])

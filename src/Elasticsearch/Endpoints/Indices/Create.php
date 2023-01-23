@@ -59,12 +59,7 @@ class Create extends AbstractEndpoint
      */
     public function getParamWhitelist()
     {
-        return array(
-            'timeout',
-            'master_timeout',
-            'update_all_types',
-            'wait_for_active_shards'
-        );
+        return ['timeout', 'master_timeout', 'update_all_types', 'wait_for_active_shards'];
     }
 
     /**

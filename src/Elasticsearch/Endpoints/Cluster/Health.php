@@ -35,18 +35,7 @@ class Health extends AbstractEndpoint
      */
     public function getParamWhitelist()
     {
-        return array(
-            'level',
-            'local',
-            'master_timeout',
-            'timeout',
-            'wait_for_active_shards',
-            'wait_for_nodes',
-            'wait_for_relocating_shards',
-            'wait_for_status',
-            'wait_for_events',
-            'wait_for_no_relocating_shards'
-        );
+        return ['level', 'local', 'master_timeout', 'timeout', 'wait_for_active_shards', 'wait_for_nodes', 'wait_for_relocating_shards', 'wait_for_status', 'wait_for_events', 'wait_for_no_relocating_shards'];
     }
 
     /**

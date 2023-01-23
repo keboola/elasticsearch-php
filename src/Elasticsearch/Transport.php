@@ -93,7 +93,7 @@ class Transport
             throw $exception;
         }
 
-        $response             = array();
+        $response             = [];
         $caughtException      = null;
         $this->lastConnection = $connection;
 
@@ -134,7 +134,7 @@ class Transport
     public function resultOrFuture($result, $options = [])
     {
         $response = null;
-        $async = isset($options['client']['future']) ? $options['client']['future'] : null;
+        $async = $options['client']['future'] ?? null;
         if (is_null($async) || $async === false) {
             do {
                 $result = $result->wait();

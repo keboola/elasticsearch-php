@@ -75,11 +75,7 @@ class MsearchTemplate extends AbstractEndpoint
      */
     public function getParamWhitelist()
     {
-        return array(
-            'search_type',
-            'typed_keys',
-            'max_concurrent_searches'
-        );
+        return ['search_type', 'typed_keys', 'max_concurrent_searches'];
     }
 
     /**

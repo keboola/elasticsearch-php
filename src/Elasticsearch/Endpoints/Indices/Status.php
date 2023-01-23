@@ -35,15 +35,7 @@ class Status extends AbstractEndpoint
      */
     public function getParamWhitelist()
     {
-        return array(
-            'ignore_unavailable',
-            'allow_no_indices',
-            'expand_wildcards',
-            'human',
-            'operation_threading',
-            'recovery',
-            'snapshot',
-        );
+        return ['ignore_unavailable', 'allow_no_indices', 'expand_wildcards', 'human', 'operation_threading', 'recovery', 'snapshot'];
     }
 
     /**

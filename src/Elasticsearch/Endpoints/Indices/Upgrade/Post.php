@@ -45,13 +45,7 @@ class Post extends AbstractEndpoint
      */
     public function getParamWhitelist()
     {
-        return array(
-            'wait_for_completion',
-            'only_ancient_segments',
-            'ignore_unavailable',
-            'allow_no_indices',
-            'expand_wildcards',
-        );
+        return ['wait_for_completion', 'only_ancient_segments', 'ignore_unavailable', 'allow_no_indices', 'expand_wildcards'];
     }
 
 

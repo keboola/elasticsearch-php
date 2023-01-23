@@ -35,7 +35,7 @@ class SmartSerializer implements SerializerInterface
             return $data;
         } else {
             if (version_compare($this->PHP_VERSION, '5.6.6', '<') || ! defined('JSON_PRESERVE_ZERO_FRACTION')) {
-                $data = json_encode($data);
+                $data = json_encode($data, JSON_THROW_ON_ERROR);
             } else {
                 $data = json_encode($data, JSON_PRESERVE_ZERO_FRACTION);
             }

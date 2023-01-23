@@ -18,7 +18,7 @@ use Mockery as m;
  */
 class StaticConnectionPoolTest extends \PHPUnit\Framework\TestCase
 {
-    public function tearDown()
+    public function tearDown(): void
     {
         m::close();
     }
@@ -83,11 +83,9 @@ class StaticConnectionPoolTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals($connections[0], $retConnection);
     }
 
-    /**
-     * @expectedException NoNodesAvailableException
-     */
     public function testAllHostsFailPing()
     {
+        $this->expectException('NoNodesAvailableException');
         $connections = [];
 
         foreach (range(1, 10) as $index) {
@@ -210,6 +208,9 @@ class StaticConnectionPoolTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals($goodConnection, $ret);
     }
 
+    /**
+     * @doesNotPerformAssertions
+     */
     public function testCustomConnectionPoolIT()
     {
         $clientBuilder = \KBC\Elasticsearch\ClientBuilder::create();

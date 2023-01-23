@@ -19,19 +19,20 @@ use Mockery as m;
  */
 class ClientTest extends \PHPUnit\Framework\TestCase
 {
-    public function tearDown()
+    public function tearDown(): void
     {
         m::close();
     }
 
-    /**
-     * @expectedException \KBC\Elasticsearch\Common\Exceptions\InvalidArgumentException
-     */
     public function testConstructorIllegalPort()
     {
+        $this->expectException(\KBC\Elasticsearch\Common\Exceptions\InvalidArgumentException::class);
         $client = Elasticsearch\ClientBuilder::create()->setHosts(['localhost:abc'])->build();
     }
 
+    /**
+     * @doesNotPerformAssertions
+     */
     public function testFromConfig()
     {
         $params = [
@@ -44,11 +45,9 @@ class ClientTest extends \PHPUnit\Framework\TestCase
         $client = ClientBuilder::fromConfig($params);
     }
 
-    /**
-     * @expectedException \KBC\Elasticsearch\Common\Exceptions\RuntimeException
-     */
     public function testFromConfigBadParam()
     {
+        $this->expectException(\KBC\Elasticsearch\Common\Exceptions\RuntimeException::class);
         $params = [
             'hosts' => [
                 'localhost:9200'
@@ -59,6 +58,9 @@ class ClientTest extends \PHPUnit\Framework\TestCase
         $client = ClientBuilder::fromConfig($params);
     }
 
+    /**
+     * @doesNotPerformAssertions
+     */
     public function testFromConfigBadParamQuiet()
     {
         $params = [
@@ -71,6 +73,9 @@ class ClientTest extends \PHPUnit\Framework\TestCase
         $client = ClientBuilder::fromConfig($params, true);
     }
 
+    /**
+     * @doesNotPerformAssertions
+     */
     public function testNullDelete()
     {
         $client = ClientBuilder::create()->build();
@@ -109,6 +114,9 @@ class ClientTest extends \PHPUnit\Framework\TestCase
         }
     }
 
+    /**
+     * @doesNotPerformAssertions
+     */
     public function testEmptyStringDelete()
     {
         $client = ClientBuilder::create()->build();
@@ -147,6 +155,9 @@ class ClientTest extends \PHPUnit\Framework\TestCase
         }
     }
 
+    /**
+     * @doesNotPerformAssertions
+     */
     public function testArrayOfEmptyStringDelete()
     {
         $client = ClientBuilder::create()->build();
@@ -174,6 +185,9 @@ class ClientTest extends \PHPUnit\Framework\TestCase
         }
     }
 
+    /**
+     * @doesNotPerformAssertions
+     */
     public function testArrayOfNullDelete()
     {
         $client = ClientBuilder::create()->build();

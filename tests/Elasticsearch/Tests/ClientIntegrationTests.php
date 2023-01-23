@@ -12,6 +12,9 @@
  */
 class ClientIntegrationTests extends \PHPUnit\Framework\TestCase
 {
+    /**
+     * @doesNotPerformAssertions
+     */
     public function testCustomQueryParams()
     {
         $params = [];

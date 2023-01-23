@@ -85,7 +85,7 @@ class YamlRunnerTest extends \PHPUnit\Framework\TestCase
     }
 
 
-    public static function setUpBeforeClass()
+    public static function setUpBeforeClass(): void
     {
         $host = static::getHost();
         echo "Test Host: $host\n";
@@ -103,7 +103,7 @@ class YamlRunnerTest extends \PHPUnit\Framework\TestCase
         echo "ES Version: ".static::$esVersion."\n";
     }
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->clean();
         $builder = ClientBuilder::create()->setHosts([self::getHost()]);
@@ -116,6 +116,7 @@ class YamlRunnerTest extends \PHPUnit\Framework\TestCase
     /**
      * @dataProvider yamlProvider
      * @group sync
+     * @doesNotPerformAssertions
      */
     public function testIntegration($testProcedure, $skip, $setupProcedure, $fileName)
     {
@@ -138,6 +139,7 @@ class YamlRunnerTest extends \PHPUnit\Framework\TestCase
     /**
      * @dataProvider yamlProvider
      * @group async
+     * @doesNotPerformAssertions
      */
     public function testAsyncIntegration($testProcedure, $skip, $setupProcedure, $fileName)
     {
@@ -518,7 +520,7 @@ class YamlRunnerTest extends \PHPUnit\Framework\TestCase
 
             static::assertEquals($expected, $match, $msg);
         } elseif (is_string($expected) && preg_match('#^/.+?/$#s', $expected)) {
-            static::assertRegExp($this->formatRegex($expected), $match, $msg);
+            static::assertMatchesRegularExpression($this->formatRegex($expected), $match, $msg);
         } else {
             static::assertEquals($expected, $match, $msg);
         }
@@ -692,7 +694,7 @@ class YamlRunnerTest extends \PHPUnit\Framework\TestCase
     private function assertException(\Exception $exception, $expectedError, $testName)
     {
         if (is_string($expectedError) && preg_match('#^/.+?/$#', $expectedError)) {
-            static::assertRegExp($expectedError, $exception->getMessage(), 'Failed to catch error in test ' . $testName);
+            static::assertMatchesRegularExpression($expectedError, $exception->getMessage(), 'Failed to catch error in test ' . $testName);
         } elseif ($exception instanceof Missing404Exception && $expectedError === 'missing') {
             static::assertTrue(true);
         } elseif ($exception instanceof Conflict409Exception && $expectedError === 'conflict') {
@@ -708,7 +710,7 @@ class YamlRunnerTest extends \PHPUnit\Framework\TestCase
         } elseif ($exception instanceof \RuntimeException && $expectedError === 'param') {
             static::assertTrue(true);
         } else {
-            static::assertContains($expectedError, $exception->getMessage());
+            static::assertStringContainsString($expectedError, $exception->getMessage());
         }
 
         if ($exception->getPrevious() !== null) {

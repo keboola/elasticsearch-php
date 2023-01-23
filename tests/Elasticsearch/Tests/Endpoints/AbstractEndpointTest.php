@@ -18,10 +18,10 @@ class AbstractEndpointTest extends \PHPUnit\Framework\TestCase
 
     /**
      * @dataProvider invalidParameters
-     * @expectedException KBC\Elasticsearch\Common\Exceptions\UnexpectedValueException
      */
     public function testInvalidParamsCauseErrorsWhenProvidedToSetParams(array $params)
     {
+        $this->expectException(\KBC\Elasticsearch\Common\Exceptions\UnexpectedValueException::class);
         $this->endpoint->expects($this->once())
             ->method('getParamWhitelist')
             ->willReturn(['one', 'two']);
@@ -29,7 +29,7 @@ class AbstractEndpointTest extends \PHPUnit\Framework\TestCase
         $this->endpoint->setParams($params);
     }
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->endpoint = $this->getMockForAbstractClass(AbstractEndpoint::class);
     }

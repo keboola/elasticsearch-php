@@ -20,7 +20,7 @@ use Mockery as m;
  */
 class RegisteredNamespaceTest extends \PHPUnit\Framework\TestCase
 {
-    public function tearDown()
+    public function tearDown(): void
     {
         m::close();
     }
@@ -32,11 +32,9 @@ class RegisteredNamespaceTest extends \PHPUnit\Framework\TestCase
         $this->assertEquals("123", $client->foo()->fooMethod());
     }
 
-    /**
-     * @expectedException \KBC\Elasticsearch\Common\Exceptions\BadMethodCallException
-     */
     public function testNonExistingNamespace()
     {
+        $this->expectException(\KBC\Elasticsearch\Common\Exceptions\BadMethodCallException::class);
         $builder = new FooNamespaceBuilder();
         $client = ClientBuilder::create()->registerNamespace($builder)->build();
         $this->assertEquals("123", $client->bar()->fooMethod());

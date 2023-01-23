@@ -9,7 +9,6 @@ return static function (RectorConfig $rectorConfig): void {
     $rectorConfig->paths([
         __DIR__ . '/src',
         __DIR__ . '/tests',
-        __DIR__ . '/util',
     ]);
 
     // register a single rule
@@ -26,7 +25,7 @@ return static function (RectorConfig $rectorConfig): void {
 
     // define sets of rules
     $rectorConfig->sets([
-        LevelSetList::UP_TO_PHP_80,
+        LevelSetList::UP_TO_PHP_74,
         \Rector\PHPUnit\Set\PHPUnitSetList::PHPUNIT_60,
         \Rector\PHPUnit\Set\PHPUnitSetList::PHPUNIT_70,
         \Rector\PHPUnit\Set\PHPUnitSetList::PHPUNIT_80,

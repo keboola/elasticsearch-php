@@ -40,13 +40,7 @@ class Get extends AbstractEndpoint
      */
     public function getParamWhitelist()
     {
-        return array(
-            'ignore_unavailable',
-            'allow_no_indices',
-            'expand_wildcards',
-            'wildcard_expansion',
-            'local',
-        );
+        return ['ignore_unavailable', 'allow_no_indices', 'expand_wildcards', 'wildcard_expansion', 'local'];
     }
 
     /**

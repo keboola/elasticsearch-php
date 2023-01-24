@@ -15,9 +15,9 @@ use Mockery as m;
  * @license    http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link       http://elasticsearch.org
  */
-class StickyRoundRobinSelectorTest extends \PHPUnit_Framework_TestCase
+class StickyRoundRobinSelectorTest extends \PHPUnit\Framework\TestCase
 {
-    public function tearDown()
+    public function tearDown(): void
     {
         m::close();
     }
@@ -26,7 +26,7 @@ class StickyRoundRobinSelectorTest extends \PHPUnit_Framework_TestCase
     {
         $roundRobin = new Elasticsearch\ConnectionPool\Selectors\StickyRoundRobinSelector();
 
-        $mockConnections = array();
+        $mockConnections = [];
         $mockConnections[] = m::mock('\Elasticsearch\Connections\GuzzleConnection')
                              ->shouldReceive('isAlive')->times(16)->andReturn(true)->getMock();
 
@@ -45,7 +45,7 @@ class StickyRoundRobinSelectorTest extends \PHPUnit_Framework_TestCase
     {
         $roundRobin = new Elasticsearch\ConnectionPool\Selectors\StickyRoundRobinSelector();
 
-        $mockConnections = array();
+        $mockConnections = [];
         $mockConnections[] = m::mock('\Elasticsearch\Connections\GuzzleConnection')
                              ->shouldReceive('isAlive')->once()->andReturn(false)->getMock();
 

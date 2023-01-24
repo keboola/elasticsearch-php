@@ -10,22 +10,18 @@
  * @license    http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link       http://elasticsearch.org
  */
-class ClientIntegrationTests extends \PHPUnit_Framework_TestCase
+class ClientIntegrationTests extends \PHPUnit\Framework\TestCase
 {
+    /**
+     * @doesNotPerformAssertions
+     */
     public function testCustomQueryParams()
     {
-        $params = array();
+        $params = [];
 
         $client = KBC\Elasticsearch\ClientBuilder::create()->setHosts([$_SERVER['ES_TEST_HOST']])->build();
 
-        $getParams = array(
-            'index' => 'test',
-            'type' => 'test',
-            'id' => 1,
-            'parent' => 'abc',
-            'custom' => array('customToken' => 'abc', 'otherToken' => 123),
-            'client' => ['ignore' => 400]
-        );
+        $getParams = ['index' => 'test', 'type' => 'test', 'id' => 1, 'parent' => 'abc', 'custom' => ['customToken' => 'abc', 'otherToken' => 123], 'client' => ['ignore' => 400]];
         $exists = $client->exists($getParams);
     }
 

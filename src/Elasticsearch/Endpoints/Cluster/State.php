@@ -61,15 +61,7 @@ class State extends AbstractEndpoint
      */
     public function getParamWhitelist()
     {
-        return array(
-            'local',
-            'master_timeout',
-            'flat_settings',
-            'index_templates',
-            'expand_wildcards',
-            'ignore_unavailable',
-            'allow_no_indices'
-        );
+        return ['local', 'master_timeout', 'flat_settings', 'index_templates', 'expand_wildcards', 'ignore_unavailable', 'allow_no_indices'];
     }
 
     /**

@@ -61,10 +61,7 @@ class Delete extends AbstractEndpoint
      */
     public function getParamWhitelist()
     {
-        return array(
-            'master_timeout',
-            'timeout',
-        );
+        return ['master_timeout', 'timeout'];
     }
 
     /**

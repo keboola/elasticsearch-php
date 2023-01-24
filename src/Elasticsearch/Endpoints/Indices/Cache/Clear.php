@@ -35,23 +35,7 @@ class Clear extends AbstractEndpoint
      */
     public function getParamWhitelist()
     {
-        return array(
-            'field_data',
-            'fielddata',
-            'fields',
-            'filter',
-            'filter_cache',
-            'filter_keys',
-            'id',
-            'id_cache',
-            'index',
-            'recycler',
-            'ignore_unavailable',
-            'allow_no_indices',
-            'expand_wildcards',
-            'request_cache',
-            'request'
-        );
+        return ['field_data', 'fielddata', 'fields', 'filter', 'filter_cache', 'filter_keys', 'id', 'id_cache', 'index', 'recycler', 'ignore_unavailable', 'allow_no_indices', 'expand_wildcards', 'request_cache', 'request'];
     }
 
     /**

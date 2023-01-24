@@ -35,13 +35,7 @@ class Segments extends AbstractEndpoint
      */
     public function getParamWhitelist()
     {
-        return array(
-            'ignore_unavailable',
-            'allow_no_indices',
-            'expand_wildcards',
-            'human',
-            'operation_threading',
-        );
+        return ['ignore_unavailable', 'allow_no_indices', 'expand_wildcards', 'human', 'operation_threading'];
     }
 
     /**

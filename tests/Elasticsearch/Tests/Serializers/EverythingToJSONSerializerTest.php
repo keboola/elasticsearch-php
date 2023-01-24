@@ -3,16 +3,16 @@
 namespace KBC\Elasticsearch\Tests\Serializers;
 
 use KBC\Elasticsearch\Serializers\EverythingToJSONSerializer;
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase;
 use Mockery as m;
 
 /**
  * Class EverythingToJSONSerializerTest
  * @package KBC\Elasticsearch\Tests\Serializers
  */
-class EverythingToJSONSerializerTest extends PHPUnit_Framework_TestCase
+class EverythingToJSONSerializerTest extends \PHPUnit\Framework\TestCase
 {
-    public function tearDown()
+    public function tearDown(): void
     {
         m::close();
     }
@@ -20,7 +20,7 @@ class EverythingToJSONSerializerTest extends PHPUnit_Framework_TestCase
     public function testSerializeArray()
     {
         $serializer = new EverythingToJSONSerializer();
-        $body = array('value' => 'field');
+        $body = ['value' => 'field'];
 
         $ret = $serializer->serialize($body);
 
@@ -44,7 +44,7 @@ class EverythingToJSONSerializerTest extends PHPUnit_Framework_TestCase
         $serializer = new EverythingToJSONSerializer();
         $body = '{"field":"value"}';
 
-        $ret = $serializer->deserialize($body, array());
+        $ret = $serializer->deserialize($body, []);
 
         $body = json_decode($body, true);
         $this->assertEquals($body, $ret);

@@ -26,7 +26,7 @@ class IngestNamespace extends AbstractNamespace
      *
      * @return array
      */
-    public function deletePipeline($params = array())
+    public function deletePipeline($params = [])
     {
         $id = $this->extractArgument($params, 'id');
 
@@ -48,7 +48,7 @@ class IngestNamespace extends AbstractNamespace
      *
      * @return array
      */
-    public function getPipeline($params = array())
+    public function getPipeline($params = [])
     {
         $id = $this->extractArgument($params, 'id');
 
@@ -71,7 +71,7 @@ class IngestNamespace extends AbstractNamespace
      *
      * @return array
      */
-    public function putPipeline($params = array())
+    public function putPipeline($params = [])
     {
         $body = $this->extractArgument($params, 'body');
         $id = $this->extractArgument($params, 'id');
@@ -95,7 +95,7 @@ class IngestNamespace extends AbstractNamespace
      *
      * @return array
      */
-    public function simulate($params = array())
+    public function simulate($params = [])
     {
         $body = $this->extractArgument($params, 'body');
         $id = $this->extractArgument($params, 'id');

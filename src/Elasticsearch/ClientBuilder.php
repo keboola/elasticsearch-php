@@ -55,13 +55,13 @@ class ClientBuilder
     private $tracer;
 
     /** @var string */
-    private $connectionPool = '\KBC\Elasticsearch\ConnectionPool\StaticNoPingConnectionPool';
+    private $connectionPool = '\\' . \KBC\Elasticsearch\ConnectionPool\StaticNoPingConnectionPool::class;
 
     /** @var  string */
-    private $serializer = '\KBC\Elasticsearch\Serializers\SmartSerializer';
+    private $serializer = '\\' . \KBC\Elasticsearch\Serializers\SmartSerializer::class;
 
     /** @var  string */
-    private $selector = '\KBC\Elasticsearch\ConnectionPool\Selectors\RoundRobinSelector';
+    private $selector = '\\' . \KBC\Elasticsearch\ConnectionPool\Selectors\RoundRobinSelector::class;
 
     /** @var  array */
     private $connectionPoolArgs = [
@@ -464,16 +464,14 @@ class ClientBuilder
         }
 
         if (!is_null($sslOptions)) {
-            $sslHandler = function (callable $handler, array $sslOptions) {
-                return function (array $request) use ($handler, $sslOptions) {
-                    // Add our custom headers
-                    foreach ($sslOptions as $key => $value) {
-                        $request['client'][$key] = $value;
-                    }
+            $sslHandler = fn(callable $handler, array $sslOptions) => function (array $request) use ($handler, $sslOptions) {
+                // Add our custom headers
+                foreach ($sslOptions as $key => $value) {
+                    $request['client'][$key] = $value;
+                }
 
-                    // Send the request using the handler and return the response.
-                    return $handler($request);
-                };
+                // Send the request using the handler and return the response.
+                return $handler($request);
             };
             $this->handler = $sslHandler($this->handler, $sslOptions);
         }

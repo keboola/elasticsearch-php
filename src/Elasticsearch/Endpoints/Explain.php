@@ -70,24 +70,7 @@ class Explain extends AbstractEndpoint
      */
     public function getParamWhitelist()
     {
-        return array(
-            'analyze_wildcard',
-            'analyzer',
-            'default_operator',
-            'df',
-            'fields',
-            'lenient',
-            'lowercase_expanded_terms',
-            'parent',
-            'preference',
-            'q',
-            'routing',
-            'source',
-            '_source',
-            '_source_exclude',
-            '_source_include',
-            'stored_fields'
-        );
+        return ['analyze_wildcard', 'analyzer', 'default_operator', 'df', 'fields', 'lenient', 'lowercase_expanded_terms', 'parent', 'preference', 'q', 'routing', 'source', '_source', '_source_exclude', '_source_include', 'stored_fields'];
     }
 
     /**

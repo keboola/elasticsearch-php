@@ -19,14 +19,7 @@ class Reindex extends AbstractEndpoint
      */
     public function getParamWhitelist()
     {
-        return array(
-            'slices',
-            'refresh',
-            'timeout',
-            'consistency',
-            'wait_for_completion',
-            'requests_per_second',
-        );
+        return ['slices', 'refresh', 'timeout', 'consistency', 'wait_for_completion', 'requests_per_second'];
     }
 
     /**

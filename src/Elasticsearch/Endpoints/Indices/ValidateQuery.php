@@ -56,15 +56,7 @@ class ValidateQuery extends AbstractEndpoint
      */
     public function getParamWhitelist()
     {
-        return array(
-            'explain',
-            'ignore_unavailable',
-            'allow_no_indices',
-            'expand_wildcards',
-            'operation_threading',
-            'source',
-            'q',
-        );
+        return ['explain', 'ignore_unavailable', 'allow_no_indices', 'expand_wildcards', 'operation_threading', 'source', 'q'];
     }
 
     /**

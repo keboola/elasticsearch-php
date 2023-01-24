@@ -57,41 +57,7 @@ class DeleteByQuery extends AbstractEndpoint
      */
     public function getParamWhitelist()
     {
-        return array(
-            '_source',
-            '_source_exclude',
-            '_source_include',
-            'allow_no_indices',
-            'analyze_wildcard',
-            'analyzer',
-            'conflicts',
-            'default_operator',
-            'df',
-            'expand_wildcards',
-            'from',
-            'ignore_unavailable',
-            'lenient',
-            'preference',
-            'query',
-            'q',
-            'refresh',
-            'request_cache',
-            'requests_per_second',
-            'routing',
-            'scroll',
-            'scroll_size',
-            'search_timeout',
-            'search_type',
-            'size',
-            'slices',
-            'sort',
-            'stats',
-            'terminate_after',
-            'timeout',
-            'version',
-            'wait_for_active_shards',
-            'wait_for_completion',
-        );
+        return ['_source', '_source_exclude', '_source_include', 'allow_no_indices', 'analyze_wildcard', 'analyzer', 'conflicts', 'default_operator', 'df', 'expand_wildcards', 'from', 'ignore_unavailable', 'lenient', 'preference', 'query', 'q', 'refresh', 'request_cache', 'requests_per_second', 'routing', 'scroll', 'scroll_size', 'search_timeout', 'search_type', 'size', 'slices', 'sort', 'stats', 'terminate_after', 'timeout', 'version', 'wait_for_active_shards', 'wait_for_completion'];
     }
 
     /**

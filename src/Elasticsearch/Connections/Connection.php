@@ -88,7 +88,7 @@ class Connection implements ConnectionInterface
     /** @var int  */
     private $failedPings = 0;
 
-    private $lastRequest = array();
+    private $lastRequest = [];
 
     /**
      * Constructor
@@ -246,7 +246,7 @@ class Connection implements ConnectionInterface
                         if (isset($transport) === true) {
                             $transport->connectionPool->scheduleCheck();
 
-                            $neverRetry = isset($request['client']['never_retry']) ? $request['client']['never_retry'] : false;
+                            $neverRetry = $request['client']['never_retry'] ?? false;
                             $shouldRetry = $transport->shouldRetry($request);
                             $shouldRetryText = ($shouldRetry) ? 'true' : 'false';
 
@@ -289,10 +289,10 @@ class Connection implements ConnectionInterface
                     }
 
                     if ($response['status'] >= 400 && $response['status'] < 500) {
-                        $ignore = isset($request['client']['ignore']) ? $request['client']['ignore'] : [];
+                        $ignore = $request['client']['ignore'] ?? [];
                         $this->process4xxError($request, $response, $ignore);
                     } elseif ($response['status'] >= 500) {
-                        $ignore = isset($request['client']['ignore']) ? $request['client']['ignore'] : [];
+                        $ignore = $request['client']['ignore'] ?? [];
                         $this->process5xxError($request, $response, $ignore);
                     }
 
@@ -359,31 +359,19 @@ class Connection implements ConnectionInterface
      */
     public function logRequestSuccess($method, $fullURI, $body, $headers, $statusCode, $response, $duration)
     {
-        $this->log->debug('Request Body', array($body));
+        $this->log->debug('Request Body', [$body]);
         $this->log->info(
             'Request Success:',
-            array(
-                'method'    => $method,
-                'uri'       => $fullURI,
-                'headers'   => $headers,
-                'HTTP code' => $statusCode,
-                'duration'  => $duration,
-            )
+            ['method'    => $method, 'uri'       => $fullURI, 'headers'   => $headers, 'HTTP code' => $statusCode, 'duration'  => $duration]
         );
-        $this->log->debug('Response', array($response));
+        $this->log->debug('Response', [$response]);
 
         // Build the curl command for Trace.
         $curlCommand = $this->buildCurlCommand($method, $fullURI, $body);
         $this->trace->info($curlCommand);
         $this->trace->debug(
             'Response:',
-            array(
-                'response'  => $response,
-                'method'    => $method,
-                'uri'       => $fullURI,
-                'HTTP code' => $statusCode,
-                'duration'  => $duration,
-            )
+            ['response'  => $response, 'method'    => $method, 'uri'       => $fullURI, 'HTTP code' => $statusCode, 'duration'  => $duration]
         );
     }
 
@@ -403,32 +391,19 @@ class Connection implements ConnectionInterface
      */
     public function logRequestFail($method, $fullURI, $body, $headers, $statusCode, $response, $duration, \Exception $exception)
     {
-        $this->log->debug('Request Body', array($body));
+        $this->log->debug('Request Body', [$body]);
         $this->log->warning(
             'Request Failure:',
-            array(
-                'method'    => $method,
-                'uri'       => $fullURI,
-                'headers'   => $headers,
-                'HTTP code' => $statusCode,
-                'duration'  => $duration,
-                'error'     => $exception->getMessage(),
-            )
+            ['method'    => $method, 'uri'       => $fullURI, 'headers'   => $headers, 'HTTP code' => $statusCode, 'duration'  => $duration, 'error'     => $exception->getMessage()]
         );
-        $this->log->warning('Response', array($response));
+        $this->log->warning('Response', [$response]);
 
         // Build the curl command for Trace.
         $curlCommand = $this->buildCurlCommand($method, $fullURI, $body);
         $this->trace->info($curlCommand);
         $this->trace->debug(
             'Response:',
-            array(
-                'response'  => $response,
-                'method'    => $method,
-                'uri'       => $fullURI,
-                'HTTP code' => $statusCode,
-                'duration'  => $duration,
-            )
+            ['response'  => $response, 'method'    => $method, 'uri'       => $fullURI, 'HTTP code' => $statusCode, 'duration'  => $duration]
         );
     }
 
@@ -692,12 +667,12 @@ class Connection implements ConnectionInterface
 
     private function tryDeserialize400Error($response)
     {
-        return $this->tryDeserializeError($response, 'KBC\Elasticsearch\Common\Exceptions\BadRequest400Exception');
+        return $this->tryDeserializeError($response, \KBC\Elasticsearch\Common\Exceptions\BadRequest400Exception::class);
     }
 
     private function tryDeserialize500Error($response)
     {
-        return $this->tryDeserializeError($response, 'KBC\Elasticsearch\Common\Exceptions\ServerErrorResponseException');
+        return $this->tryDeserializeError($response, \KBC\Elasticsearch\Common\Exceptions\ServerErrorResponseException::class);
     }
 
     private function tryDeserializeError($response, $errorClass)

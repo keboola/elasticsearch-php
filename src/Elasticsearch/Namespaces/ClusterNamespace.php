@@ -28,7 +28,7 @@ class ClusterNamespace extends AbstractNamespace
      *
      * @return array
      */
-    public function health($params = array())
+    public function health($params = [])
     {
         $index = $this->extractArgument($params, 'index');
 
@@ -53,7 +53,7 @@ class ClusterNamespace extends AbstractNamespace
      *
      * @return array
      */
-    public function reroute($params = array())
+    public function reroute($params = [])
     {
         $body = $this->extractArgument($params, 'body');
 
@@ -82,7 +82,7 @@ class ClusterNamespace extends AbstractNamespace
      *
      * @return array
      */
-    public function state($params = array())
+    public function state($params = [])
     {
         $index = $this->extractArgument($params, 'index');
         $metric = $this->extractArgument($params, 'metric');
@@ -107,7 +107,7 @@ class ClusterNamespace extends AbstractNamespace
      *
      * @return array
      */
-    public function stats($params = array())
+    public function stats($params = [])
     {
         $nodeID = $this->extractArgument($params, 'node_id');
 
@@ -129,7 +129,7 @@ class ClusterNamespace extends AbstractNamespace
      *
      * @return array
      */
-    public function putSettings($params = array())
+    public function putSettings($params = [])
     {
         $body = $this->extractArgument($params, 'body');
 
@@ -149,7 +149,7 @@ class ClusterNamespace extends AbstractNamespace
      *
      * @return array
      */
-    public function getSettings($params = array())
+    public function getSettings($params = [])
     {
         /** @var callback $endpointBuilder */
         $endpointBuilder = $this->endpoints;
@@ -169,7 +169,7 @@ class ClusterNamespace extends AbstractNamespace
      *
      * @return array
      */
-    public function pendingTasks($params = array())
+    public function pendingTasks($params = [])
     {
         /** @var callback $endpointBuilder */
         $endpointBuilder = $this->endpoints;
@@ -188,7 +188,7 @@ class ClusterNamespace extends AbstractNamespace
      *
      * @return array
      */
-    public function allocationExplain($params = array())
+    public function allocationExplain($params = [])
     {
         $body = $this->extractArgument($params, 'body');
 

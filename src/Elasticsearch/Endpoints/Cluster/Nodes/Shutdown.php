@@ -33,10 +33,7 @@ class Shutdown extends AbstractNodesEndpoint
      */
     public function getParamWhitelist()
     {
-        return array(
-            'delay',
-            'exit',
-        );
+        return ['delay', 'exit'];
     }
 
     /**

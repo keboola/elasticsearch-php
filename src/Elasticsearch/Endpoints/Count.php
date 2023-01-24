@@ -57,24 +57,7 @@ class Count extends AbstractEndpoint
      */
     public function getParamWhitelist()
     {
-        return array(
-            'ignore_unavailable',
-            'allow_no_indices',
-            'expand_wildcards',
-            'min_score',
-            'preference',
-            'routing',
-            'source',
-            'q',
-            'df',
-            'default_operator',
-            'analyzer',
-            'lowercase_expanded_terms',
-            'analyze_wildcard',
-            'lenient',
-            'lowercase_expanded_terms',
-            'terminate_after'
-        );
+        return ['ignore_unavailable', 'allow_no_indices', 'expand_wildcards', 'min_score', 'preference', 'routing', 'source', 'q', 'df', 'default_operator', 'analyzer', 'lowercase_expanded_terms', 'analyze_wildcard', 'lenient', 'lowercase_expanded_terms', 'terminate_after'];
     }
 
     /**

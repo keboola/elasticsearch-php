@@ -35,15 +35,7 @@ class Count extends AbstractEndpoint
      */
     public function getParamWhitelist()
     {
-        return array(
-            'local',
-            'master_timeout',
-            'h',
-            'help',
-            'v',
-            's',
-            'format',
-        );
+        return ['local', 'master_timeout', 'h', 'help', 'v', 's', 'format'];
     }
 
     /**

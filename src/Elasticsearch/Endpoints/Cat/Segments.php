@@ -43,13 +43,7 @@ class Segments extends AbstractEndpoint
      */
     public function getParamWhitelist()
     {
-        return array(
-            'h',
-            'help',
-            'v',
-            's',
-            'format',
-        );
+        return ['h', 'help', 'v', 's', 'format'];
     }
 
 

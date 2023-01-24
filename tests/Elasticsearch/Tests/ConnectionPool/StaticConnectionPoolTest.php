@@ -16,16 +16,16 @@ use Mockery as m;
  * @license    http://www.apache.org/licenses/LICENSE-2.0 Apache2
  * @link       http://elasticsearch.org
  */
-class StaticConnectionPoolTest extends \PHPUnit_Framework_TestCase
+class StaticConnectionPoolTest extends \PHPUnit\Framework\TestCase
 {
-    public function tearDown()
+    public function tearDown(): void
     {
         m::close();
     }
 
     public function testAddOneHostThenGetConnection()
     {
-        $mockConnection = m::mock('\KBC\Elasticsearch\Connections\Connection')
+        $mockConnection = m::mock('\\' . \KBC\Elasticsearch\Connections\Connection::class)
                           ->shouldReceive('ping')
                           ->andReturn(true)
                           ->getMock()
@@ -34,14 +34,14 @@ class StaticConnectionPoolTest extends \PHPUnit_Framework_TestCase
                           ->getMock()
                           ->shouldReceive('markDead')->once()->getMock();
 
-        $connections = array($mockConnection);
+        $connections = [$mockConnection];
 
-        $selector = m::mock('\KBC\Elasticsearch\ConnectionPool\Selectors\RoundRobinSelector')
+        $selector = m::mock('\\' . \KBC\Elasticsearch\ConnectionPool\Selectors\RoundRobinSelector::class)
                     ->shouldReceive('select')
                     ->andReturn($connections[0])
                     ->getMock();
 
-        $connectionFactory = m::mock('\KBC\Elasticsearch\Connections\ConnectionFactory');
+        $connectionFactory = m::mock('\\' . \KBC\Elasticsearch\Connections\ConnectionFactory::class);
 
         $randomizeHosts = false;
         $connectionPool = new Elasticsearch\ConnectionPool\StaticConnectionPool($connections, $selector, $connectionFactory, $randomizeHosts);
@@ -53,10 +53,10 @@ class StaticConnectionPoolTest extends \PHPUnit_Framework_TestCase
 
     public function testAddMultipleHostsThenGetFirst()
     {
-        $connections = array();
+        $connections = [];
 
         foreach (range(1, 10) as $index) {
-            $mockConnection = m::mock('\KBC\Elasticsearch\Connections\Connection')
+            $mockConnection = m::mock('\\' . \KBC\Elasticsearch\Connections\Connection::class)
                               ->shouldReceive('ping')
                               ->andReturn(true)
                               ->getMock()
@@ -68,12 +68,12 @@ class StaticConnectionPoolTest extends \PHPUnit_Framework_TestCase
             $connections[] = $mockConnection;
         }
 
-        $selector = m::mock('\KBC\Elasticsearch\ConnectionPool\Selectors\RoundRobinSelector')
+        $selector = m::mock('\\' . \KBC\Elasticsearch\ConnectionPool\Selectors\RoundRobinSelector::class)
             ->shouldReceive('select')
             ->andReturn($connections[0])
             ->getMock();
 
-        $connectionFactory = m::mock('\KBC\Elasticsearch\Connections\ConnectionFactory');
+        $connectionFactory = m::mock('\\' . \KBC\Elasticsearch\Connections\ConnectionFactory::class);
 
         $randomizeHosts = false;
         $connectionPool = new Elasticsearch\ConnectionPool\StaticConnectionPool($connections, $selector, $connectionFactory, $randomizeHosts);
@@ -83,12 +83,10 @@ class StaticConnectionPoolTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($connections[0], $retConnection);
     }
 
-    /**
-     * @expectedException NoNodesAvailableException
-     */
     public function testAllHostsFailPing()
     {
-        $connections = array();
+        $this->expectException('NoNodesAvailableException');
+        $connections = [];
 
         foreach (range(1, 10) as $index) {
             $mockConnection = m::mock('\Elasticsearch\Connections\Connection')
@@ -120,7 +118,7 @@ class StaticConnectionPoolTest extends \PHPUnit_Framework_TestCase
 
     public function testAllExceptLastHostFailPingRevivesInSkip()
     {
-        $connections = array();
+        $connections = [];
 
         foreach (range(1, 9) as $index) {
             $mockConnection = m::mock('\Elasticsearch\Connections\Connection')
@@ -166,7 +164,7 @@ class StaticConnectionPoolTest extends \PHPUnit_Framework_TestCase
 
     public function testAllExceptLastHostFailPingRevivesPreSkip()
     {
-        $connections = array();
+        $connections = [];
 
         foreach (range(1, 9) as $index) {
             $mockConnection = m::mock('\Elasticsearch\Connections\Connection')
@@ -210,6 +208,9 @@ class StaticConnectionPoolTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($goodConnection, $ret);
     }
 
+    /**
+     * @doesNotPerformAssertions
+     */
     public function testCustomConnectionPoolIT()
     {
         $clientBuilder = \KBC\Elasticsearch\ClientBuilder::create();

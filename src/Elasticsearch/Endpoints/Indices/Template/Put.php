@@ -78,13 +78,7 @@ class Put extends AbstractEndpoint
      */
     public function getParamWhitelist()
     {
-        return array(
-            'order',
-            'timeout',
-            'master_timeout',
-            'flat_settings',
-            'create'
-        );
+        return ['order', 'timeout', 'master_timeout', 'flat_settings', 'create'];
     }
 
     /**

@@ -46,10 +46,7 @@ class AllocationExplain extends AbstractEndpoint
      */
     public function getParamWhitelist()
     {
-        return array(
-            'include_yes_decisions',
-            'include_disk_info',
-        );
+        return ['include_yes_decisions', 'include_disk_info'];
     }
 
     /**

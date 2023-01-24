@@ -103,10 +103,7 @@ class Create extends AbstractEndpoint
      */
     public function getParamWhitelist()
     {
-        return array(
-            'master_timeout',
-            'wait_for_completion',
-        );
+        return ['master_timeout', 'wait_for_completion'];
     }
 
     /**

@@ -28,8 +28,7 @@ class Ping extends AbstractEndpoint
      */
     public function getParamWhitelist()
     {
-        return array(
-        );
+        return [];
     }
 
     /**

@@ -63,17 +63,7 @@ class Stats extends AbstractEndpoint
      */
     public function getParamWhitelist()
     {
-        return array(
-            'completion_fields',
-            'fielddata_fields',
-            'fields',
-            'groups',
-            'human',
-            'level',
-            'types',
-            'metric',
-            'include_segment_file_sizes'
-        );
+        return ['completion_fields', 'fielddata_fields', 'fields', 'groups', 'human', 'level', 'types', 'metric', 'include_segment_file_sizes'];
     }
 
     /**

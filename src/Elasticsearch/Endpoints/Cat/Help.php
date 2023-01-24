@@ -30,11 +30,7 @@ class Help extends AbstractEndpoint
      */
     public function getParamWhitelist()
     {
-        return array(
-            'help',
-            's',
-            'format',
-        );
+        return ['help', 's', 'format'];
     }
 
     /**

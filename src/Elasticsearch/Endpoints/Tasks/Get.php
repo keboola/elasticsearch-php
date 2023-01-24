@@ -53,9 +53,7 @@ class Get extends AbstractEndpoint
      */
     public function getParamWhitelist()
     {
-        return array(
-            'wait_for_completion'
-        );
+        return ['wait_for_completion'];
     }
 
     /**

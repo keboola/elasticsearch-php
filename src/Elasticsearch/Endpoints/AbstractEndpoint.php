@@ -20,7 +20,7 @@ use GuzzleHttp\Ring\Future\FutureArrayInterface;
 abstract class AbstractEndpoint
 {
     /** @var array  */
-    protected $params = array();
+    protected $params = [];
 
     /** @var  string */
     protected $index = null;
@@ -184,7 +184,7 @@ abstract class AbstractEndpoint
      */
     protected function getOptionalURI($endpoint)
     {
-        $uri = array();
+        $uri = [];
         $uri[] = $this->getOptionalIndex();
         $uri[] = $this->getOptionalType();
         $uri[] = $endpoint;
@@ -228,7 +228,7 @@ abstract class AbstractEndpoint
             return; //no params, just return.
         }
 
-        $whitelist = array_merge($this->getParamWhitelist(), array('client', 'custom', 'filter_path', 'human'));
+        $whitelist = array_merge($this->getParamWhitelist(), ['client', 'custom', 'filter_path', 'human']);
 
         $invalid = array_diff(array_keys($params), $whitelist);
         if (count($invalid) > 0) {
@@ -253,7 +253,7 @@ abstract class AbstractEndpoint
             unset($params['client']);
         }
 
-        $ignore = isset($this->options['client']['ignore']) ? $this->options['client']['ignore'] : null;
+        $ignore = $this->options['client']['ignore'] ?? null;
         if (isset($ignore) === true) {
             if (is_string($ignore)) {
                 $this->options['client']['ignore'] = explode(",", $ignore);

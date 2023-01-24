@@ -48,14 +48,7 @@ class Reroute extends AbstractEndpoint
      */
     public function getParamWhitelist()
     {
-        return array(
-            'dry_run',
-            'filter_metadata',
-            'master_timeout',
-            'timeout',
-            'explain',
-            'metric'
-        );
+        return ['dry_run', 'filter_metadata', 'master_timeout', 'timeout', 'explain', 'metric'];
     }
 
     /**
